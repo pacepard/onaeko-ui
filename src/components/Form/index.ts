@@ -1,7 +1,10 @@
 export {
+    useFormField,
     Form,
-    FormField,
+    FormItem,
     FormLabel,
+    FormControl,
     FormDescription,
     FormMessage,
+    FormField,
 } from './Form';

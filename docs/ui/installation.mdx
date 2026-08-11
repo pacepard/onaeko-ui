@@ -11,6 +11,27 @@ pnpm add @onaeko/ui
 npm install @onaeko/ui
 ```
 
+## Peer dependencies
+
+Required for the library:
+
+```bash
+pnpm add react react-dom
+```
+
+Also install when you use these surfaces:
+
+| Peer | Needed for |
+| --- | --- |
+| `react-hook-form` | Form (`Form`, `FormField`, `FormControl`, …) |
+| `react-is` | Chart / Recharts |
+
+```bash
+pnpm add react-hook-form react-is
+```
+
+Optional for validated Form stories and app schemas: `@hookform/resolvers` and `zod` (or another resolver-supported schema library).
+
 ## Styles
 
 Import the package stylesheet once in your app root:
@@ -41,6 +62,3 @@ Use `transpilePackages: ['@onaeko/ui']` in `next.config` when needed. Only inter
 ## Vite
 
 Install the package, import styles, and use components like any other React library.
-
-
-add date picker, input otp, kbd, attachment, context menu, hover card, naviagtion menu, questionnaire, radio group, sonner, spinner, toggle, 

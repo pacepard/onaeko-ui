@@ -47,6 +47,8 @@ export default defineConfig({
                 'react-dom',
                 'react/jsx-runtime',
                 'react/jsx-dev-runtime',
+                'react-hook-form',
+                'react-is',
                 /^@radix-ui\//,
                 /^@base-ui\//,
                 /^@dnd-kit\//,

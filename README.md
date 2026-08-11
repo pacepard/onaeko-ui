@@ -96,7 +96,7 @@ pnpm changeset
 | `@onaeko/ui` | Components, utilities, theme helpers |
 | `@onaeko/ui/styles.css` | Design tokens and component styles |
 
-React and React DOM are peer dependencies.
+React, React DOM, `react-hook-form` (for Form), and `react-is` (for Recharts) are peer dependencies.
 
 ## Examples
 

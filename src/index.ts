@@ -221,10 +221,13 @@ export type { ErrorStateProps } from './components/ErrorState';
 
 export {
     Form,
+    FormControl,
     FormDescription,
     FormField,
+    FormItem,
     FormLabel,
     FormMessage,
+    useFormField,
 } from './components/Form';
 
 export { Grid, gridVariants } from './components/Grid';
