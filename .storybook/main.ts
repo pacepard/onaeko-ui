@@ -18,7 +18,7 @@ const config: StorybookConfig = {
             '@': path.resolve(rootDir, '../src'),
         };
 
-        // Prevent HMR from watching the static build output (breaks indexing).
+        // Prevent HMR from watching build outputs / examples (corrupts CSF indexing).
         config.server = config.server ?? {};
         config.server.watch = {
             ...config.server.watch,
@@ -28,6 +28,9 @@ const config: StorybookConfig = {
                 '**/coverage/**',
                 '**/test-results/**',
                 '**/playwright-report/**',
+                '**/examples/**',
+                '**/.next/**',
+                '**/packages/**/dist/**',
             ],
         };
 
