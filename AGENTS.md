@@ -40,6 +40,7 @@ pnpm build-storybook && pnpm test:e2e
 | Form API | `docs/ui/forms.mdx`, Form stories/tests/e2e |
 | Install/peers | `docs/ui/installation.mdx`, README peers section |
 | Package-affecting | `.changeset/*.md` via `pnpm changeset` |
+| Significant / high-risk feature | `specs/feature/<name>/PRODUCT.md` + `TECH.md` (see [`specs/README.md`](./specs/README.md)) |
 
 ## Branch / CI
 

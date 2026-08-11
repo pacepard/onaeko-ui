@@ -39,7 +39,7 @@ pnpm build-storybook && pnpm test:e2e
 
 - Storybook = interactive source of truth for visuals and a11y
 - Mintlify under `docs/` = install, theming, tokens, exports, Form, migrations, i18n/RTL
-- Specs under `specs/` for high-risk surfaces (Form, InputOTP, Button, Dialog, Chart, …)
+- Specs under `specs/feature/<name>/` as **PRODUCT.md** + **TECH.md** (see [`specs/README.md`](./specs/README.md)). High-risk surfaces: Form, InputOTP, Button, Dialog, Chart, …
 
 ## Visual regression
 
