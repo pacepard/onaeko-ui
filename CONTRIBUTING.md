@@ -23,13 +23,8 @@ pnpm storybook
 6. Before opening a PR, run:
 
 ```bash
-pnpm typecheck
-pnpm lint
-pnpm format:check
-pnpm test
-pnpm build
-pnpm build-storybook
-pnpm test:e2e
+pnpm format:check && pnpm check
+pnpm build-storybook && pnpm test:e2e
 ```
 
 ## Conventions

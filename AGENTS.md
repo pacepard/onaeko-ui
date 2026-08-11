@@ -17,7 +17,7 @@ Ship a framework-agnostic React design system (`@onaeko/ui`). Prefer small, revi
 ## Default verification
 
 ```bash
-pnpm typecheck && pnpm lint && pnpm format:check && pnpm test && pnpm build
+pnpm check
 ```
 
 For interaction or Storybook URL changes, also:
@@ -43,4 +43,4 @@ pnpm build-storybook && pnpm test:e2e
 
 ## Branch / CI
 
-Local default branch is `master`. CI runs typecheck, lint, format, tests, package build, Storybook build, example builds, Playwright.
+Local default branch is `master`. CI runs `pnpm format:check && pnpm check`, Storybook build, example builds, Playwright.

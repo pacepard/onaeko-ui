@@ -13,13 +13,13 @@ jobs:
     validate:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v4
+            - uses: actions/checkout@v5
 
-            - uses: pnpm/action-setup@v4
+            - uses: pnpm/action-setup@v5
               with:
                   version: 9.15.4
 
-            - uses: actions/setup-node@v4
+            - uses: actions/setup-node@v5
               with:
                   node-version: 22
                   cache: pnpm
@@ -27,26 +27,14 @@ jobs:
             - name: Install
               run: pnpm install --frozen-lockfile
 
-            - name: Typecheck
-              run: pnpm typecheck
-
-            - name: Lint
-              run: pnpm lint
-
-            - name: Format
-              run: pnpm format:check
-
-            - name: Unit tests
-              run: pnpm test
-
-            - name: Build icons package
-              run: pnpm build:icons
-
-            - name: Build package
-              run: pnpm build
+            - name: Check
+              run: pnpm format:check && pnpm check
 
             - name: Build Storybook
               run: pnpm build-storybook
+
+            - name: Build icons
+              run: pnpm build:icons
 
             - name: Build Vite example
               working-directory: examples/vite

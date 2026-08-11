@@ -46,10 +46,7 @@ Themes: `light`, `dark`, `system`. Components use tokens such as `--onaeko-prima
 ```bash
 pnpm install
 pnpm storybook
-pnpm test
-pnpm lint
-pnpm typecheck
-pnpm build
+pnpm check
 pnpm build-storybook
 ```
 
@@ -125,6 +122,6 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) and [AGENTS.md](./AGENTS.md) for humans
 2. Include Storybook stories and tests for behavior
 3. Export from `src/index.ts`
 4. Add a changeset for package-affecting changes
-5. Ensure `pnpm typecheck`, `pnpm lint`, `pnpm format:check`, `pnpm test`, and `pnpm build` pass
+5. Ensure `pnpm format:check && pnpm check` pass
 
 Do not add authentication, API clients, analytics, or application business logic to this package.
