@@ -102,7 +102,7 @@ ESM-only. Peers: React, React DOM. Optional peers: `react-hook-form` (Form), `re
 
 ## Examples
 
-Local consumer apps under `examples/`:
+Local consumer apps under `examples/`. They depend on the published npm packages (`@onaeko/ui` / `@onaeko/icons`), not the workspace sources:
 
 ```bash
 # Vite
