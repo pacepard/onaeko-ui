@@ -1,0 +1,17 @@
+---
+title: Theming
+description: Light, dark, and system themes via CSS variables.
+---
+
+# Theming
+
+Onaeko UI uses semantic CSS variables. Toggle themes by applying the `dark` class on `document.documentElement`.
+
+```tsx
+import { initTheme, setTheme } from '@onaeko/ui';
+
+initTheme('system');
+setTheme('dark');
+```
+
+Supported values: `light`, `dark`, `system`.

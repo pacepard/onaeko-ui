@@ -1,0 +1,46 @@
+---
+title: Installation
+description: Install and import @onaeko/ui in Next.js or Vite apps.
+---
+
+# Installation
+
+```bash
+pnpm add @onaeko/ui
+# or
+npm install @onaeko/ui
+```
+
+## Styles
+
+Import the package stylesheet once in your app root:
+
+```tsx
+import '@onaeko/ui/styles.css';
+```
+
+## Usage
+
+```tsx
+import { Button, Card, Input } from '@onaeko/ui';
+
+export function Example() {
+  return (
+    <Card>
+      <Input placeholder="Email" />
+      <Button>Continue</Button>
+    </Card>
+  );
+}
+```
+
+## Next.js
+
+Use `transpilePackages: ['@onaeko/ui']` in `next.config` when needed. Only interactive components ship with `"use client"`.
+
+## Vite
+
+Install the package, import styles, and use components like any other React library.
+
+
+add date picker, input otp, kbd, attachment, context menu, hover card, naviagtion menu, questionnaire, radio group, sonner, spinner, toggle, 
