@@ -1,0 +1,258 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@source "../**/*.{ts,tsx}";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+    /* Onaeko semantic tokens — teal/slate system */
+    --onaeko-background: oklch(0.995 0.002 200);
+    --onaeko-foreground: oklch(0.22 0.02 240);
+    --onaeko-card: oklch(1 0 0);
+    --onaeko-card-foreground: oklch(0.22 0.02 240);
+    --onaeko-popover: oklch(1 0 0);
+    --onaeko-popover-foreground: oklch(0.22 0.02 240);
+    --onaeko-primary: oklch(0.45 0.1 200);
+    --onaeko-primary-foreground: oklch(0.99 0.005 200);
+    --onaeko-secondary: oklch(0.95 0.01 220);
+    --onaeko-secondary-foreground: oklch(0.28 0.03 240);
+    --onaeko-muted: oklch(0.96 0.008 220);
+    --onaeko-muted-foreground: oklch(0.5 0.02 240);
+    --onaeko-accent: oklch(0.94 0.02 195);
+    --onaeko-accent-foreground: oklch(0.28 0.04 200);
+    --onaeko-destructive: oklch(0.55 0.2 25);
+    --onaeko-destructive-foreground: oklch(0.99 0.01 25);
+    --onaeko-success: oklch(0.55 0.12 165);
+    --onaeko-border: oklch(0.9 0.01 230);
+    --onaeko-input: oklch(0.9 0.01 230);
+    --onaeko-ring: oklch(0.55 0.08 200);
+    --onaeko-radius: 0.625rem;
+
+    --onaeko-sidebar: oklch(0.985 0.005 220);
+    --onaeko-sidebar-foreground: oklch(0.22 0.02 240);
+    --onaeko-sidebar-primary: oklch(0.45 0.1 200);
+    --onaeko-sidebar-primary-foreground: oklch(0.99 0.005 200);
+    --onaeko-sidebar-accent: oklch(0.95 0.015 200);
+    --onaeko-sidebar-accent-foreground: oklch(0.28 0.04 200);
+    --onaeko-sidebar-border: oklch(0.9 0.01 230);
+    --onaeko-sidebar-ring: oklch(0.55 0.08 200);
+
+    /* Short aliases for Tailwind theme mapping */
+    --background: var(--onaeko-background);
+    --foreground: var(--onaeko-foreground);
+    --card: var(--onaeko-card);
+    --card-foreground: var(--onaeko-card-foreground);
+    --popover: var(--onaeko-popover);
+    --popover-foreground: var(--onaeko-popover-foreground);
+    --primary: var(--onaeko-primary);
+    --primary-foreground: var(--onaeko-primary-foreground);
+    --secondary: var(--onaeko-secondary);
+    --secondary-foreground: var(--onaeko-secondary-foreground);
+    --muted: var(--onaeko-muted);
+    --muted-foreground: var(--onaeko-muted-foreground);
+    --accent: var(--onaeko-accent);
+    --accent-foreground: var(--onaeko-accent-foreground);
+    --destructive: var(--onaeko-destructive);
+    --destructive-foreground: var(--onaeko-destructive-foreground);
+    --success: var(--onaeko-success);
+    --border: var(--onaeko-border);
+    --input: var(--onaeko-input);
+    --ring: var(--onaeko-ring);
+    --radius: var(--onaeko-radius);
+    --sidebar: var(--onaeko-sidebar);
+    --sidebar-foreground: var(--onaeko-sidebar-foreground);
+    --sidebar-primary: var(--onaeko-sidebar-primary);
+    --sidebar-primary-foreground: var(--onaeko-sidebar-primary-foreground);
+    --sidebar-accent: var(--onaeko-sidebar-accent);
+    --sidebar-accent-foreground: var(--onaeko-sidebar-accent-foreground);
+    --sidebar-border: var(--onaeko-sidebar-border);
+    --sidebar-ring: var(--onaeko-sidebar-ring);
+}
+
+.dark {
+    --onaeko-background: oklch(0.18 0.02 240);
+    --onaeko-foreground: oklch(0.96 0.01 220);
+    --onaeko-card: oklch(0.21 0.02 240);
+    --onaeko-card-foreground: oklch(0.96 0.01 220);
+    --onaeko-popover: oklch(0.21 0.02 240);
+    --onaeko-popover-foreground: oklch(0.96 0.01 220);
+    --onaeko-primary: oklch(0.72 0.09 195);
+    --onaeko-primary-foreground: oklch(0.18 0.03 220);
+    --onaeko-secondary: oklch(0.28 0.02 240);
+    --onaeko-secondary-foreground: oklch(0.96 0.01 220);
+    --onaeko-muted: oklch(0.28 0.02 240);
+    --onaeko-muted-foreground: oklch(0.7 0.02 220);
+    --onaeko-accent: oklch(0.3 0.03 200);
+    --onaeko-accent-foreground: oklch(0.96 0.01 200);
+    --onaeko-destructive: oklch(0.6 0.18 25);
+    --onaeko-destructive-foreground: oklch(0.98 0.01 25);
+    --onaeko-success: oklch(0.65 0.12 165);
+    --onaeko-border: oklch(0.32 0.02 240);
+    --onaeko-input: oklch(0.32 0.02 240);
+    --onaeko-ring: oklch(0.65 0.08 195);
+
+    --onaeko-sidebar: oklch(0.2 0.02 240);
+    --onaeko-sidebar-foreground: oklch(0.96 0.01 220);
+    --onaeko-sidebar-primary: oklch(0.72 0.09 195);
+    --onaeko-sidebar-primary-foreground: oklch(0.18 0.03 220);
+    --onaeko-sidebar-accent: oklch(0.28 0.03 200);
+    --onaeko-sidebar-accent-foreground: oklch(0.96 0.01 200);
+    --onaeko-sidebar-border: oklch(0.32 0.02 240);
+    --onaeko-sidebar-ring: oklch(0.65 0.08 195);
+}
+
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --font-sans:
+        "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-mono:
+        ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+        "Liberation Mono", monospace;
+    --color-sidebar-ring: var(--sidebar-ring);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar: var(--sidebar);
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --color-success: var(--success);
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
+    --animate-accordion-down: accordion-down 0.2s ease-out;
+    --animate-accordion-up: accordion-up 0.2s ease-out;
+    --animate-command-palette-in: command-palette-in 0.2s ease-out;
+    --animate-spin: spin 1s linear infinite;
+    --animate-caret-blink: caret-blink 1.25s ease-out infinite;
+
+    @keyframes caret-blink {
+        0%,
+        70%,
+        100% {
+            opacity: 1;
+        }
+        20%,
+        50% {
+            opacity: 0;
+        }
+    }
+
+    @keyframes shimmer {
+        0% {
+            background-position: 100% 0;
+        }
+        100% {
+            background-position: -100% 0;
+        }
+    }
+
+    @keyframes command-palette-in {
+        from {
+            opacity: 0;
+            transform: translate(-50%, -8px) scale(0.98);
+        }
+        to {
+            opacity: 1;
+            transform: translate(-50%, 0) scale(1);
+        }
+    }
+
+    @keyframes accordion-down {
+        from {
+            height: 0;
+        }
+        to {
+            height: var(--radix-accordion-content-height);
+        }
+    }
+
+    @keyframes accordion-up {
+        from {
+            height: var(--radix-accordion-content-height);
+        }
+        to {
+            height: 0;
+        }
+    }
+
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+}
+
+@utility animate-caret-blink {
+    animation: var(--animate-caret-blink);
+}
+
+@utility shimmer {
+    background-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        color-mix(in oklab, var(--foreground) 12%, transparent) 50%,
+        transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s linear infinite;
+}
+
+@utility scrollbar-none {
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@utility scroll-fade-x {
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        #000 0.75rem,
+        #000 calc(100% - 0.75rem),
+        transparent
+    );
+}
+
+@layer base {
+    * {
+        @apply border-border outline-ring/50;
+    }
+
+    body {
+        @apply bg-background text-foreground antialiased;
+        font-family: var(--font-sans);
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+        @apply text-muted-foreground;
+    }
+
+    button:not(:disabled),
+    [role="button"]:not(:disabled) {
+        @apply cursor-pointer;
+    }
+}
