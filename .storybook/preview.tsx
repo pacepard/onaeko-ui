@@ -34,6 +34,14 @@ const preview: Preview = {
         },
     ],
     parameters: {
+        options: {
+            // Keep sidebar always alphabetical (components and stories).
+            storySort: {
+                method: 'alphabetical',
+                order: [],
+                locales: 'en-US',
+            },
+        },
         controls: {
             matchers: {
                 color: /(background|color)$/i,
