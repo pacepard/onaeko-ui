@@ -1,0 +1,58 @@
+/**
+ * Curated Onaeko icons re-exported from lucide-react.
+ * Prefer these named exports so product apps share one icon vocabulary.
+ * Figma → code: map Figma icon components to these names (see docs/ui/figma-icons.mdx).
+ */
+export {
+    Home as HomeIcon,
+    Inbox as InboxIcon,
+    Settings as SettingsIcon,
+    Search as SearchIcon,
+    User as UserIcon,
+    Users as UsersIcon,
+    Bell as BellIcon,
+    Check as CheckIcon,
+    X as XIcon,
+    Plus as PlusIcon,
+    Minus as MinusIcon,
+    ChevronDown as ChevronDownIcon,
+    ChevronUp as ChevronUpIcon,
+    ChevronLeft as ChevronLeftIcon,
+    ChevronRight as ChevronRightIcon,
+    Menu as MenuIcon,
+    MoreHorizontal as MoreHorizontalIcon,
+    MoreVertical as MoreVerticalIcon,
+    Copy as CopyIcon,
+    Trash2 as TrashIcon,
+    Edit as EditIcon,
+    ExternalLink as ExternalLinkIcon,
+    Download as DownloadIcon,
+    Upload as UploadIcon,
+    File as FileIcon,
+    Folder as FolderIcon,
+    Image as ImageIcon,
+    Mail as MailIcon,
+    MessageSquare as MessageIcon,
+    Calendar as CalendarIcon,
+    Clock as ClockIcon,
+    Star as StarIcon,
+    Heart as HeartIcon,
+    AlertCircle as AlertCircleIcon,
+    AlertTriangle as AlertTriangleIcon,
+    Info as InfoIcon,
+    HelpCircle as HelpCircleIcon,
+    Loader2 as LoaderIcon,
+    Eye as EyeIcon,
+    EyeOff as EyeOffIcon,
+    Lock as LockIcon,
+    Unlock as UnlockIcon,
+    LogOut as LogOutIcon,
+    LogIn as LogInIcon,
+    PanelLeft as PanelLeftIcon,
+    LayoutDashboard as LayoutDashboardIcon,
+    type LucideIcon,
+    type LucideProps,
+} from 'lucide-react';
+
+export { Icon } from './Icon';
+export type { IconProps } from './Icon';

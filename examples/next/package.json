@@ -8,7 +8,8 @@
     },
     "dependencies": {
         "@hookform/resolvers": "^5.7.1",
-        "@onaeko/ui": "link:../..",
+        "@onaeko/icons": "workspace:*",
+        "@onaeko/ui": "workspace:*",
         "next": "^15.4.5",
         "react": "^19.1.1",
         "react-dom": "^19.1.1",

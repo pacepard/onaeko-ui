@@ -272,6 +272,8 @@
         "dev": "pnpm storybook",
         "sync:exports": "node scripts/sync-package-exports.mjs",
         "build": "pnpm sync:exports && vite build",
+        "build:icons": "pnpm --filter @onaeko/icons build",
+        "build:all": "pnpm build:icons && pnpm build",
         "typecheck": "tsc --noEmit",
         "lint": "eslint . --max-warnings 0",
         "format": "prettier --write .",

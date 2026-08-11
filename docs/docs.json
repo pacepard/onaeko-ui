@@ -20,7 +20,8 @@
                 "ui/forms",
                 "ui/migrations",
                 "ui/i18n-rtl",
-                "ui/architecture"
+                "ui/architecture",
+                "ui/figma-icons"
             ]
         }
     ]

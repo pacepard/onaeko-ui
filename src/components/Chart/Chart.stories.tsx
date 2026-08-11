@@ -1,12 +1,9 @@
 /**
- * Curated Storybook demos adapted from official Recharts examples
- * (recharts@v3.10.1 www/src/docs/exampleComponents/*) — not the full
- * Recharts catalog. Prefer importing `ChartTooltip` / `ChartLegend` from
- * `@onaeko/ui` (Recharts `Tooltip` / `Legend` aliases) so they do not
- * clash with the UI Tooltip component.
+ * Storybook demos adapted from official Recharts examples
+ * (recharts@v3.10.1 www/src/docs/exampleComponents/*).
+ * Additional catalog coverage: Components/Chart/Catalog + specs/chart-catalog.md.
  *
- * RechartsDevtools omitted (dev-only). Docs CSS variables replaced with
- * the hex palette used in the same official Bar/Area examples.
+ * Prefer importing `ChartTooltip` / `ChartLegend` from `@onaeko/ui`.
  *
  * Catalog: https://recharts.github.io/en-US/examples/SimpleLineChart/
  * Package: https://www.npmjs.com/package/recharts

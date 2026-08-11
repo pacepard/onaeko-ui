@@ -115,7 +115,7 @@ cd examples/vite && pnpm install && pnpm build
 cd examples/next && pnpm install && pnpm build
 ```
 
-Both examples import Form, Toast, Dialog, Table, and a small Chart demo from `@onaeko/ui`.
+Both examples include Sidebar shell, Questionnaire, Form, Toast, Dialog, Table, Chart, and `@onaeko/icons`.
 
 ## Contributing
 

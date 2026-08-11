@@ -1,0 +1,38 @@
+---
+title: Figma and icons
+description: How Onaeko maps Figma icons to @onaeko/icons.
+---
+
+# Figma and icons
+
+## Package
+
+```bash
+pnpm add @onaeko/icons
+```
+
+```tsx
+import { HomeIcon, Icon, SettingsIcon } from '@onaeko/icons';
+
+export function Nav() {
+    return (
+        <>
+            <HomeIcon aria-hidden />
+            <Icon icon={SettingsIcon} title="Settings" />
+        </>
+    );
+}
+```
+
+Icons are curated re-exports of [lucide-react](https://lucide.dev/). There is no custom SVG pipeline yet.
+
+## Figma → code mapping
+
+1. Name Figma icon components to match Onaeko export names (`HomeIcon`, `SettingsIcon`, …)
+2. Prefer Lucide’s outline set at 16/24px for product UI
+3. When a Figma glyph has no Lucide twin, add a temporary local SVG in the app — do not fork `@onaeko/icons` ad hoc
+4. Propose new shared icons via PR to `packages/icons` with the Lucide source name documented
+
+## Sync status
+
+Automated Figma ↔ code sync is **not** wired. Treat Figma as the visual source of truth for composition; treat `@onaeko/icons` as the runtime source of truth for which glyphs ship.

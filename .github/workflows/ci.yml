@@ -39,6 +39,9 @@ jobs:
             - name: Unit tests
               run: pnpm test
 
+            - name: Build icons package
+              run: pnpm build:icons
+
             - name: Build package
               run: pnpm build
 

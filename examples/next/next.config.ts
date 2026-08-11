@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-    transpilePackages: ['@onaeko/ui'],
+    transpilePackages: ['@onaeko/ui', '@onaeko/icons'],
     outputFileTracingRoot: path.join(path.dirname(fileURLToPath(import.meta.url)), '../..'),
 };
 
