@@ -13,12 +13,23 @@ export default tseslint.config(
             'node_modules/**',
             'coverage/**',
             'examples/**',
+            'packages/**/dist/**',
             'playwright-report/**',
             'test-results/**',
         ],
     },
     js.configs.recommended,
     ...tseslint.configs.recommended,
+    {
+        files: ['**/*.{js,mjs,cjs}'],
+        languageOptions: {
+            ecmaVersion: 2022,
+            sourceType: 'module',
+            globals: {
+                ...globals.node,
+            },
+        },
+    },
     {
         files: ['**/*.{ts,tsx}'],
         languageOptions: {
