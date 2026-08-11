@@ -59,7 +59,6 @@ import {
     initTheme,
 } from '@onaeko/ui';
 import { HomeIcon, InboxIcon, SettingsIcon } from '@onaeko/icons';
-import '@onaeko/ui/styles.css';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as React from 'react';
 import { useForm } from 'react-hook-form';
