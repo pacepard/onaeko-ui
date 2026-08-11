@@ -22,7 +22,11 @@ const exportsMap = {
         types: './dist/index.d.ts',
         import: './dist/index.js',
     },
-    './styles.css': './dist/styles.css',
+    './styles.css': {
+        types: './styles.css.d.ts',
+        import: './dist/styles.css',
+        default: './dist/styles.css',
+    },
     './tokens': {
         types: './dist/tokens.d.ts',
         import: './dist/tokens.js',

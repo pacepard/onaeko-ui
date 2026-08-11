@@ -15,7 +15,11 @@
             "types": "./dist/index.d.ts",
             "import": "./dist/index.js"
         },
-        "./styles.css": "./dist/styles.css",
+        "./styles.css": {
+            "types": "./styles.css.d.ts",
+            "import": "./dist/styles.css",
+            "default": "./dist/styles.css"
+        },
         "./tokens": {
             "types": "./dist/tokens.d.ts",
             "import": "./dist/tokens.js"
@@ -255,7 +259,8 @@
         }
     },
     "files": [
-        "dist"
+        "dist",
+        "styles.css.d.ts"
     ],
     "repository": {
         "type": "git",
@@ -278,6 +283,7 @@
         "lint": "eslint . --max-warnings 0",
         "format": "prettier --write .",
         "format:check": "prettier --check .",
+        "check": "pnpm typecheck && pnpm lint && pnpm test && pnpm build",
         "test": "vitest run",
         "test:watch": "vitest",
         "test:e2e": "playwright test",
@@ -285,7 +291,7 @@
         "build-storybook": "storybook build",
         "changeset": "changeset",
         "version-packages": "changeset version",
-        "release": "pnpm build && changeset publish"
+        "release": "pnpm build:all && changeset publish"
     },
     "peerDependencies": {
         "react": "^18.0.0 || ^19.0.0",
