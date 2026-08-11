@@ -1,0 +1,51 @@
+---
+title: Migrations
+description: Breaking-change notes for @onaeko/ui consumers.
+---
+
+# Migrations
+
+## Form → react-hook-form (0.1.x)
+
+`Form` is no longer a styled `<form>` wrapper. It is react-hook-form's `FormProvider`.
+
+**Before**
+
+```tsx
+<Form onSubmit={...}>
+  <FormField>
+    <FormLabel htmlFor="email">Email</FormLabel>
+    <Input id="email" />
+  </FormField>
+</Form>
+```
+
+**After**
+
+```tsx
+const form = useForm({ defaultValues: { email: '' } });
+
+<Form {...form}>
+    <form onSubmit={form.handleSubmit(onSubmit)} noValidate>
+        <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+                <FormItem>
+                    <FormLabel>Email</FormLabel>
+                    <FormControl>
+                        <Input {...field} />
+                    </FormControl>
+                    <FormMessage />
+                </FormItem>
+            )}
+        />
+    </form>
+</Form>;
+```
+
+Install peer `react-hook-form`. Optional: `@hookform/resolvers` + `zod`. See [Forms](/ui/forms).
+
+## Chart tooltips
+
+Import `ChartTooltip` / `ChartLegend` from `@onaeko/ui` instead of Recharts `Tooltip` / `Legend` when also using the UI Tooltip component.

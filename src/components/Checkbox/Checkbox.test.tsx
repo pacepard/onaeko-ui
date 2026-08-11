@@ -29,4 +29,17 @@ describe('Checkbox', () => {
         await user.click(checkbox);
         expect(onCheckedChange).not.toHaveBeenCalled();
     });
+
+    it('toggles with the keyboard', async () => {
+        const user = userEvent.setup();
+        const onCheckedChange = vi.fn();
+
+        render(<Checkbox aria-label="Accept terms" onCheckedChange={onCheckedChange} />);
+
+        const checkbox = screen.getByRole('checkbox', { name: 'Accept terms' });
+        checkbox.focus();
+        await user.keyboard(' ');
+        expect(onCheckedChange).toHaveBeenCalledWith(true);
+        expect(checkbox).toBeChecked();
+    });
 });

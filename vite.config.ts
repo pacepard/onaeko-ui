@@ -1,3 +1,4 @@
+import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -8,6 +9,26 @@ import dts from 'vite-plugin-dts';
 
 const rootDir = path.dirname(fileURLToPath(import.meta.url));
 const isStorybook = process.argv.some((arg) => arg.includes('storybook'));
+
+function toKebabCase(name: string) {
+    return name.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase();
+}
+
+function discoverComponentEntries() {
+    const componentsDir = path.resolve(rootDir, 'src/components');
+    const entries: Record<string, string> = {};
+
+    for (const dirent of fs.readdirSync(componentsDir, { withFileTypes: true })) {
+        if (!dirent.isDirectory()) continue;
+        const entry = path.join(componentsDir, dirent.name, 'index.ts');
+        if (!fs.existsSync(entry)) continue;
+        entries[toKebabCase(dirent.name)] = entry;
+    }
+
+    return entries;
+}
+
+const componentEntries = discoverComponentEntries();
 
 export default defineConfig({
     plugins: [
@@ -32,9 +53,16 @@ export default defineConfig({
             entry: {
                 index: path.resolve(rootDir, 'src/index.ts'),
                 styles: path.resolve(rootDir, 'src/styles.ts'),
+                tokens: path.resolve(rootDir, 'src/tokens/index.ts'),
+                theme: path.resolve(rootDir, 'src/theme/index.ts'),
+                ...componentEntries,
             },
             formats: ['es'],
-            fileName: (_format, entryName) => (entryName === 'styles' ? 'styles.js' : 'index.js'),
+            fileName: (_format, entryName) => {
+                if (entryName === 'styles') return 'styles.js';
+                if (entryName === 'index') return 'index.js';
+                return `${entryName}.js`;
+            },
         },
         rollupOptions: {
             external: [

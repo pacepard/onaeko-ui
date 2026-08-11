@@ -1,9 +1,13 @@
 import {
+    Bar,
+    BarChart,
     Button,
     Card,
     CardContent,
     CardHeader,
     CardTitle,
+    CartesianGrid,
+    ChartTooltip,
     Dialog,
     DialogContent,
     DialogHeader,
@@ -16,6 +20,7 @@ import {
     FormLabel,
     FormMessage,
     Input,
+    ResponsiveContainer,
     Table,
     TableBody,
     TableCell,
@@ -23,6 +28,8 @@ import {
     TableHeader,
     TableRow,
     Toaster,
+    XAxis,
+    YAxis,
     toast,
     initTheme,
 } from '@onaeko/ui';
@@ -38,6 +45,14 @@ const schema = z.object({
 });
 
 type Values = z.infer<typeof schema>;
+
+const chartData = [
+    { name: 'Mon', value: 12 },
+    { name: 'Tue', value: 18 },
+    { name: 'Wed', value: 9 },
+    { name: 'Thu', value: 22 },
+    { name: 'Fri', value: 15 },
+];
 
 function DemoForm() {
     const form = useForm<Values>({
@@ -94,6 +109,22 @@ export function App() {
                             </DialogHeader>
                         </DialogContent>
                     </Dialog>
+                </CardContent>
+            </Card>
+            <Card>
+                <CardHeader>
+                    <CardTitle>Chart</CardTitle>
+                </CardHeader>
+                <CardContent style={{ height: 240 }}>
+                    <ResponsiveContainer width="100%" height="100%">
+                        <BarChart data={chartData}>
+                            <CartesianGrid strokeDasharray="3 3" />
+                            <XAxis dataKey="name" />
+                            <YAxis />
+                            <ChartTooltip />
+                            <Bar dataKey="value" fill="var(--onaeko-primary)" />
+                        </BarChart>
+                    </ResponsiveContainer>
                 </CardContent>
             </Card>
             <Table>

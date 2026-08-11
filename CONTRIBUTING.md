@@ -43,7 +43,12 @@ pnpm test:e2e
 ## Docs
 
 - Storybook = interactive source of truth for visuals and a11y
-- Mintlify under `docs/` = install, theming, tokens, Form/Chart conceptual guides
+- Mintlify under `docs/` = install, theming, tokens, exports, Form, migrations, i18n/RTL
+- Specs under `specs/` for high-risk surfaces (Form, InputOTP, Button, Dialog, Chart, …)
+
+## Visual regression
+
+Chromatic (or equivalent) is intentionally not required in CI until a project token is available. Prefer Storybook a11y + Playwright until then.
 
 ## Examples
 

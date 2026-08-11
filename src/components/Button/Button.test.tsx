@@ -70,4 +70,26 @@ describe('Button', () => {
         expect(screen.getByLabelText('Loading')).toBeInTheDocument();
         expect(screen.getByRole('button', { name: /Saving/i })).toBeInTheDocument();
     });
+
+    it('applies variant and size classes', () => {
+        render(
+            <Button variant="destructive" size="lg">
+                Delete
+            </Button>,
+        );
+        const button = screen.getByRole('button', { name: 'Delete' });
+        expect(button.className).toMatch(/bg-destructive/);
+        expect(button.className).toMatch(/h-10/);
+    });
+
+    it('supports asChild composition', () => {
+        render(
+            <Button asChild variant="link">
+                <a href="#docs">Docs</a>
+            </Button>,
+        );
+        const link = screen.getByRole('link', { name: 'Docs' });
+        expect(link).toHaveAttribute('href', '#docs');
+        expect(link).toHaveAttribute('data-slot', 'button');
+    });
 });

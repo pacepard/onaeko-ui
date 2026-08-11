@@ -1,0 +1,22 @@
+---
+title: Internationalization and RTL
+description: Guidance for i18n and right-to-left layouts with @onaeko/ui.
+---
+
+# Internationalization and RTL
+
+Components do not ship translated strings. Pass all user-visible copy from your app (labels, placeholders, toast messages, empty states).
+
+## Recommendations
+
+- Keep strings in your i18n layer (next-intl, react-i18next, etc.) and pass them as props/children
+- Prefer `aria-label` / visible labels from translated strings for controls without text
+- Avoid baking English into component defaults beyond Storybook demos
+
+## RTL
+
+1. Set `dir="rtl"` on `html` or a layout root when the locale requires it
+2. Prefer logical CSS already used in components (`ms-`, `me-`, `ps-`, `pe-`, `start`/`end` where present)
+3. Verify overlays (Dialog, Sheet, Dropdown, Sidebar) in RTL Storybook or your app — mirror testing is app-owned
+
+There is no built-in locale switcher in `@onaeko/ui`.

@@ -13,10 +13,14 @@
             "pages": [
                 "ui/introduction",
                 "ui/installation",
+                "ui/package-exports",
                 "ui/theming",
                 "ui/design-tokens",
                 "ui/components",
-                "ui/forms"
+                "ui/forms",
+                "ui/migrations",
+                "ui/i18n-rtl",
+                "ui/architecture"
             ]
         }
     ]

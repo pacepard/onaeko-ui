@@ -25,4 +25,28 @@ describe('Select', () => {
         await user.click(await screen.findByRole('option', { name: 'Banana' }));
         expect(screen.getByRole('combobox', { name: 'Fruit' })).toHaveTextContent('Banana');
     });
+
+    it('supports keyboard selection', async () => {
+        const user = userEvent.setup();
+
+        render(
+            <Select>
+                <SelectTrigger aria-label="Fruit">
+                    <SelectValue placeholder="Pick a fruit" />
+                </SelectTrigger>
+                <SelectContent>
+                    <SelectItem value="apple">Apple</SelectItem>
+                    <SelectItem value="banana">Banana</SelectItem>
+                </SelectContent>
+            </Select>,
+        );
+
+        const trigger = screen.getByRole('combobox', { name: 'Fruit' });
+        await user.tab();
+        expect(trigger).toHaveFocus();
+        await user.keyboard('{Enter}');
+        expect(await screen.findByRole('listbox')).toBeInTheDocument();
+        await user.keyboard('{ArrowDown}{Enter}');
+        expect(trigger).toHaveTextContent(/Apple|Banana/);
+    });
 });

@@ -15,7 +15,244 @@
             "types": "./dist/index.d.ts",
             "import": "./dist/index.js"
         },
-        "./styles.css": "./dist/styles.css"
+        "./styles.css": "./dist/styles.css",
+        "./tokens": {
+            "types": "./dist/tokens.d.ts",
+            "import": "./dist/tokens.js"
+        },
+        "./theme": {
+            "types": "./dist/theme.d.ts",
+            "import": "./dist/theme.js"
+        },
+        "./package.json": "./package.json",
+        "./accordion": {
+            "types": "./dist/accordion.d.ts",
+            "import": "./dist/accordion.js"
+        },
+        "./alert": {
+            "types": "./dist/alert.d.ts",
+            "import": "./dist/alert.js"
+        },
+        "./alert-dialog": {
+            "types": "./dist/alert-dialog.d.ts",
+            "import": "./dist/alert-dialog.js"
+        },
+        "./attachment": {
+            "types": "./dist/attachment.d.ts",
+            "import": "./dist/attachment.js"
+        },
+        "./avatar": {
+            "types": "./dist/avatar.d.ts",
+            "import": "./dist/avatar.js"
+        },
+        "./badge": {
+            "types": "./dist/badge.d.ts",
+            "import": "./dist/badge.js"
+        },
+        "./breadcrumb": {
+            "types": "./dist/breadcrumb.d.ts",
+            "import": "./dist/breadcrumb.js"
+        },
+        "./button": {
+            "types": "./dist/button.d.ts",
+            "import": "./dist/button.js"
+        },
+        "./calendar": {
+            "types": "./dist/calendar.d.ts",
+            "import": "./dist/calendar.js"
+        },
+        "./card": {
+            "types": "./dist/card.d.ts",
+            "import": "./dist/card.js"
+        },
+        "./chart": {
+            "types": "./dist/chart.d.ts",
+            "import": "./dist/chart.js"
+        },
+        "./checkbox": {
+            "types": "./dist/checkbox.d.ts",
+            "import": "./dist/checkbox.js"
+        },
+        "./command": {
+            "types": "./dist/command.d.ts",
+            "import": "./dist/command.js"
+        },
+        "./command-palette": {
+            "types": "./dist/command-palette.d.ts",
+            "import": "./dist/command-palette.js"
+        },
+        "./container": {
+            "types": "./dist/container.d.ts",
+            "import": "./dist/container.js"
+        },
+        "./context-menu": {
+            "types": "./dist/context-menu.d.ts",
+            "import": "./dist/context-menu.js"
+        },
+        "./date-picker": {
+            "types": "./dist/date-picker.d.ts",
+            "import": "./dist/date-picker.js"
+        },
+        "./dialog": {
+            "types": "./dist/dialog.d.ts",
+            "import": "./dist/dialog.js"
+        },
+        "./drawer": {
+            "types": "./dist/drawer.d.ts",
+            "import": "./dist/drawer.js"
+        },
+        "./dropdown-menu": {
+            "types": "./dist/dropdown-menu.d.ts",
+            "import": "./dist/dropdown-menu.js"
+        },
+        "./empty-state": {
+            "types": "./dist/empty-state.d.ts",
+            "import": "./dist/empty-state.js"
+        },
+        "./error-state": {
+            "types": "./dist/error-state.d.ts",
+            "import": "./dist/error-state.js"
+        },
+        "./form": {
+            "types": "./dist/form.d.ts",
+            "import": "./dist/form.js"
+        },
+        "./grid": {
+            "types": "./dist/grid.d.ts",
+            "import": "./dist/grid.js"
+        },
+        "./hover-card": {
+            "types": "./dist/hover-card.d.ts",
+            "import": "./dist/hover-card.js"
+        },
+        "./icon-button": {
+            "types": "./dist/icon-button.d.ts",
+            "import": "./dist/icon-button.js"
+        },
+        "./input": {
+            "types": "./dist/input.d.ts",
+            "import": "./dist/input.js"
+        },
+        "./input-otp": {
+            "types": "./dist/input-otp.d.ts",
+            "import": "./dist/input-otp.js"
+        },
+        "./kbd": {
+            "types": "./dist/kbd.d.ts",
+            "import": "./dist/kbd.js"
+        },
+        "./label": {
+            "types": "./dist/label.d.ts",
+            "import": "./dist/label.js"
+        },
+        "./loading-state": {
+            "types": "./dist/loading-state.d.ts",
+            "import": "./dist/loading-state.js"
+        },
+        "./multi-select": {
+            "types": "./dist/multi-select.d.ts",
+            "import": "./dist/multi-select.js"
+        },
+        "./navigation-menu": {
+            "types": "./dist/navigation-menu.d.ts",
+            "import": "./dist/navigation-menu.js"
+        },
+        "./pagination": {
+            "types": "./dist/pagination.d.ts",
+            "import": "./dist/pagination.js"
+        },
+        "./popover": {
+            "types": "./dist/popover.d.ts",
+            "import": "./dist/popover.js"
+        },
+        "./progress": {
+            "types": "./dist/progress.d.ts",
+            "import": "./dist/progress.js"
+        },
+        "./questionnaire": {
+            "types": "./dist/questionnaire.d.ts",
+            "import": "./dist/questionnaire.js"
+        },
+        "./radio": {
+            "types": "./dist/radio.d.ts",
+            "import": "./dist/radio.js"
+        },
+        "./scroll-area": {
+            "types": "./dist/scroll-area.d.ts",
+            "import": "./dist/scroll-area.js"
+        },
+        "./select": {
+            "types": "./dist/select.d.ts",
+            "import": "./dist/select.js"
+        },
+        "./separator": {
+            "types": "./dist/separator.d.ts",
+            "import": "./dist/separator.js"
+        },
+        "./sheet": {
+            "types": "./dist/sheet.d.ts",
+            "import": "./dist/sheet.js"
+        },
+        "./sidebar": {
+            "types": "./dist/sidebar.d.ts",
+            "import": "./dist/sidebar.js"
+        },
+        "./skeleton": {
+            "types": "./dist/skeleton.d.ts",
+            "import": "./dist/skeleton.js"
+        },
+        "./slider": {
+            "types": "./dist/slider.d.ts",
+            "import": "./dist/slider.js"
+        },
+        "./sonner": {
+            "types": "./dist/sonner.d.ts",
+            "import": "./dist/sonner.js"
+        },
+        "./sortable": {
+            "types": "./dist/sortable.d.ts",
+            "import": "./dist/sortable.js"
+        },
+        "./spinner": {
+            "types": "./dist/spinner.d.ts",
+            "import": "./dist/spinner.js"
+        },
+        "./stack": {
+            "types": "./dist/stack.d.ts",
+            "import": "./dist/stack.js"
+        },
+        "./switch": {
+            "types": "./dist/switch.d.ts",
+            "import": "./dist/switch.js"
+        },
+        "./table": {
+            "types": "./dist/table.d.ts",
+            "import": "./dist/table.js"
+        },
+        "./tabs": {
+            "types": "./dist/tabs.d.ts",
+            "import": "./dist/tabs.js"
+        },
+        "./textarea": {
+            "types": "./dist/textarea.d.ts",
+            "import": "./dist/textarea.js"
+        },
+        "./toast": {
+            "types": "./dist/toast.d.ts",
+            "import": "./dist/toast.js"
+        },
+        "./toggle": {
+            "types": "./dist/toggle.d.ts",
+            "import": "./dist/toggle.js"
+        },
+        "./toggle-group": {
+            "types": "./dist/toggle-group.d.ts",
+            "import": "./dist/toggle-group.js"
+        },
+        "./tooltip": {
+            "types": "./dist/tooltip.d.ts",
+            "import": "./dist/tooltip.js"
+        }
     },
     "files": [
         "dist"
@@ -33,7 +270,8 @@
     },
     "scripts": {
         "dev": "pnpm storybook",
-        "build": "vite build",
+        "sync:exports": "node scripts/sync-package-exports.mjs",
+        "build": "pnpm sync:exports && vite build",
         "typecheck": "tsc --noEmit",
         "lint": "eslint . --max-warnings 0",
         "format": "prettier --write .",
@@ -52,6 +290,14 @@
         "react-dom": "^18.0.0 || ^19.0.0",
         "react-hook-form": "^7.0.0",
         "react-is": "^18.0.0 || ^19.0.0"
+    },
+    "peerDependenciesMeta": {
+        "react-hook-form": {
+            "optional": true
+        },
+        "react-is": {
+            "optional": true
+        }
     },
     "dependencies": {
         "@base-ui/react": "^1.7.0",

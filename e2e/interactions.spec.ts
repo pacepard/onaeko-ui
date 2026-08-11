@@ -73,4 +73,46 @@ test.describe('Storybook interactions', () => {
         await page.keyboard.type('123456');
         await expect(otp).toHaveValue('123456');
     });
+
+    test('Checkbox toggles', async ({ page }) => {
+        await page.goto('/iframe.html?id=components-checkbox--default&viewMode=story');
+        const checkbox = page.getByRole('checkbox');
+        await expect(checkbox).not.toBeChecked();
+        await checkbox.click();
+        await expect(checkbox).toBeChecked();
+    });
+
+    test('Switch toggles', async ({ page }) => {
+        await page.goto('/iframe.html?id=components-switch--default&viewMode=story');
+        const sw = page.getByRole('switch');
+        await expect(sw).not.toBeChecked();
+        await sw.click();
+        await expect(sw).toBeChecked();
+    });
+
+    test('Select chooses an option', async ({ page }) => {
+        await page.goto('/iframe.html?id=components-select--default&viewMode=story');
+        await page.getByRole('combobox').click();
+        await page.getByRole('option', { name: 'Banana' }).click();
+        await expect(page.getByRole('combobox')).toContainText('Banana');
+    });
+
+    test('Accordion expands and collapses', async ({ page }) => {
+        await page.goto('/iframe.html?id=components-accordion--default&viewMode=story');
+        await page.getByRole('button', { name: 'What is Onaeko?' }).click();
+        await expect(
+            page.getByText('Onaeko is a design system and component library for building product interfaces.'),
+        ).toBeVisible();
+    });
+
+    test('Chart line story renders svg', async ({ page }) => {
+        await page.goto('/iframe.html?id=components-chart--simple-line-chart&viewMode=story');
+        await expect(page.locator('.recharts-surface, svg').first()).toBeVisible();
+    });
+
+    test('Sheet opens from trigger', async ({ page }) => {
+        await page.goto('/iframe.html?id=components-sheet--default&viewMode=story');
+        await page.getByRole('button', { name: 'Open sheet' }).click();
+        await expect(page.getByRole('dialog')).toBeVisible();
+    });
 });

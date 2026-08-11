@@ -50,4 +50,22 @@ test.describe('Storybook a11y smoke', () => {
         await expect(page.getByRole('button', { name: 'Open dialog' })).toBeVisible();
         await expectNoSeriousViolations(page);
     });
+
+    test('Tabs default has no serious axe violations', async ({ page }) => {
+        await page.goto('/iframe.html?id=components-tabs--default&viewMode=story');
+        await expect(page.getByRole('tab', { name: 'Account' })).toBeVisible();
+        await expectNoSeriousViolations(page);
+    });
+
+    test('Checkbox default has no serious axe violations', async ({ page }) => {
+        await page.goto('/iframe.html?id=components-checkbox--default&viewMode=story');
+        await expect(page.getByRole('checkbox')).toBeVisible();
+        await expectNoSeriousViolations(page);
+    });
+
+    test('Select default has no serious axe violations', async ({ page }) => {
+        await page.goto('/iframe.html?id=components-select--default&viewMode=story');
+        await expect(page.getByRole('combobox')).toBeVisible();
+        await expectNoSeriousViolations(page);
+    });
 });

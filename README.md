@@ -79,12 +79,13 @@ cd docs && npx mintlify dev
 
 - Unit/component: Vitest + React Testing Library (`pnpm test`)
 - Browser flows: Playwright against Storybook (`pnpm build-storybook && pnpm test:e2e`)
-  - Dialog, Dropdown keyboard, Tabs, Form (incl. validation), Toast/Sonner, InputOTP, theme
-  - Axe smoke (`e2e/a11y.spec.ts`) via Storybook’s axe on Button, Form, and Dialog (serious/critical; color-contrast disabled)
+  - Dialog, Dropdown, Tabs, Form, Toast/Sonner, InputOTP, Checkbox, Switch, Select, Accordion, Chart, Sheet, theme
+  - Axe smoke (`e2e/a11y.spec.ts`) via Storybook’s axe on Button, Form, Dialog, Tabs, Checkbox, Select (serious/critical; color-contrast disabled)
+- Visual regression (Chromatic) is optional and not wired until a project token exists
 
 ## Publishing
 
-Versioning uses Changesets. On merge to `main`, the release workflow can open a release PR or publish to npm.
+Versioning uses Changesets. On merge to `master`, the release workflow can open a release PR or publish to npm.
 
 ```bash
 pnpm changeset
@@ -96,8 +97,11 @@ pnpm changeset
 | --- | --- |
 | `@onaeko/ui` | Components, utilities, theme helpers |
 | `@onaeko/ui/styles.css` | Design tokens and component styles |
+| `@onaeko/ui/tokens` | Typed token references |
+| `@onaeko/ui/theme` | Theme helpers (`initTheme`, `setTheme`) |
+| `@onaeko/ui/<name>` | Per-component ESM entry (kebab-case), e.g. `@onaeko/ui/button` |
 
-ESM-only. Peers: React, React DOM, `react-hook-form` (Form), and `react-is` (Recharts). Chart tooltips/legends: import `ChartTooltip` / `ChartLegend` from `@onaeko/ui` (aliases for Recharts `Tooltip` / `Legend`).
+ESM-only. Peers: React, React DOM. Optional peers: `react-hook-form` (Form), `react-is` (Recharts). Chart tooltips/legends: import `ChartTooltip` / `ChartLegend` from `@onaeko/ui`.
 
 ## Examples
 
@@ -111,7 +115,7 @@ cd examples/vite && pnpm install && pnpm build
 cd examples/next && pnpm install && pnpm build
 ```
 
-Both examples import `Button`, `Input`, `Card`, `Dialog`, `Table`, `Toast`, and a minimal `Form` (react-hook-form) from `@onaeko/ui`.
+Both examples import Form, Toast, Dialog, Table, and a small Chart demo from `@onaeko/ui`.
 
 ## Contributing
 

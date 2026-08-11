@@ -15,7 +15,6 @@ export default {
     embeddedLanguageFormatting: 'auto',
     htmlWhitespaceSensitivity: 'css',
     insertPragma: false,
-    jsxBracketSameLine: false,
 
     proseWrap: 'preserve',
     quoteProps: 'as-needed',

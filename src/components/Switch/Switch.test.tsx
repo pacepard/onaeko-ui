@@ -29,4 +29,17 @@ describe('Switch', () => {
         await user.click(toggle);
         expect(onCheckedChange).not.toHaveBeenCalled();
     });
+
+    it('toggles with the keyboard', async () => {
+        const user = userEvent.setup();
+        const onCheckedChange = vi.fn();
+
+        render(<Switch aria-label="Enable alerts" onCheckedChange={onCheckedChange} />);
+
+        const toggle = screen.getByRole('switch', { name: 'Enable alerts' });
+        toggle.focus();
+        await user.keyboard(' ');
+        expect(onCheckedChange).toHaveBeenCalledWith(true);
+        expect(toggle).toBeChecked();
+    });
 });

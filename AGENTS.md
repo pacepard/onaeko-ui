@@ -43,4 +43,4 @@ pnpm build-storybook && pnpm test:e2e
 
 ## Branch / CI
 
-Local default branch is `main`. CI runs typecheck, lint, format, tests, package build, Storybook build, example builds, Playwright.
+Local default branch is `master`. CI runs typecheck, lint, format, tests, package build, Storybook build, example builds, Playwright.

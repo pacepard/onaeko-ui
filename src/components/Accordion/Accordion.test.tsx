@@ -40,4 +40,26 @@ describe('Accordion', () => {
         await user.click(trigger);
         expect(screen.queryByText('Panel one body')).not.toBeInTheDocument();
     });
+
+    it('allows multiple panels open when type is multiple', async () => {
+        const user = userEvent.setup();
+
+        render(
+            <Accordion type="multiple" defaultValue={['item-1']}>
+                <AccordionItem value="item-1">
+                    <AccordionTrigger>Section one</AccordionTrigger>
+                    <AccordionContent>Panel one body</AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2">
+                    <AccordionTrigger>Section two</AccordionTrigger>
+                    <AccordionContent>Panel two body</AccordionContent>
+                </AccordionItem>
+            </Accordion>,
+        );
+
+        expect(screen.getByText('Panel one body')).toBeInTheDocument();
+        await user.click(screen.getByRole('button', { name: 'Section two' }));
+        expect(screen.getByText('Panel one body')).toBeInTheDocument();
+        expect(screen.getByText('Panel two body')).toBeInTheDocument();
+    });
 });

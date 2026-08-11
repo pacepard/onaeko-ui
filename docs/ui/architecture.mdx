@@ -1,0 +1,31 @@
+---
+title: Architecture
+description: Primitive stack and intentional boundaries of @onaeko/ui.
+---
+
+# Architecture
+
+## Primitive stack
+
+Components wrap a mix of:
+
+- **Radix UI** — most overlays and form primitives
+- **Base UI** / **@shadcn/react** — selected newer surfaces
+- **Libraries** — `sonner`, `vaul`, `cmdk`, `input-otp`, `react-day-picker`, `recharts`, `@dnd-kit/*`
+
+Prefer Onaeko exports for styling and a11y conventions. Unifying on a single primitive vendor is an intentional future track, not a current requirement.
+
+## Out of scope (for now)
+
+- Figma → code sync
+- Standalone icon package (use `lucide-react`)
+- Full motion/choreography system beyond token durations
+- Visual regression (Chromatic) until a project token is configured
+- Auth, API clients, analytics, or product business logic
+
+## Docs split
+
+| Surface   | Role                                                          |
+| --------- | ------------------------------------------------------------- |
+| Storybook | Props, variants, a11y addon (source of truth for components)  |
+| Mintlify  | Install, theming, tokens, exports, Form, i18n/RTL, migrations |
