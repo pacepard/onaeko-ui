@@ -57,8 +57,19 @@ export function Example() {
 
 ## Next.js
 
-Use `transpilePackages: ['@onaeko/ui']` in `next.config` when needed. Only interactive components ship with `"use client"`.
+Use `transpilePackages: ['@onaeko/ui']` in `next.config` when needed.
+
+### Client vs server
+
+Interactive components that use browser APIs or client-only libraries ship with `"use client"` (Dialog, Form, Toast/Sonner, Calendar, Sidebar, etc.). Presentational pieces without client hooks can render on the server.
+
+**SSR guidance:**
+
+- Import `@onaeko/ui/styles.css` from a root layout (server-safe)
+- Call `initTheme` / `setTheme` only on the client (e.g. `useEffect` in a client component)
+- Mount `Toaster` in a client boundary (layout client shell or page marked `'use client'`)
+- Prefer App Router client components for Form and other RHF-bound UIs
 
 ## Vite
 
-Install the package, import styles, and use components like any other React library.
+Install the package, import styles, and use components like any other React library. Theme init can run at module scope in the client entry.

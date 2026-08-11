@@ -7,12 +7,14 @@
         "start": "next start"
     },
     "dependencies": {
+        "@hookform/resolvers": "^5.7.1",
         "@onaeko/ui": "link:../..",
         "next": "^15.4.5",
         "react": "^19.1.1",
         "react-dom": "^19.1.1",
         "react-hook-form": "^7.85.0",
-        "react-is": "^19.2.8"
+        "react-is": "^19.2.8",
+        "zod": "^4.4.3"
     },
     "devDependencies": {
         "@types/node": "^20.19.9",

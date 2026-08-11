@@ -8,11 +8,13 @@
         "preview": "vite preview"
     },
     "dependencies": {
+        "@hookform/resolvers": "^5.7.1",
         "@onaeko/ui": "link:../..",
         "react": "^19.1.1",
         "react-dom": "^19.1.1",
         "react-hook-form": "^7.85.0",
-        "react-is": "^19.2.8"
+        "react-is": "^19.2.8",
+        "zod": "^4.4.3"
     },
     "devDependencies": {
         "@types/react": "^19.1.9",

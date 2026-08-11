@@ -80,6 +80,7 @@ cd docs && npx mintlify dev
 - Unit/component: Vitest + React Testing Library (`pnpm test`)
 - Browser flows: Playwright against Storybook (`pnpm build-storybook && pnpm test:e2e`)
   - Dialog, Dropdown keyboard, Tabs, Form (incl. validation), Toast/Sonner, InputOTP, theme
+  - Axe smoke (`e2e/a11y.spec.ts`) via Storybook’s axe on Button, Form, and Dialog (serious/critical; color-contrast disabled)
 
 ## Publishing
 
@@ -110,14 +111,16 @@ cd examples/vite && pnpm install && pnpm build
 cd examples/next && pnpm install && pnpm build
 ```
 
-Both examples import `Button`, `Input`, `Card`, `Dialog`, `Table`, and `Toast` from `@onaeko/ui`.
+Both examples import `Button`, `Input`, `Card`, `Dialog`, `Table`, `Toast`, and a minimal `Form` (react-hook-form) from `@onaeko/ui`.
 
 ## Contributing
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) and [AGENTS.md](./AGENTS.md) for humans and coding agents.
 
 1. Add or update the component under `src/components/ComponentName/`
 2. Include Storybook stories and tests for behavior
 3. Export from `src/index.ts`
 4. Add a changeset for package-affecting changes
-5. Ensure `pnpm typecheck`, `pnpm lint`, `pnpm test`, and `pnpm build` pass
+5. Ensure `pnpm typecheck`, `pnpm lint`, `pnpm format:check`, `pnpm test`, and `pnpm build` pass
 
 Do not add authentication, API clients, analytics, or application business logic to this package.

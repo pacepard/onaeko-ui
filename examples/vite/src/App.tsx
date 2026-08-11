@@ -9,6 +9,12 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger,
+    Form,
+    FormControl,
+    FormField,
+    FormItem,
+    FormLabel,
+    FormMessage,
     Input,
     Table,
     TableBody,
@@ -21,8 +27,51 @@ import {
     initTheme,
 } from '@onaeko/ui';
 import '@onaeko/ui/styles.css';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
 
 initTheme('system');
+
+const schema = z.object({
+    email: z.string().email('Enter a valid email'),
+});
+
+type Values = z.infer<typeof schema>;
+
+function DemoForm() {
+    const form = useForm<Values>({
+        resolver: zodResolver(schema),
+        defaultValues: { email: '' },
+    });
+
+    return (
+        <Form {...form}>
+            <form
+                style={{ display: 'grid', gap: 12 }}
+                onSubmit={form.handleSubmit((values) => {
+                    toast.success(`Hello ${values.email}`);
+                })}
+                noValidate
+            >
+                <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                        <FormItem>
+                            <FormLabel>Email</FormLabel>
+                            <FormControl>
+                                <Input type="email" placeholder="you@example.com" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                    )}
+                />
+                <Button type="submit">Submit form</Button>
+            </form>
+        </Form>
+    );
+}
 
 export function App() {
     return (
@@ -33,7 +82,7 @@ export function App() {
                     <CardTitle>Vite + @onaeko/ui</CardTitle>
                 </CardHeader>
                 <CardContent style={{ display: 'grid', gap: 12 }}>
-                    <Input placeholder="Email" />
+                    <DemoForm />
                     <Button onClick={() => toast.success('Saved')}>Show toast</Button>
                     <Dialog>
                         <DialogTrigger asChild>
