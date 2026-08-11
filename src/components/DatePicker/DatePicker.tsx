@@ -7,11 +7,7 @@ import type { DateRange } from 'react-day-picker';
 
 import { Button } from '@/components/Button';
 import { Calendar } from '@/components/Calendar';
-import {
-    Popover,
-    PopoverContent,
-    PopoverTrigger,
-} from '@/components/Popover';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/Popover';
 import { cn } from '@/lib/cn';
 
 export type DatePickerProps = {
@@ -38,9 +34,7 @@ function DatePicker({
     'aria-label': ariaLabel,
 }: DatePickerProps) {
     const [open, setOpen] = React.useState(false);
-    const [uncontrolled, setUncontrolled] = React.useState<Date | undefined>(
-        defaultValue,
-    );
+    const [uncontrolled, setUncontrolled] = React.useState<Date | undefined>(defaultValue);
     const date = value !== undefined ? value : uncontrolled;
 
     const setDate = (next: Date | undefined) => {
@@ -72,11 +66,7 @@ function DatePicker({
                 </Button>
             </PopoverTrigger>
             <PopoverContent className="w-auto p-0" align="start">
-                <Calendar
-                    mode="single"
-                    selected={date}
-                    onSelect={setDate}
-                />
+                <Calendar mode="single" selected={date} onSelect={setDate} />
             </PopoverContent>
         </Popover>
     );
@@ -108,9 +98,7 @@ function DatePickerRange({
     'aria-label': ariaLabel,
 }: DatePickerRangeProps) {
     const [open, setOpen] = React.useState(false);
-    const [uncontrolled, setUncontrolled] = React.useState<
-        DateRange | undefined
-    >(defaultValue);
+    const [uncontrolled, setUncontrolled] = React.useState<DateRange | undefined>(defaultValue);
     const range = value !== undefined ? value : uncontrolled;
 
     const setRange = (next: DateRange | undefined) => {
@@ -146,12 +134,7 @@ function DatePickerRange({
                 </Button>
             </PopoverTrigger>
             <PopoverContent className="w-auto p-0" align="start">
-                <Calendar
-                    mode="range"
-                    selected={range}
-                    onSelect={setRange}
-                    numberOfMonths={numberOfMonths}
-                />
+                <Calendar mode="range" selected={range} onSelect={setRange} numberOfMonths={numberOfMonths} />
             </PopoverContent>
         </Popover>
     );

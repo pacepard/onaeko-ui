@@ -2,13 +2,7 @@
 
 import * as React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
-import {
-    CheckIcon,
-    ChevronDownIcon,
-    WandSparklesIcon,
-    XCircleIcon,
-    XIcon,
-} from 'lucide-react';
+import { CheckIcon, ChevronDownIcon, WandSparklesIcon, XCircleIcon, XIcon } from 'lucide-react';
 
 import { Badge } from '@/components/Badge';
 import { Button } from '@/components/Button';
@@ -21,11 +15,7 @@ import {
     CommandList,
     CommandSeparator,
 } from '@/components/Command';
-import {
-    Popover,
-    PopoverContent,
-    PopoverTrigger,
-} from '@/components/Popover';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/Popover';
 import { Separator } from '@/components/Separator';
 import { cn } from '@/lib/cn';
 
@@ -34,12 +24,9 @@ const multiSelectVariants = cva(
     {
         variants: {
             variant: {
-                default:
-                    'border-foreground/10 text-foreground bg-card hover:bg-card/80',
-                secondary:
-                    'border-foreground/10 bg-secondary text-secondary-foreground hover:bg-secondary/80',
-                destructive:
-                    'border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80',
+                default: 'border-foreground/10 text-foreground bg-card hover:bg-card/80',
+                secondary: 'border-foreground/10 bg-secondary text-secondary-foreground hover:bg-secondary/80',
+                destructive: 'border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80',
                 inverted: 'inverted',
             },
         },
@@ -50,8 +37,7 @@ const multiSelectVariants = cva(
 );
 
 export interface MultiSelectProps
-    extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-        VariantProps<typeof multiSelectVariants> {
+    extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof multiSelectVariants> {
     options: {
         label: string;
         value: string;
@@ -83,20 +69,14 @@ const MultiSelect = React.forwardRef<HTMLButtonElement, MultiSelectProps>(
         },
         ref,
     ) => {
-        const [selectedValues, setSelectedValues] =
-            React.useState<string[]>(defaultValue);
+        const [selectedValues, setSelectedValues] = React.useState<string[]>(defaultValue);
         const [isPopoverOpen, setIsPopoverOpen] = React.useState(false);
         const [isAnimating, setIsAnimating] = React.useState(false);
 
-        const handleInputKeyDown = (
-            event: React.KeyboardEvent<HTMLInputElement>,
-        ) => {
+        const handleInputKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
             if (event.key === 'Enter') {
                 setIsPopoverOpen(true);
-            } else if (
-                event.key === 'Backspace' &&
-                !event.currentTarget.value
-            ) {
+            } else if (event.key === 'Backspace' && !event.currentTarget.value) {
                 const newSelectedValues = [...selectedValues];
                 newSelectedValues.pop();
                 setSelectedValues(newSelectedValues);
@@ -138,11 +118,7 @@ const MultiSelect = React.forwardRef<HTMLButtonElement, MultiSelectProps>(
         };
 
         return (
-            <Popover
-                open={isPopoverOpen}
-                onOpenChange={setIsPopoverOpen}
-                modal={modalPopover}
-            >
+            <Popover open={isPopoverOpen} onOpenChange={setIsPopoverOpen} modal={modalPopover}>
                 <PopoverTrigger asChild>
                     <Button
                         ref={ref}
@@ -158,51 +134,41 @@ const MultiSelect = React.forwardRef<HTMLButtonElement, MultiSelectProps>(
                         {selectedValues.length > 0 ? (
                             <div className="flex w-full items-center justify-between">
                                 <div className="flex flex-wrap items-center">
-                                    {selectedValues
-                                        .slice(0, maxCount)
-                                        .map((value) => {
-                                            const option = options.find(
-                                                (o) => o.value === value,
-                                            );
-                                            const IconComponent = option?.icon;
-                                            return (
-                                                <Badge
-                                                    key={value}
-                                                    variant="outline"
-                                                    className={cn(
-                                                        isAnimating
-                                                            ? 'animate-bounce'
-                                                            : '',
-                                                        multiSelectVariants({
-                                                            variant,
-                                                        }),
-                                                    )}
-                                                    style={{
-                                                        animationDuration: `${animation}s`,
+                                    {selectedValues.slice(0, maxCount).map((value) => {
+                                        const option = options.find((o) => o.value === value);
+                                        const IconComponent = option?.icon;
+                                        return (
+                                            <Badge
+                                                key={value}
+                                                variant="outline"
+                                                className={cn(
+                                                    isAnimating ? 'animate-bounce' : '',
+                                                    multiSelectVariants({
+                                                        variant,
+                                                    }),
+                                                )}
+                                                style={{
+                                                    animationDuration: `${animation}s`,
+                                                }}
+                                            >
+                                                {IconComponent && <IconComponent className="mr-2 h-4 w-4" />}
+                                                {option?.label}
+                                                <XCircleIcon
+                                                    className="ml-2 h-4 w-4 cursor-pointer"
+                                                    onClick={(event) => {
+                                                        event.stopPropagation();
+                                                        toggleOption(value);
                                                     }}
-                                                >
-                                                    {IconComponent && (
-                                                        <IconComponent className="mr-2 h-4 w-4" />
-                                                    )}
-                                                    {option?.label}
-                                                    <XCircleIcon
-                                                        className="ml-2 h-4 w-4 cursor-pointer"
-                                                        onClick={(event) => {
-                                                            event.stopPropagation();
-                                                            toggleOption(value);
-                                                        }}
-                                                    />
-                                                </Badge>
-                                            );
-                                        })}
+                                                />
+                                            </Badge>
+                                        );
+                                    })}
                                     {selectedValues.length > maxCount && (
                                         <Badge
                                             variant="outline"
                                             className={cn(
                                                 'border-foreground/10 bg-transparent text-foreground hover:bg-transparent',
-                                                isAnimating
-                                                    ? 'animate-bounce'
-                                                    : '',
+                                                isAnimating ? 'animate-bounce' : '',
                                                 multiSelectVariants({
                                                     variant,
                                                 }),
@@ -230,46 +196,29 @@ const MultiSelect = React.forwardRef<HTMLButtonElement, MultiSelectProps>(
                                             handleClear();
                                         }}
                                     />
-                                    <Separator
-                                        orientation="vertical"
-                                        className="flex h-full min-h-6"
-                                    />
+                                    <Separator orientation="vertical" className="flex h-full min-h-6" />
                                     <ChevronDownIcon className="mx-2 h-4 cursor-pointer text-muted-foreground" />
                                 </div>
                             </div>
                         ) : (
                             <div className="mx-auto flex w-full items-center justify-between">
-                                <span className="mx-3 text-sm text-muted-foreground">
-                                    {placeholder}
-                                </span>
+                                <span className="mx-3 text-sm text-muted-foreground">{placeholder}</span>
                                 <ChevronDownIcon className="mx-2 h-4 cursor-pointer text-muted-foreground" />
                             </div>
                         )}
                     </Button>
                 </PopoverTrigger>
-                <PopoverContent
-                    className="w-auto p-0"
-                    align="start"
-                    onEscapeKeyDown={() => setIsPopoverOpen(false)}
-                >
+                <PopoverContent className="w-auto p-0" align="start" onEscapeKeyDown={() => setIsPopoverOpen(false)}>
                     <Command>
-                        <CommandInput
-                            placeholder="Search..."
-                            onKeyDown={handleInputKeyDown}
-                        />
+                        <CommandInput placeholder="Search..." onKeyDown={handleInputKeyDown} />
                         <CommandList>
                             <CommandEmpty>No results found.</CommandEmpty>
                             <CommandGroup>
-                                <CommandItem
-                                    key="all"
-                                    onSelect={toggleAll}
-                                    className="cursor-pointer"
-                                >
+                                <CommandItem key="all" onSelect={toggleAll} className="cursor-pointer">
                                     <div
                                         className={cn(
                                             'mr-2 flex h-4 w-4 items-center justify-center rounded-md border border-primary',
-                                            selectedValues.length ===
-                                                options.length
+                                            selectedValues.length === options.length
                                                 ? 'bg-primary text-primary-foreground'
                                                 : 'opacity-50 [&_svg]:invisible',
                                         )}
@@ -279,15 +228,11 @@ const MultiSelect = React.forwardRef<HTMLButtonElement, MultiSelectProps>(
                                     <span>(Select All)</span>
                                 </CommandItem>
                                 {options.map((option) => {
-                                    const isSelected = selectedValues.includes(
-                                        option.value,
-                                    );
+                                    const isSelected = selectedValues.includes(option.value);
                                     return (
                                         <CommandItem
                                             key={option.value}
-                                            onSelect={() =>
-                                                toggleOption(option.value)
-                                            }
+                                            onSelect={() => toggleOption(option.value)}
                                             className="cursor-pointer"
                                         >
                                             <div
@@ -319,16 +264,11 @@ const MultiSelect = React.forwardRef<HTMLButtonElement, MultiSelectProps>(
                                             >
                                                 Clear
                                             </CommandItem>
-                                            <Separator
-                                                orientation="vertical"
-                                                className="flex h-full min-h-6"
-                                            />
+                                            <Separator orientation="vertical" className="flex h-full min-h-6" />
                                         </>
                                     )}
                                     <CommandItem
-                                        onSelect={() =>
-                                            setIsPopoverOpen(false)
-                                        }
+                                        onSelect={() => setIsPopoverOpen(false)}
                                         className="max-w-full flex-1 cursor-pointer justify-center"
                                     >
                                         Close

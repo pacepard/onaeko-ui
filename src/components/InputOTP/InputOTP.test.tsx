@@ -2,12 +2,7 @@ import { cleanup, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
-import {
-    InputOTP,
-    InputOTPGroup,
-    InputOTPSlot,
-    REGEXP_ONLY_DIGITS,
-} from './InputOTP';
+import { InputOTP, InputOTPGroup, InputOTPSlot, REGEXP_ONLY_DIGITS } from './InputOTP';
 
 afterEach(() => {
     cleanup();
@@ -29,9 +24,7 @@ describe('InputOTP', () => {
         );
 
         expect(screen.getByLabelText('OTP')).toBeInTheDocument();
-        expect(
-            document.querySelectorAll('[data-slot=input-otp-slot]'),
-        ).toHaveLength(4);
+        expect(document.querySelectorAll('[data-slot=input-otp-slot]')).toHaveLength(4);
 
         unmount();
         vi.runOnlyPendingTimers();
@@ -50,10 +43,7 @@ describe('InputOTP', () => {
             </InputOTP>,
         );
 
-        expect(screen.getByLabelText('OTP autofill')).toHaveAttribute(
-            'autocomplete',
-            'one-time-code',
-        );
+        expect(screen.getByLabelText('OTP autofill')).toHaveAttribute('autocomplete', 'one-time-code');
 
         unmount();
         vi.runOnlyPendingTimers();
@@ -72,14 +62,8 @@ describe('InputOTP', () => {
             </InputOTP>,
         );
 
-        expect(
-            document.querySelector('[data-slot=input-otp-group]'),
-        ).toHaveAttribute('data-variant', 'separate');
-        expect(
-            document.querySelectorAll(
-                '[data-slot=input-otp-slot][data-variant=separate]',
-            ),
-        ).toHaveLength(4);
+        expect(document.querySelector('[data-slot=input-otp-group]')).toHaveAttribute('data-variant', 'separate');
+        expect(document.querySelectorAll('[data-slot=input-otp-slot][data-variant=separate]')).toHaveLength(4);
 
         unmount();
         vi.runOnlyPendingTimers();

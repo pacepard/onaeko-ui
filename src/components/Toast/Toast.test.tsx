@@ -12,9 +12,7 @@ describe('Toast', () => {
         render(
             <>
                 <Toaster theme="light" />
-                <Button onClick={() => toast('Event has been created')}>
-                    Show toast
-                </Button>
+                <Button onClick={() => toast('Event has been created')}>Show toast</Button>
             </>,
         );
 

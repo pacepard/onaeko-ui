@@ -31,14 +31,7 @@ type CommandPaletteDialogProps = React.ComponentProps<typeof Dialog> & {
     filter?: CommandFilter;
 };
 
-function CommandPaletteDialog({
-    children,
-    value,
-    onValueChange,
-    filter,
-    open,
-    ...props
-}: CommandPaletteDialogProps) {
+function CommandPaletteDialog({ children, value, onValueChange, filter, open, ...props }: CommandPaletteDialogProps) {
     return (
         <Dialog open={open} {...props}>
             <DialogPrimitive.Portal>
@@ -80,10 +73,7 @@ const CommandPaletteInput = React.forwardRef<
     React.ElementRef<typeof CommandPrimitive.Input>,
     React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input>
 >(({ className, ...props }, ref) => (
-    <div
-        className="flex items-center border-b border-border/80 !p-2"
-        {...{ 'cmdk-input-wrapper': '' }}
-    >
+    <div className="flex items-center border-b border-border/80 !p-2" {...{ 'cmdk-input-wrapper': '' }}>
         <SearchIcon className="mx-3 h-5 w-5 shrink-0 text-muted-foreground" />
         <CommandPrimitive.Input
             ref={ref}
@@ -103,10 +93,7 @@ const CommandPaletteList = React.forwardRef<
 >(({ className, ...props }, ref) => (
     <CommandPrimitive.List
         ref={ref}
-        className={cn(
-            'max-h-[min(400px,60vh)] overflow-y-auto overflow-x-hidden',
-            className,
-        )}
+        className={cn('max-h-[min(400px,60vh)] overflow-y-auto overflow-x-hidden', className)}
         {...props}
     />
 ));
@@ -116,11 +103,7 @@ const CommandPaletteEmpty = React.forwardRef<
     React.ElementRef<typeof CommandPrimitive.Empty>,
     React.ComponentPropsWithoutRef<typeof CommandPrimitive.Empty>
 >((props, ref) => (
-    <CommandPrimitive.Empty
-        ref={ref}
-        className="py-6 text-center text-sm text-muted-foreground/80"
-        {...props}
-    />
+    <CommandPrimitive.Empty ref={ref} className="py-6 text-center text-sm text-muted-foreground/80" {...props} />
 ));
 CommandPaletteEmpty.displayName = 'CommandPaletteEmpty';
 

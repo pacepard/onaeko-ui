@@ -22,26 +22,12 @@ type Story = StoryObj<typeof meta>;
 
 function BasicDemo() {
     const [date, setDate] = React.useState<Date | undefined>(new Date());
-    return (
-        <Calendar
-            mode="single"
-            selected={date}
-            onSelect={setDate}
-            className="rounded-lg border"
-        />
-    );
+    return <Calendar mode="single" selected={date} onSelect={setDate} className="rounded-lg border" />;
 }
 
 function RangeDemo() {
     const [range, setRange] = React.useState<DateRange | undefined>();
-    return (
-        <Calendar
-            mode="range"
-            selected={range}
-            onSelect={setRange}
-            className="rounded-lg border"
-        />
-    );
+    return <Calendar mode="range" selected={range} onSelect={setRange} className="rounded-lg border" />;
 }
 
 function CaptionDemo() {
@@ -59,36 +45,20 @@ function CaptionDemo() {
 
 function TimeZoneDemo() {
     const [date, setDate] = React.useState<Date | undefined>(undefined);
-    const [timeZone, setTimeZone] = React.useState<string | undefined>(
-        undefined,
-    );
+    const [timeZone, setTimeZone] = React.useState<string | undefined>(undefined);
 
     React.useEffect(() => {
         setTimeZone(Intl.DateTimeFormat().resolvedOptions().timeZone);
     }, []);
 
     return (
-        <Calendar
-            mode="single"
-            selected={date}
-            onSelect={setDate}
-            timeZone={timeZone}
-            className="rounded-lg border"
-        />
+        <Calendar mode="single" selected={date} onSelect={setDate} timeZone={timeZone} className="rounded-lg border" />
     );
 }
 
 function WeekNumbersDemo() {
     const [date, setDate] = React.useState<Date | undefined>(new Date());
-    return (
-        <Calendar
-            mode="single"
-            selected={date}
-            onSelect={setDate}
-            showWeekNumber
-            className="rounded-lg border"
-        />
-    );
+    return <Calendar mode="single" selected={date} onSelect={setDate} showWeekNumber className="rounded-lg border" />;
 }
 
 function CustomCellSizeDemo() {

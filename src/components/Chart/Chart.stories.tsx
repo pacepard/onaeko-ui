@@ -1,6 +1,10 @@
 /**
- * Storybook demos adapted from official Recharts examples
- * (recharts@v3.10.1 www/src/docs/exampleComponents/*).
+ * Curated Storybook demos adapted from official Recharts examples
+ * (recharts@v3.10.1 www/src/docs/exampleComponents/*) — not the full
+ * Recharts catalog. Prefer importing `ChartTooltip` / `ChartLegend` from
+ * `@onaeko/ui` (Recharts `Tooltip` / `Legend` aliases) so they do not
+ * clash with the UI Tooltip component.
+ *
  * RechartsDevtools omitted (dev-only). Docs CSS variables replaced with
  * the hex palette used in the same official Bar/Area examples.
  *
@@ -84,23 +88,13 @@ type Story = StoryObj;
 export const SimpleLineChart: Story = {
     name: 'Simple Line Chart',
     render: () => (
-        <LineChart
-            style={chartFrame}
-            responsive
-            data={pageData}
-            margin={{ top: 5, right: 0, left: 0, bottom: 5 }}
-        >
+        <LineChart style={chartFrame} responsive data={pageData} margin={{ top: 5, right: 0, left: 0, bottom: 5 }}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
             <YAxis width="auto" />
             <Tooltip />
             <Legend />
-            <Line
-                type="monotone"
-                dataKey="pv"
-                stroke="#8884d8"
-                activeDot={{ r: 8 }}
-            />
+            <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
             <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
         </LineChart>
     ),
@@ -110,29 +104,14 @@ export const SimpleLineChart: Story = {
 export const DashedLineChart: Story = {
     name: 'Dashed Line Chart',
     render: () => (
-        <LineChart
-            style={chartFrame}
-            responsive
-            data={pageData}
-            margin={{ top: 15, right: 0, left: 0, bottom: 5 }}
-        >
+        <LineChart style={chartFrame} responsive data={pageData} margin={{ top: 15, right: 0, left: 0, bottom: 5 }}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
             <YAxis width="auto" />
             <Tooltip />
             <Legend />
-            <Line
-                type="monotone"
-                dataKey="pv"
-                stroke="#8884d8"
-                strokeDasharray="5 5"
-            />
-            <Line
-                type="monotone"
-                dataKey="uv"
-                stroke="#82ca9d"
-                strokeDasharray="3 4 5 2"
-            />
+            <Line type="monotone" dataKey="pv" stroke="#8884d8" strokeDasharray="5 5" />
+            <Line type="monotone" dataKey="uv" stroke="#82ca9d" strokeDasharray="3 4 5 2" />
         </LineChart>
     ),
 };
@@ -141,12 +120,7 @@ export const DashedLineChart: Story = {
 export const SimpleAreaChart: Story = {
     name: 'Simple Area Chart',
     render: () => (
-        <AreaChart
-            style={chartFrame}
-            responsive
-            data={pageData}
-            margin={{ top: 20, right: 0, left: 0, bottom: 0 }}
-        >
+        <AreaChart style={chartFrame} responsive data={pageData} margin={{ top: 20, right: 0, left: 0, bottom: 0 }}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" niceTicks="snap125" />
             <YAxis width="auto" niceTicks="snap125" />
@@ -160,37 +134,14 @@ export const SimpleAreaChart: Story = {
 export const StackedAreaChart: Story = {
     name: 'Stacked Area Chart',
     render: () => (
-        <AreaChart
-            style={chartFrame}
-            responsive
-            data={pageData}
-            margin={{ top: 20, right: 0, left: 0, bottom: 0 }}
-        >
+        <AreaChart style={chartFrame} responsive data={pageData} margin={{ top: 20, right: 0, left: 0, bottom: 0 }}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" niceTicks="snap125" />
             <YAxis width="auto" niceTicks="snap125" />
             <Tooltip />
-            <Area
-                type="monotone"
-                dataKey="uv"
-                stackId="1"
-                stroke="#8884d8"
-                fill="#8884d8"
-            />
-            <Area
-                type="monotone"
-                dataKey="pv"
-                stackId="1"
-                stroke="#82ca9d"
-                fill="#82ca9d"
-            />
-            <Area
-                type="monotone"
-                dataKey="amt"
-                stackId="1"
-                stroke="#ffc658"
-                fill="#ffc658"
-            />
+            <Area type="monotone" dataKey="uv" stackId="1" stroke="#8884d8" fill="#8884d8" />
+            <Area type="monotone" dataKey="pv" stackId="1" stroke="#82ca9d" fill="#82ca9d" />
+            <Area type="monotone" dataKey="amt" stackId="1" stroke="#ffc658" fill="#ffc658" />
         </AreaChart>
     ),
 };
@@ -199,29 +150,14 @@ export const StackedAreaChart: Story = {
 export const SimpleBarChart: Story = {
     name: 'Simple Bar Chart',
     render: () => (
-        <BarChart
-            style={chartFrame}
-            responsive
-            data={pageData}
-            margin={{ top: 5, right: 0, left: 0, bottom: 5 }}
-        >
+        <BarChart style={chartFrame} responsive data={pageData} margin={{ top: 5, right: 0, left: 0, bottom: 5 }}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
             <YAxis width="auto" />
             <Tooltip />
             <Legend />
-            <Bar
-                dataKey="pv"
-                fill="#8884d8"
-                activeBar={{ fill: 'pink', stroke: 'blue' }}
-                radius={[10, 10, 0, 0]}
-            />
-            <Bar
-                dataKey="uv"
-                fill="#82ca9d"
-                activeBar={{ fill: 'gold', stroke: 'purple' }}
-                radius={[10, 10, 0, 0]}
-            />
+            <Bar dataKey="pv" fill="#8884d8" activeBar={{ fill: 'pink', stroke: 'blue' }} radius={[10, 10, 0, 0]} />
+            <Bar dataKey="uv" fill="#82ca9d" activeBar={{ fill: 'gold', stroke: 'purple' }} radius={[10, 10, 0, 0]} />
         </BarChart>
     ),
 };
@@ -230,12 +166,7 @@ export const SimpleBarChart: Story = {
 export const StackedBarChart: Story = {
     name: 'Stacked Bar Chart',
     render: () => (
-        <BarChart
-            style={chartFrame}
-            responsive
-            data={pageData}
-            margin={{ top: 20, right: 0, left: 0, bottom: 5 }}
-        >
+        <BarChart style={chartFrame} responsive data={pageData} margin={{ top: 20, right: 0, left: 0, bottom: 5 }}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" niceTicks="snap125" />
             <YAxis width="auto" niceTicks="snap125" />
@@ -260,23 +191,13 @@ export const LineBarAreaComposedChart: Story = {
             { name: 'Page F', uv: 1400, pv: 680, amt: 1700, cnt: 380 },
         ];
         return (
-            <ComposedChart
-                style={chartFrame}
-                responsive
-                data={data}
-                margin={{ top: 20, right: 0, bottom: 0, left: 0 }}
-            >
+            <ComposedChart style={chartFrame} responsive data={data} margin={{ top: 20, right: 0, bottom: 0, left: 0 }}>
                 <CartesianGrid stroke="#f5f5f5" />
                 <XAxis dataKey="name" scale="band" />
                 <YAxis width="auto" niceTicks="snap125" />
                 <Tooltip />
                 <Legend />
-                <Area
-                    type="monotone"
-                    dataKey="amt"
-                    fill="#8884d8"
-                    stroke="#8884d8"
-                />
+                <Area type="monotone" dataKey="amt" fill="#8884d8" stroke="#8884d8" />
                 <Bar dataKey="pv" barSize={20} fill="#413ea0" />
                 <Line type="monotone" dataKey="uv" stroke="#ff7300" />
                 <Scatter dataKey="cnt" fill="red" />
@@ -318,14 +239,7 @@ export const TwoLevelPieChart: Story = {
                 }}
                 responsive
             >
-                <Pie
-                    data={data01}
-                    dataKey="value"
-                    cx="50%"
-                    cy="50%"
-                    outerRadius="50%"
-                    fill="#8884d8"
-                />
+                <Pie data={data01} dataKey="value" cx="50%" cy="50%" outerRadius="50%" fill="#8884d8" />
                 <Pie
                     data={data02}
                     dataKey="value"
@@ -442,13 +356,7 @@ export const SimpleRadarChart: Story = {
                 <PolarGrid />
                 <PolarAngleAxis dataKey="subject" />
                 <PolarRadiusAxis />
-                <Radar
-                    name="Mike"
-                    dataKey="A"
-                    stroke="#8884d8"
-                    fill="#8884d8"
-                    fillOpacity={0.6}
-                />
+                <Radar name="Mike" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
             </RadarChart>
         );
     },
@@ -486,17 +394,8 @@ export const SimpleRadialBarChart: Story = {
                 barSize={14}
                 data={data}
             >
-                <RadialBar
-                    label={{ position: 'insideStart', fill: '#fff' }}
-                    background
-                    dataKey="uv"
-                />
-                <Legend
-                    iconSize={10}
-                    layout="vertical"
-                    verticalAlign="middle"
-                    wrapperStyle={style}
-                />
+                <RadialBar label={{ position: 'insideStart', fill: '#fff' }} background dataKey="uv" />
+                <Legend iconSize={10} layout="vertical" verticalAlign="middle" wrapperStyle={style} />
                 <Tooltip />
             </RadialBarChart>
         );
@@ -524,27 +423,11 @@ export const SimpleScatterChart: Story = {
             { x: 210, y: 220, z: 230 },
         ];
         return (
-            <ScatterChart
-                style={chartFrame}
-                responsive
-                margin={{ top: 20, right: 20, bottom: 10, left: 10 }}
-            >
+            <ScatterChart style={chartFrame} responsive margin={{ top: 20, right: 20, bottom: 10, left: 10 }}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="x" type="number" name="stature" unit="cm" />
-                <YAxis
-                    dataKey="y"
-                    type="number"
-                    name="weight"
-                    unit="kg"
-                    width="auto"
-                />
-                <ZAxis
-                    dataKey="z"
-                    type="number"
-                    range={[64, 144]}
-                    name="score"
-                    unit="km"
-                />
+                <YAxis dataKey="y" type="number" name="weight" unit="kg" width="auto" />
+                <ZAxis dataKey="z" type="number" range={[64, 144]} name="score" unit="km" />
                 <Tooltip cursor={{ strokeDasharray: '3 3' }} />
                 <Legend />
                 <Scatter name="A school" data={data01} fill="#8884d8" />
@@ -698,19 +581,10 @@ export const FunnelChartExample: Story = {
             { value: 26, name: 'Order', fill: '#a4de6c' },
         ];
         return (
-            <FunnelChart
-                style={chartFrame}
-                responsive
-                margin={{ right: 30 }}
-            >
+            <FunnelChart style={chartFrame} responsive margin={{ right: 30 }}>
                 <Tooltip />
                 <Funnel dataKey="value" data={data}>
-                    <LabelList
-                        position="right"
-                        fill="#000"
-                        stroke="none"
-                        dataKey="name"
-                    />
+                    <LabelList position="right" fill="#000" stroke="none" dataKey="name" />
                 </Funnel>
             </FunnelChart>
         );
@@ -737,14 +611,7 @@ export const SankeyChartExample: Story = {
             ],
         };
 
-        function MyCustomSankeyNode({
-            x,
-            y,
-            width,
-            height,
-            index,
-            payload,
-        }: SankeyNodeProps) {
+        function MyCustomSankeyNode({ x, y, width, height, index, payload }: SankeyNodeProps) {
             const containerWidth = useChartWidth();
             if (containerWidth == null) {
                 return null;
@@ -752,14 +619,7 @@ export const SankeyChartExample: Story = {
             const isOut = x + width + 6 > containerWidth;
             return (
                 <Layer key={`CustomNode${index}`}>
-                    <Rectangle
-                        x={x}
-                        y={y}
-                        width={width}
-                        height={height}
-                        fill="#5192ca"
-                        fillOpacity="1"
-                    />
+                    <Rectangle x={x} y={y} width={width} height={height} fill="#5192ca" fillOpacity="1" />
                     <text
                         textAnchor={isOut ? 'end' : 'start'}
                         x={isOut ? x - 6 : x + width + 6}

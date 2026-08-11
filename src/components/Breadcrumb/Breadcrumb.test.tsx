@@ -1,13 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
-import {
-    Breadcrumb,
-    BreadcrumbItem,
-    BreadcrumbLink,
-    BreadcrumbList,
-    BreadcrumbPage,
-} from './Breadcrumb';
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage } from './Breadcrumb';
 
 describe('Breadcrumb', () => {
     it('renders navigation landmark with trail items', () => {
@@ -24,9 +18,7 @@ describe('Breadcrumb', () => {
             </Breadcrumb>,
         );
 
-        expect(
-            screen.getByRole('navigation', { name: 'breadcrumb' }),
-        ).toBeInTheDocument();
+        expect(screen.getByRole('navigation', { name: 'breadcrumb' })).toBeInTheDocument();
         expect(screen.getByRole('link', { name: 'Home' })).toBeInTheDocument();
         expect(screen.getByText('Projects')).toBeInTheDocument();
     });

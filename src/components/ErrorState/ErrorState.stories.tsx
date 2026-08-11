@@ -30,10 +30,7 @@ export const CustomCopy: Story = {
 
 export const WithAction: Story = {
     render: () => (
-        <ErrorState
-            title="Request failed"
-            description="Something went wrong while processing your request."
-        >
+        <ErrorState title="Request failed" description="Something went wrong while processing your request.">
             <Button variant="outline">Try again</Button>
         </ErrorState>
     ),

@@ -38,9 +38,6 @@ describe('Radio', () => {
         const optionB = screen.getByRole('radio', { name: 'Option B' });
         expect(optionB).toHaveAttribute('aria-disabled', 'true');
         await user.click(optionB);
-        expect(screen.getByRole('radio', { name: 'Option A' })).toHaveAttribute(
-            'aria-checked',
-            'true',
-        );
+        expect(screen.getByRole('radio', { name: 'Option A' })).toHaveAttribute('aria-checked', 'true');
     });
 });

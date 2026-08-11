@@ -6,15 +6,7 @@ import { describe, expect, it, vi } from 'vitest';
 import { z } from 'zod';
 
 import { Input } from '../Input';
-import {
-    Form,
-    FormControl,
-    FormDescription,
-    FormField,
-    FormItem,
-    FormLabel,
-    FormMessage,
-} from './Form';
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from './Form';
 
 const profileSchema = z.object({
     name: z.string().min(1, 'Name is required'),
@@ -22,11 +14,7 @@ const profileSchema = z.object({
 
 type ProfileValues = z.infer<typeof profileSchema>;
 
-function ProfileForm({
-    onSubmit,
-}: {
-    onSubmit?: (values: ProfileValues) => void;
-}) {
+function ProfileForm({ onSubmit }: { onSubmit?: (values: ProfileValues) => void }) {
     const form = useForm<ProfileValues>({
         resolver: zodResolver(profileSchema),
         defaultValues: { name: '' },
@@ -34,11 +22,7 @@ function ProfileForm({
 
     return (
         <Form {...form}>
-            <form
-                aria-label="Profile form"
-                onSubmit={form.handleSubmit((values) => onSubmit?.(values))}
-                noValidate
-            >
+            <form aria-label="Profile form" onSubmit={form.handleSubmit((values) => onSubmit?.(values))} noValidate>
                 <FormField
                     control={form.control}
                     name="name"
@@ -48,9 +32,7 @@ function ProfileForm({
                             <FormControl>
                                 <Input {...field} />
                             </FormControl>
-                            <FormDescription>
-                                Your public display name.
-                            </FormDescription>
+                            <FormDescription>Your public display name.</FormDescription>
                             <FormMessage />
                         </FormItem>
                     )}
@@ -65,13 +47,9 @@ describe('Form', () => {
     it('renders fields with label and description', () => {
         render(<ProfileForm />);
 
-        expect(
-            screen.getByRole('form', { name: 'Profile form' }),
-        ).toBeInTheDocument();
+        expect(screen.getByRole('form', { name: 'Profile form' })).toBeInTheDocument();
         expect(screen.getByLabelText('Name')).toBeInTheDocument();
-        expect(
-            screen.getByText('Your public display name.'),
-        ).toBeInTheDocument();
+        expect(screen.getByText('Your public display name.')).toBeInTheDocument();
     });
 
     it('shows FormMessage when validation fails', async () => {
@@ -80,9 +58,7 @@ describe('Form', () => {
 
         await user.click(screen.getByRole('button', { name: 'Save' }));
 
-        expect(await screen.findByRole('alert')).toHaveTextContent(
-            'Name is required',
-        );
+        expect(await screen.findByRole('alert')).toHaveTextContent('Name is required');
     });
 
     it('does not render FormMessage when the field is valid', async () => {

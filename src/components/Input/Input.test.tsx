@@ -20,9 +20,6 @@ describe('Input', () => {
 
     it('supports aria-invalid', () => {
         render(<Input aria-label="Email" aria-invalid />);
-        expect(screen.getByLabelText('Email')).toHaveAttribute(
-            'aria-invalid',
-            'true',
-        );
+        expect(screen.getByLabelText('Email')).toHaveAttribute('aria-invalid', 'true');
     });
 });

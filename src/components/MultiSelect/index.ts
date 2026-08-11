@@ -1,5 +1,1 @@
-export {
-    MultiSelect,
-    multiSelectVariants,
-    type MultiSelectProps,
-} from './MultiSelect';
+export { MultiSelect, multiSelectVariants, type MultiSelectProps } from './MultiSelect';

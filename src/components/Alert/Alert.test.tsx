@@ -14,8 +14,6 @@ describe('Alert', () => {
 
         expect(screen.getByRole('alert')).toBeInTheDocument();
         expect(screen.getByText('Heads up')).toBeInTheDocument();
-        expect(
-            screen.getByText('You can change settings anytime.'),
-        ).toBeInTheDocument();
+        expect(screen.getByText('You can change settings anytime.')).toBeInTheDocument();
     });
 });

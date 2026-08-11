@@ -6,9 +6,7 @@ import { LoadingState } from './LoadingState';
 describe('LoadingState', () => {
     it('renders default loading label and status', () => {
         render(<LoadingState />);
-        expect(
-            document.querySelector('[data-slot="loading-state"]'),
-        ).toBeInTheDocument();
+        expect(document.querySelector('[data-slot="loading-state"]')).toBeInTheDocument();
         expect(screen.getByText('Loading')).toBeInTheDocument();
         expect(screen.getByLabelText('Loading')).toBeInTheDocument();
     });

@@ -77,9 +77,9 @@ cd docs && npx mintlify dev
 
 ## Testing
 
-- Unit/component: Vitest + React Testing Library (`pnpm test`) — every component has tests
+- Unit/component: Vitest + React Testing Library (`pnpm test`)
 - Browser flows: Playwright against Storybook (`pnpm build-storybook && pnpm test:e2e`)
-  - Dialog, Dropdown keyboard, Tabs, Form, theme
+  - Dialog, Dropdown keyboard, Tabs, Form (incl. validation), Toast/Sonner, InputOTP, theme
 
 ## Publishing
 
@@ -96,7 +96,7 @@ pnpm changeset
 | `@onaeko/ui` | Components, utilities, theme helpers |
 | `@onaeko/ui/styles.css` | Design tokens and component styles |
 
-React, React DOM, `react-hook-form` (for Form), and `react-is` (for Recharts) are peer dependencies.
+ESM-only. Peers: React, React DOM, `react-hook-form` (Form), and `react-is` (Recharts). Chart tooltips/legends: import `ChartTooltip` / `ChartLegend` from `@onaeko/ui` (aliases for Recharts `Tooltip` / `Legend`).
 
 ## Examples
 

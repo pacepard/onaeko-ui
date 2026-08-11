@@ -7,9 +7,7 @@ import { Button } from './Button';
 describe('Button', () => {
     it('renders children', () => {
         render(<Button>Continue</Button>);
-        expect(
-            screen.getByRole('button', { name: 'Continue' }),
-        ).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: 'Continue' })).toBeInTheDocument();
     });
 
     it('fires click handlers', async () => {
@@ -70,8 +68,6 @@ describe('Button', () => {
         expect(screen.queryByTestId('icon-before')).not.toBeInTheDocument();
         expect(screen.queryByTestId('icon-after')).not.toBeInTheDocument();
         expect(screen.getByLabelText('Loading')).toBeInTheDocument();
-        expect(
-            screen.getByRole('button', { name: /Saving/i }),
-        ).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: /Saving/i })).toBeInTheDocument();
     });
 });

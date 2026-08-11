@@ -31,11 +31,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-function MultiSelectDemo({
-    variant,
-}: {
-    variant?: 'default' | 'secondary' | 'destructive' | 'inverted';
-}) {
+function MultiSelectDemo({ variant }: { variant?: 'default' | 'secondary' | 'destructive' | 'inverted' }) {
     const [value, setValue] = React.useState<string[]>(['design', 'engineering']);
     return (
         <MultiSelect

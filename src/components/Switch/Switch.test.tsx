@@ -9,9 +9,7 @@ describe('Switch', () => {
         const user = userEvent.setup();
         const onCheckedChange = vi.fn();
 
-        render(
-            <Switch aria-label="Enable alerts" onCheckedChange={onCheckedChange} />,
-        );
+        render(<Switch aria-label="Enable alerts" onCheckedChange={onCheckedChange} />);
 
         const toggle = screen.getByRole('switch', { name: 'Enable alerts' });
         expect(toggle).not.toBeChecked();
@@ -24,13 +22,7 @@ describe('Switch', () => {
         const user = userEvent.setup();
         const onCheckedChange = vi.fn();
 
-        render(
-            <Switch
-                disabled
-                aria-label="Enable alerts"
-                onCheckedChange={onCheckedChange}
-            />,
-        );
+        render(<Switch disabled aria-label="Enable alerts" onCheckedChange={onCheckedChange} />);
 
         const toggle = screen.getByRole('switch', { name: 'Enable alerts' });
         expect(toggle).toBeDisabled();

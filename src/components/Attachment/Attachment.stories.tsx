@@ -113,10 +113,7 @@ export const ImageMedia: Story = {
     render: () => (
         <Attachment state="done">
             <AttachmentMedia variant="image">
-                <img
-                    src="https://picsum.photos/seed/onaeko/80/80"
-                    alt=""
-                />
+                <img src="https://picsum.photos/seed/onaeko/80/80" alt="" />
             </AttachmentMedia>
             <AttachmentContent>
                 <AttachmentTitle>preview.jpg</AttachmentTitle>

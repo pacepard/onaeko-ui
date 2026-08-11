@@ -17,17 +17,10 @@ const containerVariants = cva('mx-auto w-full px-4 sm:px-6', {
     },
 });
 
-export type ContainerProps = React.ComponentProps<'div'> &
-    VariantProps<typeof containerVariants>;
+export type ContainerProps = React.ComponentProps<'div'> & VariantProps<typeof containerVariants>;
 
 function Container({ className, size, ...props }: ContainerProps) {
-    return (
-        <div
-            data-slot="container"
-            className={cn(containerVariants({ size }), className)}
-            {...props}
-        />
-    );
+    return <div data-slot="container" className={cn(containerVariants({ size }), className)} {...props} />;
 }
 
 export { Container, containerVariants };

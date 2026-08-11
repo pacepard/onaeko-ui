@@ -1,15 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { Button } from '../Button';
-import {
-    Sheet,
-    SheetContent,
-    SheetDescription,
-    SheetFooter,
-    SheetHeader,
-    SheetTitle,
-    SheetTrigger,
-} from './Sheet';
+import { Sheet, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from './Sheet';
 
 const meta = {
     title: 'Components/Sheet',
@@ -37,14 +29,11 @@ export const Default: Story = {
                 <SheetHeader>
                     <SheetTitle>Edit profile</SheetTitle>
                     <SheetDescription>
-                        Make changes to your profile here. Click save when you
-                        are done.
+                        Make changes to your profile here. Click save when you are done.
                     </SheetDescription>
                 </SheetHeader>
                 <div className="px-4 py-2">
-                    <p className="text-muted-foreground text-sm">
-                        Sheet body content.
-                    </p>
+                    <p className="text-muted-foreground text-sm">Sheet body content.</p>
                 </div>
                 <SheetFooter>
                     <Button>Save changes</Button>
@@ -63,9 +52,7 @@ export const Left: Story = {
             <SheetContent side="left">
                 <SheetHeader>
                     <SheetTitle>Navigation</SheetTitle>
-                    <SheetDescription>
-                        Browse sections from the side panel.
-                    </SheetDescription>
+                    <SheetDescription>Browse sections from the side panel.</SheetDescription>
                 </SheetHeader>
             </SheetContent>
         </Sheet>
@@ -81,9 +68,7 @@ export const Top: Story = {
             <SheetContent side="top">
                 <SheetHeader>
                     <SheetTitle>Announcements</SheetTitle>
-                    <SheetDescription>
-                        Banner-style sheet from the top edge.
-                    </SheetDescription>
+                    <SheetDescription>Banner-style sheet from the top edge.</SheetDescription>
                 </SheetHeader>
             </SheetContent>
         </Sheet>
@@ -99,9 +84,7 @@ export const Bottom: Story = {
             <SheetContent side="bottom">
                 <SheetHeader>
                     <SheetTitle>Filters</SheetTitle>
-                    <SheetDescription>
-                        Bottom edge panel for filter controls.
-                    </SheetDescription>
+                    <SheetDescription>Bottom edge panel for filter controls.</SheetDescription>
                 </SheetHeader>
             </SheetContent>
         </Sheet>

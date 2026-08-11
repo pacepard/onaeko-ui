@@ -1,12 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import {
-    AlignCenterIcon,
-    AlignLeftIcon,
-    AlignRightIcon,
-    BoldIcon,
-    ItalicIcon,
-    UnderlineIcon,
-} from 'lucide-react';
+import { AlignCenterIcon, AlignLeftIcon, AlignRightIcon, BoldIcon, ItalicIcon, UnderlineIcon } from 'lucide-react';
 
 import { ToggleGroup, ToggleGroupItem } from './ToggleGroup';
 
@@ -43,11 +36,7 @@ export const Default: Story = {
 
 export const Outline: Story = {
     render: () => (
-        <ToggleGroup
-            variant="outline"
-            defaultValue={['left']}
-            aria-label="Text alignment outline"
-        >
+        <ToggleGroup variant="outline" defaultValue={['left']} aria-label="Text alignment outline">
             <ToggleGroupItem value="left" aria-label="Align left">
                 <AlignLeftIcon />
             </ToggleGroupItem>
@@ -63,12 +52,7 @@ export const Outline: Story = {
 
 export const Small: Story = {
     render: () => (
-        <ToggleGroup
-            variant="outline"
-            size="sm"
-            defaultValue={['bold']}
-            aria-label="Text style small"
-        >
+        <ToggleGroup variant="outline" size="sm" defaultValue={['bold']} aria-label="Text style small">
             <ToggleGroupItem value="bold" aria-label="Bold">
                 <BoldIcon />
             </ToggleGroupItem>
@@ -84,12 +68,7 @@ export const Small: Story = {
 
 export const Large: Story = {
     render: () => (
-        <ToggleGroup
-            variant="outline"
-            size="lg"
-            defaultValue={['bold']}
-            aria-label="Text style large"
-        >
+        <ToggleGroup variant="outline" size="lg" defaultValue={['bold']} aria-label="Text style large">
             <ToggleGroupItem value="bold" aria-label="Bold">
                 <BoldIcon />
             </ToggleGroupItem>
@@ -105,12 +84,7 @@ export const Large: Story = {
 
 export const Vertical: Story = {
     render: () => (
-        <ToggleGroup
-            variant="outline"
-            orientation="vertical"
-            defaultValue={['left']}
-            aria-label="Vertical alignment"
-        >
+        <ToggleGroup variant="outline" orientation="vertical" defaultValue={['left']} aria-label="Vertical alignment">
             <ToggleGroupItem value="left" aria-label="Align left">
                 <AlignLeftIcon />
             </ToggleGroupItem>

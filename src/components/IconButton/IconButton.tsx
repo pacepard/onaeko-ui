@@ -10,11 +10,7 @@ export type IconButtonProps = Omit<ButtonProps, 'size' | 'children'> & {
 
 function IconButton({ className, children, ...props }: IconButtonProps) {
     return (
-        <Button
-            size="icon"
-            className={cn(className)}
-            {...props}
-        >
+        <Button size="icon" className={cn(className)} {...props}>
             {children}
         </Button>
     );

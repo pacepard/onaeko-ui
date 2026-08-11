@@ -34,11 +34,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 function Cell({ children }: { children: ReactNode }) {
-    return (
-        <div className="bg-muted text-muted-foreground rounded-md border p-4 text-center text-sm">
-            {children}
-        </div>
-    );
+    return <div className="bg-muted text-muted-foreground rounded-md border p-4 text-center text-sm">{children}</div>;
 }
 
 export const Default: Story = {

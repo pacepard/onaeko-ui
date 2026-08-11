@@ -1,13 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import * as React from 'react';
 
-import {
-    InputOTP,
-    InputOTPGroup,
-    InputOTPSeparator,
-    InputOTPSlot,
-    REGEXP_ONLY_DIGITS,
-} from './InputOTP';
+import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot, REGEXP_ONLY_DIGITS } from './InputOTP';
 
 const meta = {
     title: 'Components/InputOTP',
@@ -60,11 +54,7 @@ export const Separate: Story = {
 
 export const FourDigits: Story = {
     render: () => (
-        <InputOTP
-            maxLength={4}
-            pattern={REGEXP_ONLY_DIGITS}
-            aria-label="PIN"
-        >
+        <InputOTP maxLength={4} pattern={REGEXP_ONLY_DIGITS} aria-label="PIN">
             <InputOTPGroup variant="separate">
                 <InputOTPSlot index={0} />
                 <InputOTPSlot index={1} />
@@ -77,12 +67,7 @@ export const FourDigits: Story = {
 
 export const DigitsOnly: Story = {
     render: () => (
-        <InputOTP
-            maxLength={6}
-            pattern={REGEXP_ONLY_DIGITS}
-            inputMode="numeric"
-            aria-label="6-digit code"
-        >
+        <InputOTP maxLength={6} pattern={REGEXP_ONLY_DIGITS} inputMode="numeric" aria-label="6-digit code">
             <InputOTPGroup variant="separate">
                 <InputOTPSlot index={0} />
                 <InputOTPSlot index={1} />
@@ -100,8 +85,7 @@ export const PasteFriendly: Story = {
     render: () => (
         <div className="flex flex-col gap-2">
             <p className="text-sm text-muted-foreground">
-                Paste formats like 123-456 or 123 456 — hyphens and spaces are
-                stripped.
+                Paste formats like 123-456 or 123 456 — hyphens and spaces are stripped.
             </p>
             <InputOTP
                 maxLength={6}
@@ -146,9 +130,7 @@ export const Controlled: Story = {
                         <InputOTPSlot index={5} />
                     </InputOTPGroup>
                 </InputOTP>
-                <p className="text-sm text-muted-foreground">
-                    Value: {value || '(empty)'}
-                </p>
+                <p className="text-sm text-muted-foreground">Value: {value || '(empty)'}</p>
             </div>
         );
     },
@@ -191,12 +173,7 @@ export const OnComplete: Story = {
 
 export const Disabled: Story = {
     render: () => (
-        <InputOTP
-            maxLength={6}
-            disabled
-            value="123456"
-            aria-label="Disabled OTP"
-        >
+        <InputOTP maxLength={6} disabled value="123456" aria-label="Disabled OTP">
             <InputOTPGroup variant="separate">
                 <InputOTPSlot index={0} />
                 <InputOTPSlot index={1} />

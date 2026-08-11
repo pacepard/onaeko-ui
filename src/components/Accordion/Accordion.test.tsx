@@ -2,12 +2,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it } from 'vitest';
 
-import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
-} from './Accordion';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './Accordion';
 
 describe('Accordion', () => {
     it('renders trigger and expands content on click', async () => {

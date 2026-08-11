@@ -34,14 +34,10 @@ export const Default: Story = {
                     <NavigationMenuContent>
                         <ul className="grid w-[240px] gap-1 p-1">
                             <li>
-                                <NavigationMenuLink href="#">
-                                    Platform
-                                </NavigationMenuLink>
+                                <NavigationMenuLink href="#">Platform</NavigationMenuLink>
                             </li>
                             <li>
-                                <NavigationMenuLink href="#">
-                                    Design system
-                                </NavigationMenuLink>
+                                <NavigationMenuLink href="#">Design system</NavigationMenuLink>
                             </li>
                         </ul>
                     </NavigationMenuContent>

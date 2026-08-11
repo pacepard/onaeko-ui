@@ -3,11 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { describe, expect, it } from 'vitest';
 
 import { Button } from '../Button';
-import {
-    HoverCard,
-    HoverCardContent,
-    HoverCardTrigger,
-} from './HoverCard';
+import { HoverCard, HoverCardContent, HoverCardTrigger } from './HoverCard';
 
 describe('HoverCard', () => {
     it('shows content on hover', async () => {
@@ -15,11 +11,7 @@ describe('HoverCard', () => {
 
         render(
             <HoverCard>
-                <HoverCardTrigger
-                    delay={0}
-                    closeDelay={0}
-                    render={<Button />}
-                >
+                <HoverCardTrigger delay={0} closeDelay={0} render={<Button />}>
                     Hover
                 </HoverCardTrigger>
                 <HoverCardContent>Preview body</HoverCardContent>

@@ -12,9 +12,7 @@ describe('IconButton', () => {
             </IconButton>,
         );
 
-        expect(
-            screen.getByRole('button', { name: 'Settings' }),
-        ).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: 'Settings' })).toBeInTheDocument();
     });
 
     it('fires click handler', async () => {

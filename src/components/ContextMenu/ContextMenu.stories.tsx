@@ -54,12 +54,8 @@ export const Destructive: Story = {
             <ContextMenuContent>
                 <ContextMenuItem>Archive</ContextMenuItem>
                 <ContextMenuSeparator />
-                <ContextMenuItem variant="destructive">
-                    Remove permanently
-                </ContextMenuItem>
-                <ContextMenuItem variant="destructive">
-                    Delete forever
-                </ContextMenuItem>
+                <ContextMenuItem variant="destructive">Remove permanently</ContextMenuItem>
+                <ContextMenuItem variant="destructive">Delete forever</ContextMenuItem>
             </ContextMenuContent>
         </ContextMenu>
     ),
@@ -72,9 +68,7 @@ export const WithSubmenu: Story = {
                 Right click for more options
             </ContextMenuTrigger>
             <ContextMenuContent>
-                <ContextMenuCheckboxItem checked>
-                    Show bookmarks
-                </ContextMenuCheckboxItem>
+                <ContextMenuCheckboxItem checked>Show bookmarks</ContextMenuCheckboxItem>
                 <ContextMenuCheckboxItem>Show full URLs</ContextMenuCheckboxItem>
                 <ContextMenuSeparator />
                 <ContextMenuSub>
@@ -82,9 +76,7 @@ export const WithSubmenu: Story = {
                     <ContextMenuSubContent>
                         <ContextMenuItem>Save page as</ContextMenuItem>
                         <ContextMenuItem>Create shortcut</ContextMenuItem>
-                        <ContextMenuItem variant="destructive">
-                            Clear browsing data
-                        </ContextMenuItem>
+                        <ContextMenuItem variant="destructive">Clear browsing data</ContextMenuItem>
                     </ContextMenuSubContent>
                 </ContextMenuSub>
             </ContextMenuContent>

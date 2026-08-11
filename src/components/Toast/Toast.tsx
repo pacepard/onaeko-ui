@@ -1,23 +1,13 @@
 'use client';
 
 import * as React from 'react';
-import {
-    CircleCheckIcon,
-    InfoIcon,
-    Loader2Icon,
-    OctagonXIcon,
-    TriangleAlertIcon,
-} from 'lucide-react';
+import { CircleCheckIcon, InfoIcon, Loader2Icon, OctagonXIcon, TriangleAlertIcon } from 'lucide-react';
 import { Toaster as Sonner, toast, type ToasterProps } from 'sonner';
 
 import { getStoredTheme, resolveTheme } from '@/theme';
 
 function Toaster({ theme, ...props }: ToasterProps) {
-    const resolved =
-        theme ??
-        (typeof window === 'undefined'
-            ? 'system'
-            : resolveTheme(getStoredTheme()));
+    const resolved = theme ?? (typeof window === 'undefined' ? 'system' : resolveTheme(getStoredTheme()));
 
     return (
         <Sonner

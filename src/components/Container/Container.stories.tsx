@@ -28,11 +28,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 function DemoBlock({ label }: { label: string }) {
-    return (
-        <div className="bg-muted text-muted-foreground rounded-md border p-6 text-center text-sm">
-            {label}
-        </div>
-    );
+    return <div className="bg-muted text-muted-foreground rounded-md border p-6 text-center text-sm">{label}</div>;
 }
 
 export const Default: Story = {

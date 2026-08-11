@@ -1,49 +1,60 @@
 name: CI
 
 on:
-  pull_request:
-  push:
-    branches: [main]
+    pull_request:
+    push:
+        branches: [main]
 
 concurrency:
-  group: ci-${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+    group: ci-${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
 
 jobs:
-  validate:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
+    validate:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
 
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 9.15.4
+            - uses: pnpm/action-setup@v4
+              with:
+                  version: 9.15.4
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: pnpm
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 22
+                  cache: pnpm
 
-      - name: Install
-        run: pnpm install --frozen-lockfile
+            - name: Install
+              run: pnpm install --frozen-lockfile
 
-      - name: Typecheck
-        run: pnpm typecheck
+            - name: Typecheck
+              run: pnpm typecheck
 
-      - name: Lint
-        run: pnpm lint
+            - name: Lint
+              run: pnpm lint
 
-      - name: Unit tests
-        run: pnpm test
+            - name: Format
+              run: pnpm format:check
 
-      - name: Build package
-        run: pnpm build
+            - name: Unit tests
+              run: pnpm test
 
-      - name: Build Storybook
-        run: pnpm build-storybook
+            - name: Build package
+              run: pnpm build
 
-      - name: Install Playwright browsers
-        run: pnpm exec playwright install --with-deps chromium
+            - name: Build Storybook
+              run: pnpm build-storybook
 
-      - name: Playwright
-        run: pnpm test:e2e
+            - name: Build Vite example
+              working-directory: examples/vite
+              run: pnpm install && pnpm build
+
+            - name: Build Next.js example
+              working-directory: examples/next
+              run: pnpm install && pnpm build
+
+            - name: Install Playwright browsers
+              run: pnpm exec playwright install --with-deps chromium
+
+            - name: Playwright
+              run: pnpm test:e2e

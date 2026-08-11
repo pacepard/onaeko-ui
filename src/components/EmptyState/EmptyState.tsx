@@ -20,25 +20,15 @@ function EmptyState({
     return (
         <div
             data-slot="empty-state"
-            className={cn(
-                'flex flex-col items-center justify-center gap-6 py-16',
-                className,
-            )}
+            className={cn('flex flex-col items-center justify-center gap-6 py-16', className)}
             {...props}
         >
             <div className="bg-muted flex size-20 items-center justify-center rounded-full">
-                {icon ?? (
-                    <InboxIcon
-                        className="text-muted-foreground size-10"
-                        aria-hidden
-                    />
-                )}
+                {icon ?? <InboxIcon className="text-muted-foreground size-10" aria-hidden />}
             </div>
             <div className="space-y-2 text-center">
                 <h2 className="text-2xl font-bold tracking-tight">{title}</h2>
-                <p className="text-muted-foreground max-w-md text-sm">
-                    {description}
-                </p>
+                <p className="text-muted-foreground max-w-md text-sm">{description}</p>
             </div>
             {children ? <div className="mt-2">{children}</div> : null}
         </div>

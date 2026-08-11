@@ -37,14 +37,10 @@ export const Default: Story = {
             <DrawerContent>
                 <DrawerHeader>
                     <DrawerTitle>Edit profile</DrawerTitle>
-                    <DrawerDescription>
-                        Make changes to your profile here.
-                    </DrawerDescription>
+                    <DrawerDescription>Make changes to your profile here.</DrawerDescription>
                 </DrawerHeader>
                 <div className="p-4">
-                    <p className="text-muted-foreground text-sm">
-                        Drawer body content goes here.
-                    </p>
+                    <p className="text-muted-foreground text-sm">Drawer body content goes here.</p>
                 </div>
                 <DrawerFooter>
                     <Button>Save</Button>
@@ -66,9 +62,7 @@ export const Bottom: Story = {
             <DrawerContent>
                 <DrawerHeader>
                     <DrawerTitle>Share link</DrawerTitle>
-                    <DrawerDescription>
-                        Anyone with the link can view this item.
-                    </DrawerDescription>
+                    <DrawerDescription>Anyone with the link can view this item.</DrawerDescription>
                 </DrawerHeader>
             </DrawerContent>
         </Drawer>
@@ -84,9 +78,7 @@ export const Left: Story = {
             <DrawerContent>
                 <DrawerHeader>
                     <DrawerTitle>Menu</DrawerTitle>
-                    <DrawerDescription>
-                        Side drawer from the left.
-                    </DrawerDescription>
+                    <DrawerDescription>Side drawer from the left.</DrawerDescription>
                 </DrawerHeader>
             </DrawerContent>
         </Drawer>
@@ -102,9 +94,7 @@ export const Right: Story = {
             <DrawerContent>
                 <DrawerHeader>
                     <DrawerTitle>Details</DrawerTitle>
-                    <DrawerDescription>
-                        Side drawer from the right.
-                    </DrawerDescription>
+                    <DrawerDescription>Side drawer from the right.</DrawerDescription>
                 </DrawerHeader>
             </DrawerContent>
         </Drawer>

@@ -39,8 +39,8 @@ export const Default: Story = {
                 <AlertDialogHeader>
                     <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
                     <AlertDialogDescription>
-                        This action cannot be undone. It will permanently delete
-                        your account and remove your data from our servers.
+                        This action cannot be undone. It will permanently delete your account and remove your data from
+                        our servers.
                     </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
@@ -62,8 +62,7 @@ export const Destructive: Story = {
                 <AlertDialogHeader>
                     <AlertDialogTitle>Delete this project?</AlertDialogTitle>
                     <AlertDialogDescription>
-                        All associated data will be removed. This cannot be
-                        undone.
+                        All associated data will be removed. This cannot be undone.
                     </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>

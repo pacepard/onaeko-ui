@@ -9,12 +9,7 @@ describe('Checkbox', () => {
         const user = userEvent.setup();
         const onCheckedChange = vi.fn();
 
-        render(
-            <Checkbox
-                aria-label="Accept terms"
-                onCheckedChange={onCheckedChange}
-            />,
-        );
+        render(<Checkbox aria-label="Accept terms" onCheckedChange={onCheckedChange} />);
 
         const checkbox = screen.getByRole('checkbox', { name: 'Accept terms' });
         expect(checkbox).not.toBeChecked();
@@ -27,13 +22,7 @@ describe('Checkbox', () => {
         const user = userEvent.setup();
         const onCheckedChange = vi.fn();
 
-        render(
-            <Checkbox
-                disabled
-                aria-label="Accept terms"
-                onCheckedChange={onCheckedChange}
-            />,
-        );
+        render(<Checkbox disabled aria-label="Accept terms" onCheckedChange={onCheckedChange} />);
 
         const checkbox = screen.getByRole('checkbox', { name: 'Accept terms' });
         expect(checkbox).toBeDisabled();

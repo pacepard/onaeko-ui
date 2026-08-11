@@ -25,17 +25,10 @@ const gridVariants = cva('grid w-full', {
     },
 });
 
-export type GridProps = React.ComponentProps<'div'> &
-    VariantProps<typeof gridVariants>;
+export type GridProps = React.ComponentProps<'div'> & VariantProps<typeof gridVariants>;
 
 function Grid({ className, cols, gap, ...props }: GridProps) {
-    return (
-        <div
-            data-slot="grid"
-            className={cn(gridVariants({ cols, gap }), className)}
-            {...props}
-        />
-    );
+    return <div data-slot="grid" className={cn(gridVariants({ cols, gap }), className)} {...props} />;
 }
 
 export { Grid, gridVariants };

@@ -1,0 +1,70 @@
+---
+title: Forms
+description: Build validated forms with react-hook-form and @onaeko/ui Form primitives.
+---
+
+# Forms
+
+`Form` is a thin wrapper around react-hook-form's `FormProvider`. Field wiring uses `FormField` (Controller), `FormItem`, `FormControl`, `FormLabel`, `FormDescription`, and `FormMessage`.
+
+## Peers
+
+```bash
+pnpm add react-hook-form
+# optional validation
+pnpm add zod @hookform/resolvers
+```
+
+## Example
+
+```tsx
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
+import {
+    Button,
+    Form,
+    FormControl,
+    FormDescription,
+    FormField,
+    FormItem,
+    FormLabel,
+    FormMessage,
+    Input,
+} from '@onaeko/ui';
+
+const schema = z.object({
+    email: z.string().email('Enter a valid email address.'),
+});
+
+export function EmailForm() {
+    const form = useForm<z.infer<typeof schema>>({
+        resolver: zodResolver(schema),
+        defaultValues: { email: '' },
+    });
+
+    return (
+        <Form {...form}>
+            <form onSubmit={form.handleSubmit(console.log)} noValidate>
+                <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                        <FormItem>
+                            <FormLabel>Email</FormLabel>
+                            <FormControl>
+                                <Input type="email" placeholder="you@example.com" {...field} />
+                            </FormControl>
+                            <FormDescription>We will never share your email with anyone else.</FormDescription>
+                            <FormMessage />
+                        </FormItem>
+                    )}
+                />
+                <Button type="submit">Submit</Button>
+            </form>
+        </Form>
+    );
+}
+```
+
+See Storybook **Components/Form** for interactive examples.

@@ -7,8 +7,19 @@ export default {
     jsxSingleQuote: false,
     trailingComma: 'all',
     endOfLine: 'auto',
-    printWidth: 80,
+    printWidth: 120,
     arrowParens: 'always',
     bracketSpacing: true,
     bracketSameLine: false,
+
+    embeddedLanguageFormatting: 'auto',
+    htmlWhitespaceSensitivity: 'css',
+    insertPragma: false,
+    jsxBracketSameLine: false,
+
+    proseWrap: 'preserve',
+    quoteProps: 'as-needed',
+    requirePragma: false,
+
+    vueIndentScriptAndStyle: false,
 };

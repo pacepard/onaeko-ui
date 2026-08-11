@@ -28,9 +28,7 @@ export const Default: Story = {
             <PopoverContent>
                 <div className="space-y-2">
                     <h4 className="leading-none font-medium">Dimensions</h4>
-                    <p className="text-muted-foreground text-sm">
-                        Set the width and height for the layer.
-                    </p>
+                    <p className="text-muted-foreground text-sm">Set the width and height for the layer.</p>
                 </div>
             </PopoverContent>
         </Popover>

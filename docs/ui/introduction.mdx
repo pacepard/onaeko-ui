@@ -9,10 +9,10 @@ description: Onaeko UI is the shared React design system for Onaeko products.
 
 ## What lives where
 
-| Surface | Purpose |
-| --- | --- |
-| **Storybook** | Interactive component development, states, a11y checks |
-| **Mintlify (this docs site)** | Installation, theming, tokens, integration guides |
+| Surface                       | Purpose                                                |
+| ----------------------------- | ------------------------------------------------------ |
+| **Storybook**                 | Interactive component development, states, a11y checks |
+| **Mintlify (this docs site)** | Installation, theming, tokens, integration guides      |
 
 Do not duplicate every Storybook example here. Link to Storybook for visual exploration.
 
@@ -26,3 +26,9 @@ pnpm add @onaeko/ui
 import { Button } from '@onaeko/ui';
 import '@onaeko/ui/styles.css';
 ```
+
+Install peers as needed — see [Installation](/ui/installation). Form usage is covered in [Forms](/ui/forms).
+
+## ESM
+
+The published package is **ESM-only** (`"type": "module"`, `exports` → `import`). Consume it from modern bundlers (Vite, Next.js, etc.). CommonJS `require()` is not supported.

@@ -1,11 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
-} from './Accordion';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './Accordion';
 
 const meta = {
     title: 'Components/Accordion',
@@ -33,15 +28,13 @@ export const Default: Story = {
             <AccordionItem value="item-1">
                 <AccordionTrigger>What is Onaeko?</AccordionTrigger>
                 <AccordionContent>
-                    Onaeko is a design system and component library for
-                    building product interfaces.
+                    Onaeko is a design system and component library for building product interfaces.
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
                 <AccordionTrigger>How do I get started?</AccordionTrigger>
                 <AccordionContent>
-                    Install the package and import components from the library
-                    entry point.
+                    Install the package and import components from the library entry point.
                 </AccordionContent>
             </AccordionItem>
         </Accordion>

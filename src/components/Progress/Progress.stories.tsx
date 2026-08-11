@@ -22,9 +22,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-    render: (args) => (
-        <Progress {...args} className="w-full max-w-sm" />
-    ),
+    render: (args) => <Progress {...args} className="w-full max-w-sm" />,
 };
 
 export const Empty: Story = {

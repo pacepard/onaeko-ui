@@ -33,11 +33,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 function Box({ label }: { label: string }) {
-    return (
-        <div className="bg-muted text-muted-foreground rounded-md border px-4 py-3 text-sm">
-            {label}
-        </div>
-    );
+    return <div className="bg-muted text-muted-foreground rounded-md border px-4 py-3 text-sm">{label}</div>;
 }
 
 export const Column: Story = {
@@ -62,11 +58,7 @@ export const Row: Story = {
 
 export const SpacedBetween: Story = {
     render: () => (
-        <Stack
-            direction="row"
-            justify="between"
-            className="w-full max-w-md rounded-md border p-4"
-        >
+        <Stack direction="row" justify="between" className="w-full max-w-md rounded-md border p-4">
             <Box label="Start" />
             <Box label="End" />
         </Stack>

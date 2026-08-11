@@ -1,11 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
-import {
-    Attachment,
-    AttachmentContent,
-    AttachmentTitle,
-} from './Attachment';
+import { Attachment, AttachmentContent, AttachmentTitle } from './Attachment';
 
 describe('Attachment', () => {
     it('renders title and state', () => {
@@ -18,9 +14,6 @@ describe('Attachment', () => {
         );
 
         expect(screen.getByText('notes.txt')).toBeInTheDocument();
-        expect(screen.getByText('notes.txt').closest('[data-slot=attachment]')).toHaveAttribute(
-            'data-state',
-            'done',
-        );
+        expect(screen.getByText('notes.txt').closest('[data-slot=attachment]')).toHaveAttribute('data-state', 'done');
     });
 });

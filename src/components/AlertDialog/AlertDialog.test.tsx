@@ -27,9 +27,7 @@ describe('AlertDialog', () => {
                 <AlertDialogContent>
                     <AlertDialogHeader>
                         <AlertDialogTitle>Are you sure?</AlertDialogTitle>
-                        <AlertDialogDescription>
-                            This action cannot be undone.
-                        </AlertDialogDescription>
+                        <AlertDialogDescription>This action cannot be undone.</AlertDialogDescription>
                     </AlertDialogHeader>
                     <AlertDialogFooter>
                         <AlertDialogCancel>Cancel</AlertDialogCancel>
@@ -40,12 +38,8 @@ describe('AlertDialog', () => {
         );
 
         expect(screen.queryByRole('alertdialog')).not.toBeInTheDocument();
-        await user.click(
-            screen.getByRole('button', { name: 'Delete project' }),
-        );
+        await user.click(screen.getByRole('button', { name: 'Delete project' }));
         expect(screen.getByRole('alertdialog')).toBeInTheDocument();
-        expect(
-            screen.getByRole('heading', { name: 'Are you sure?' }),
-        ).toBeInTheDocument();
+        expect(screen.getByRole('heading', { name: 'Are you sure?' })).toBeInTheDocument();
     });
 });

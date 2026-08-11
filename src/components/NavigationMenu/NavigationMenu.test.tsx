@@ -1,12 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
-import {
-    NavigationMenu,
-    NavigationMenuItem,
-    NavigationMenuLink,
-    NavigationMenuList,
-} from './NavigationMenu';
+import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from './NavigationMenu';
 
 describe('NavigationMenu', () => {
     it('renders links', () => {
@@ -20,9 +15,6 @@ describe('NavigationMenu', () => {
             </NavigationMenu>,
         );
 
-        expect(screen.getByRole('link', { name: 'Docs' })).toHaveAttribute(
-            'href',
-            '#docs',
-        );
+        expect(screen.getByRole('link', { name: 'Docs' })).toHaveAttribute('href', '#docs');
     });
 });

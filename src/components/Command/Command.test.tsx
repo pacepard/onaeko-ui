@@ -2,14 +2,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it } from 'vitest';
 
-import {
-    Command,
-    CommandEmpty,
-    CommandGroup,
-    CommandInput,
-    CommandItem,
-    CommandList,
-} from './Command';
+import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from './Command';
 
 describe('Command', () => {
     it('renders and filters items when typing', async () => {

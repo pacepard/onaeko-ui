@@ -21,29 +21,16 @@ import {
 
 const items = [
     {
-        choices: [
-            { value: 'tool-calls' },
-            { value: 'approvals' },
-            { value: 'handoffs' },
-        ],
+        choices: [{ value: 'tool-calls' }, { value: 'approvals' }, { value: 'handoffs' }],
         name: 'direction',
         required: true,
     },
     {
-        choices: [
-            { value: 'progress' },
-            { value: 'decisions' },
-            { value: 'risks' },
-            { value: 'next-step' },
-        ],
+        choices: [{ value: 'progress' }, { value: 'decisions' }, { value: 'risks' }, { value: 'next-step' }],
         name: 'signals',
     },
     {
-        choices: [
-            { value: 'now' },
-            { value: 'next-cycle' },
-            { value: 'backlog' },
-        ],
+        choices: [{ value: 'now' }, { value: 'next-cycle' }, { value: 'backlog' }],
         name: 'timing',
         required: true,
     },
@@ -104,36 +91,21 @@ function QuestionnaireDemo({
                 <QuestionnaireProgress />
 
                 <QuestionnaireItem name="direction" required>
-                    <QuestionnaireTitle>
-                        What should the agent build next?
-                    </QuestionnaireTitle>
-                    <QuestionnaireDescription>
-                        Choose a direction or describe another task.
-                    </QuestionnaireDescription>
+                    <QuestionnaireTitle>What should the agent build next?</QuestionnaireTitle>
+                    <QuestionnaireDescription>Choose a direction or describe another task.</QuestionnaireDescription>
                     <QuestionnaireChoices>
                         <QuestionnaireChoice value="tool-calls">
-                            <span className="font-medium">
-                                Tool call timeline
-                            </span>
-                            <span className="text-muted-foreground">
-                                Show what the agent ran and what came back.
-                            </span>
+                            <span className="font-medium">Tool call timeline</span>
+                            <span className="text-muted-foreground">Show what the agent ran and what came back.</span>
                         </QuestionnaireChoice>
                         <QuestionnaireChoice value="approvals">
-                            <span className="font-medium">
-                                Approval checkpoints
-                            </span>
-                            <span className="text-muted-foreground">
-                                Ask before sensitive or destructive actions.
-                            </span>
+                            <span className="font-medium">Approval checkpoints</span>
+                            <span className="text-muted-foreground">Ask before sensitive or destructive actions.</span>
                         </QuestionnaireChoice>
                         <QuestionnaireChoice value="handoffs">
-                            <span className="font-medium">
-                                Sub-agent handoffs
-                            </span>
+                            <span className="font-medium">Sub-agent handoffs</span>
                             <span className="text-muted-foreground">
-                                Make delegated work and results easier to
-                                follow.
+                                Make delegated work and results easier to follow.
                             </span>
                         </QuestionnaireChoice>
                         <QuestionnaireInput
@@ -145,46 +117,24 @@ function QuestionnaireDemo({
                 </QuestionnaireItem>
 
                 <QuestionnaireItem name="signals" multiple>
-                    <QuestionnaireTitle>
-                        What should every progress update include?
-                    </QuestionnaireTitle>
-                    <QuestionnaireDescription>
-                        Select all that apply, or skip this question.
-                    </QuestionnaireDescription>
+                    <QuestionnaireTitle>What should every progress update include?</QuestionnaireTitle>
+                    <QuestionnaireDescription>Select all that apply, or skip this question.</QuestionnaireDescription>
                     <QuestionnaireChoices>
-                        <QuestionnaireChoice value="progress">
-                            Progress
-                        </QuestionnaireChoice>
-                        <QuestionnaireChoice value="decisions">
-                            Decisions
-                        </QuestionnaireChoice>
-                        <QuestionnaireChoice value="risks">
-                            Risks
-                        </QuestionnaireChoice>
-                        <QuestionnaireChoice value="next-step">
-                            Next step
-                        </QuestionnaireChoice>
+                        <QuestionnaireChoice value="progress">Progress</QuestionnaireChoice>
+                        <QuestionnaireChoice value="decisions">Decisions</QuestionnaireChoice>
+                        <QuestionnaireChoice value="risks">Risks</QuestionnaireChoice>
+                        <QuestionnaireChoice value="next-step">Next step</QuestionnaireChoice>
                     </QuestionnaireChoices>
                     <QuestionnaireError />
                 </QuestionnaireItem>
 
                 <QuestionnaireItem name="timing" required>
-                    <QuestionnaireTitle>
-                        When should work begin?
-                    </QuestionnaireTitle>
-                    <QuestionnaireDescription>
-                        Choose when the agent should begin the work.
-                    </QuestionnaireDescription>
+                    <QuestionnaireTitle>When should work begin?</QuestionnaireTitle>
+                    <QuestionnaireDescription>Choose when the agent should begin the work.</QuestionnaireDescription>
                     <QuestionnaireChoices>
-                        <QuestionnaireChoice value="now">
-                            Start now
-                        </QuestionnaireChoice>
-                        <QuestionnaireChoice value="next-cycle">
-                            Next development cycle
-                        </QuestionnaireChoice>
-                        <QuestionnaireChoice value="backlog">
-                            Add it to the backlog
-                        </QuestionnaireChoice>
+                        <QuestionnaireChoice value="now">Start now</QuestionnaireChoice>
+                        <QuestionnaireChoice value="next-cycle">Next development cycle</QuestionnaireChoice>
+                        <QuestionnaireChoice value="backlog">Add it to the backlog</QuestionnaireChoice>
                     </QuestionnaireChoices>
                     <QuestionnaireError />
                 </QuestionnaireItem>
@@ -192,12 +142,8 @@ function QuestionnaireDemo({
                 <QuestionnaireActions>
                     <QuestionnairePrevious variant={previousVariant} />
                     <QuestionnaireSkip variant={skipVariant} />
-                    <QuestionnaireNext variant={nextVariant}>
-                        Next
-                    </QuestionnaireNext>
-                    <QuestionnaireSubmit variant={submitVariant}>
-                        Save plan
-                    </QuestionnaireSubmit>
+                    <QuestionnaireNext variant={nextVariant}>Next</QuestionnaireNext>
+                    <QuestionnaireSubmit variant={submitVariant}>Save plan</QuestionnaireSubmit>
                 </QuestionnaireActions>
             </Questionnaire>
         </>
@@ -211,12 +157,7 @@ export const Default: Story = {
 export const GhostActions: Story = {
     name: 'Ghost actions',
     render: () => (
-        <QuestionnaireDemo
-            previousVariant="ghost"
-            skipVariant="ghost"
-            nextVariant="primary"
-            submitVariant="primary"
-        />
+        <QuestionnaireDemo previousVariant="ghost" skipVariant="ghost" nextVariant="primary" submitVariant="primary" />
     ),
 };
 

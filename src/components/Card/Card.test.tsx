@@ -1,13 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardHeader,
-    CardTitle,
-} from './Card';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './Card';
 
 describe('Card', () => {
     it('renders header, title, description, and content', () => {

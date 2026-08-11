@@ -12,9 +12,43 @@ Browse interactive examples and props in Storybook. This page is a conceptual in
 - **Basic** — Button, IconButton, Input, InputOTP, Textarea, Label, Select, Checkbox, Radio, Switch, Slider, MultiSelect, Toggle, ToggleGroup, Kbd
 - **Layout** — Container, Stack, Grid, Separator, ScrollArea, Sortable
 - **Display** — Card, Badge, Avatar, Skeleton, Spinner, Progress, Table, Chart, Calendar, Attachment
-- **Feedback** — Alert, Toast (Sonner), EmptyState, ErrorState, LoadingState
+- **Feedback** — Alert, Toast / Sonner, EmptyState, ErrorState, LoadingState
 - **Navigation** — Tabs, Breadcrumb, Pagination, Sidebar, DropdownMenu, ContextMenu, NavigationMenu, Command, CommandPalette
 - **Overlays** — Dialog, Drawer, Popover, Tooltip, HoverCard, DatePicker
-- **Forms** — Form (react-hook-form FormProvider), FormField, FormItem, FormControl, FormLabel, FormDescription, FormMessage, Questionnaire
+- **Forms** — Form (react-hook-form), FormField, FormItem, FormControl, FormLabel, FormDescription, FormMessage, Questionnaire — see [Forms](/ui/forms)
+
+## Chart
+
+Charts re-export [Recharts](https://recharts.github.io/) primitives. Storybook includes a **curated** set of official examples, not the full Recharts catalog.
+
+Prefer these package-root aliases so names do not clash with UI components:
+
+| Export         | Recharts source |
+| -------------- | --------------- |
+| `ChartTooltip` | `Tooltip`       |
+| `ChartLegend`  | `Legend`        |
+
+```tsx
+import {
+    Bar,
+    BarChart,
+    CartesianGrid,
+    ChartLegend,
+    ChartTooltip,
+    ResponsiveContainer,
+    XAxis,
+    YAxis,
+} from '@onaeko/ui';
+```
+
+Peer: `react-is` (required by Recharts).
+
+## Toast / Sonner
+
+`Toaster` + `toast` are Sonner-backed. `Sonner` / `sonnerToast` are the same exports under alternate names. Mount `Toaster` once near the app root.
+
+## Primitives stack
+
+Components are built on a mix of **Radix UI**, **Base UI**, **@shadcn/react**, and libraries such as **vaul**, **cmdk**, **sonner**, and **recharts**. Prefer the Onaeko exports rather than reaching into those packages for styling and a11y conventions.
 
 For states, variants, and accessibility checks, use Storybook.

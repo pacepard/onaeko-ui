@@ -6,15 +6,7 @@ import { z } from 'zod';
 
 import { Button } from '../Button';
 import { Input } from '../Input';
-import {
-    Form,
-    FormControl,
-    FormDescription,
-    FormField,
-    FormItem,
-    FormLabel,
-    FormMessage,
-} from './Form';
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from './Form';
 
 const meta = {
     title: 'Components/Form',
@@ -46,11 +38,7 @@ export const Default: Story = {
 
         return (
             <Form {...form}>
-                <form
-                    className="flex max-w-sm flex-col gap-6"
-                    onSubmit={form.handleSubmit(() => undefined)}
-                    noValidate
-                >
+                <form className="flex max-w-sm flex-col gap-6" onSubmit={form.handleSubmit(() => undefined)} noValidate>
                     <FormField
                         control={form.control}
                         name="email"
@@ -58,16 +46,9 @@ export const Default: Story = {
                             <FormItem>
                                 <FormLabel>Email</FormLabel>
                                 <FormControl>
-                                    <Input
-                                        type="email"
-                                        placeholder="you@example.com"
-                                        {...field}
-                                    />
+                                    <Input type="email" placeholder="you@example.com" {...field} />
                                 </FormControl>
-                                <FormDescription>
-                                    We will never share your email with anyone
-                                    else.
-                                </FormDescription>
+                                <FormDescription>We will never share your email with anyone else.</FormDescription>
                                 <FormMessage />
                             </FormItem>
                         )}
@@ -99,11 +80,7 @@ export const WithError: Story = {
 
         return (
             <Form {...form}>
-                <form
-                    className="flex max-w-sm flex-col gap-6"
-                    onSubmit={form.handleSubmit(() => undefined)}
-                    noValidate
-                >
+                <form className="flex max-w-sm flex-col gap-6" onSubmit={form.handleSubmit(() => undefined)} noValidate>
                     <FormField
                         control={form.control}
                         name="name"

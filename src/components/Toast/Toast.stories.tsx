@@ -23,10 +23,7 @@ export const Default: Story = {
     render: () => (
         <>
             <Toaster />
-            <Button
-                variant="outline"
-                onClick={() => toast('Event has been created')}
-            >
+            <Button variant="outline" onClick={() => toast('Event has been created')}>
                 Show toast
             </Button>
         </>
@@ -37,13 +34,7 @@ export const Success: Story = {
     render: () => (
         <>
             <Toaster />
-            <Button
-                onClick={() =>
-                    toast.success('Profile updated successfully')
-                }
-            >
-                Success toast
-            </Button>
+            <Button onClick={() => toast.success('Profile updated successfully')}>Success toast</Button>
         </>
     ),
 };
@@ -52,10 +43,7 @@ export const Error: Story = {
     render: () => (
         <>
             <Toaster />
-            <Button
-                variant="destructive"
-                onClick={() => toast.error('Something went wrong')}
-            >
+            <Button variant="destructive" onClick={() => toast.error('Something went wrong')}>
                 Error toast
             </Button>
         </>

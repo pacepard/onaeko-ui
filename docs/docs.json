@@ -1,22 +1,23 @@
 {
-  "$schema": "https://mintlify.com/docs.json",
-  "name": "Onaeko UI",
-  "theme": "mint",
-  "colors": {
-    "primary": "#0F766E",
-    "light": "#14B8A6",
-    "dark": "#134E4A"
-  },
-  "navigation": [
-    {
-      "group": "UI",
-      "pages": [
-        "ui/introduction",
-        "ui/installation",
-        "ui/theming",
-        "ui/design-tokens",
-        "ui/components"
-      ]
-    }
-  ]
+    "$schema": "https://mintlify.com/docs.json",
+    "name": "Onaeko UI",
+    "theme": "mint",
+    "colors": {
+        "primary": "#0F766E",
+        "light": "#14B8A6",
+        "dark": "#134E4A"
+    },
+    "navigation": [
+        {
+            "group": "UI",
+            "pages": [
+                "ui/introduction",
+                "ui/installation",
+                "ui/theming",
+                "ui/design-tokens",
+                "ui/components",
+                "ui/forms"
+            ]
+        }
+    ]
 }

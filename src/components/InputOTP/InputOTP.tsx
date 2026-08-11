@@ -32,10 +32,7 @@ function InputOTP({
         <OTPInput
             data-slot="input-otp"
             autoComplete={autoComplete}
-            containerClassName={cn(
-                'cn-input-otp flex items-center gap-2 has-disabled:opacity-50',
-                containerClassName,
-            )}
+            containerClassName={cn('cn-input-otp flex items-center gap-2 has-disabled:opacity-50', containerClassName)}
             spellCheck={false}
             className={cn('disabled:cursor-not-allowed', className)}
             {...props}

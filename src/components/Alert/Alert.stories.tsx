@@ -24,9 +24,7 @@ export const Default: Story = {
         <Alert className="max-w-lg">
             <InfoIcon />
             <AlertTitle>Heads up</AlertTitle>
-            <AlertDescription>
-                You can add components to your app using the CLI.
-            </AlertDescription>
+            <AlertDescription>You can add components to your app using the CLI.</AlertDescription>
         </Alert>
     ),
 };
@@ -36,9 +34,7 @@ export const Destructive: Story = {
         <Alert variant="destructive" className="max-w-lg">
             <AlertCircleIcon />
             <AlertTitle>Error</AlertTitle>
-            <AlertDescription>
-                Your session has expired. Please sign in again.
-            </AlertDescription>
+            <AlertDescription>Your session has expired. Please sign in again.</AlertDescription>
         </Alert>
     ),
 };

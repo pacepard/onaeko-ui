@@ -3,11 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { describe, expect, it } from 'vitest';
 
 import { Button } from '../Button';
-import {
-    Popover,
-    PopoverContent,
-    PopoverTrigger,
-} from './Popover';
+import { Popover, PopoverContent, PopoverTrigger } from './Popover';
 
 describe('Popover', () => {
     it('opens and closes content', async () => {

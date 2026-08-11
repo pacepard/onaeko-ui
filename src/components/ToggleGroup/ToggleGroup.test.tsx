@@ -19,13 +19,7 @@ describe('ToggleGroup', () => {
         );
 
         await user.click(screen.getByRole('button', { name: 'Right' }));
-        expect(screen.getByRole('button', { name: 'Right' })).toHaveAttribute(
-            'aria-pressed',
-            'true',
-        );
-        expect(screen.getByRole('button', { name: 'Left' })).toHaveAttribute(
-            'aria-pressed',
-            'false',
-        );
+        expect(screen.getByRole('button', { name: 'Right' })).toHaveAttribute('aria-pressed', 'true');
+        expect(screen.getByRole('button', { name: 'Left' })).toHaveAttribute('aria-pressed', 'false');
     });
 });

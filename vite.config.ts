@@ -16,11 +16,7 @@ export default defineConfig({
         !isStorybook &&
             dts({
                 include: ['src'],
-                exclude: [
-                    'src/**/*.stories.tsx',
-                    'src/**/*.test.tsx',
-                    'src/**/*.test.ts',
-                ],
+                exclude: ['src/**/*.stories.tsx', 'src/**/*.test.tsx', 'src/**/*.test.ts'],
                 outDir: 'dist',
                 insertTypesEntry: true,
                 tsconfigPath: './tsconfig.build.json',
@@ -38,8 +34,7 @@ export default defineConfig({
                 styles: path.resolve(rootDir, 'src/styles.ts'),
             },
             formats: ['es'],
-            fileName: (_format, entryName) =>
-                entryName === 'styles' ? 'styles.js' : 'index.js',
+            fileName: (_format, entryName) => (entryName === 'styles' ? 'styles.js' : 'index.js'),
         },
         rollupOptions: {
             external: [

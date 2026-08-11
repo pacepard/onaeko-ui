@@ -12,8 +12,6 @@ describe('Progress', () => {
 
     it('accepts zero value', () => {
         render(<Progress value={0} aria-label="Upload progress" />);
-        expect(
-            screen.getByRole('progressbar', { name: 'Upload progress' }),
-        ).toBeInTheDocument();
+        expect(screen.getByRole('progressbar', { name: 'Upload progress' })).toBeInTheDocument();
     });
 });

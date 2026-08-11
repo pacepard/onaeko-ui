@@ -1,13 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-} from './Card';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './Card';
 import { Button } from '../Button';
 
 const meta = {
@@ -31,9 +24,7 @@ export const Default: Story = {
         <Card className="w-[360px]">
             <CardHeader>
                 <CardTitle>Project overview</CardTitle>
-                <CardDescription>
-                    Track progress across your Onaeko workspace.
-                </CardDescription>
+                <CardDescription>Track progress across your Onaeko workspace.</CardDescription>
             </CardHeader>
             <CardContent>
                 <p className="text-sm">3 active milestones this week.</p>

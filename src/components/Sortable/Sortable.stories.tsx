@@ -2,12 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import * as React from 'react';
 import { GripVerticalIcon } from 'lucide-react';
 
-import {
-    Sortable,
-    SortableContent,
-    SortableItem,
-    SortableItemHandle,
-} from './Sortable';
+import { Sortable, SortableContent, SortableItem, SortableItemHandle } from './Sortable';
 
 const meta = {
     title: 'Components/Sortable',
@@ -33,11 +28,7 @@ export const VerticalList: Story = {
     render: function SortableVerticalListStory() {
         const [items, setItems] = React.useState(['Alpha', 'Beta', 'Gamma']);
         return (
-            <Sortable
-                value={items}
-                onValueChange={setItems}
-                orientation="vertical"
-            >
+            <Sortable value={items} onValueChange={setItems} orientation="vertical">
                 <SortableContent className="flex max-w-sm flex-col gap-2">
                     {items.map((item) => (
                         <SortableItem
@@ -63,18 +54,9 @@ export const HorizontalList: Story = {
         onValueChange: () => {},
     },
     render: function SortableHorizontalListStory() {
-        const [items, setItems] = React.useState([
-            'One',
-            'Two',
-            'Three',
-            'Four',
-        ]);
+        const [items, setItems] = React.useState(['One', 'Two', 'Three', 'Four']);
         return (
-            <Sortable
-                value={items}
-                onValueChange={setItems}
-                orientation="horizontal"
-            >
+            <Sortable value={items} onValueChange={setItems} orientation="horizontal">
                 <SortableContent className="flex flex-row gap-2">
                     {items.map((item) => (
                         <SortableItem

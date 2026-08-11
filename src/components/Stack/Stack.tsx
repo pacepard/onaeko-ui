@@ -37,24 +37,13 @@ const stackVariants = cva('flex', {
     },
 });
 
-export type StackProps = React.ComponentProps<'div'> &
-    VariantProps<typeof stackVariants>;
+export type StackProps = React.ComponentProps<'div'> & VariantProps<typeof stackVariants>;
 
-function Stack({
-    className,
-    direction,
-    gap,
-    align,
-    justify,
-    ...props
-}: StackProps) {
+function Stack({ className, direction, gap, align, justify, ...props }: StackProps) {
     return (
         <div
             data-slot="stack"
-            className={cn(
-                stackVariants({ direction, gap, align, justify }),
-                className,
-            )}
+            className={cn(stackVariants({ direction, gap, align, justify }), className)}
             {...props}
         />
     );

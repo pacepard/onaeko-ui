@@ -34,9 +34,7 @@ export function App() {
                 </CardHeader>
                 <CardContent style={{ display: 'grid', gap: 12 }}>
                     <Input placeholder="Email" />
-                    <Button onClick={() => toast.success('Saved')}>
-                        Show toast
-                    </Button>
+                    <Button onClick={() => toast.success('Saved')}>Show toast</Button>
                     <Dialog>
                         <DialogTrigger asChild>
                             <Button variant="secondary">Open dialog</Button>

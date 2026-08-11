@@ -36,9 +36,7 @@ export const Default: Story = {
             <DialogContent>
                 <DialogHeader>
                     <DialogTitle>Edit project</DialogTitle>
-                    <DialogDescription>
-                        Make changes to your project details.
-                    </DialogDescription>
+                    <DialogDescription>Make changes to your project details.</DialogDescription>
                 </DialogHeader>
                 <DialogFooter>
                     <Button variant="secondary">Cancel</Button>
@@ -58,9 +56,7 @@ export const Confirmation: Story = {
             <DialogContent>
                 <DialogHeader>
                     <DialogTitle>Confirm changes</DialogTitle>
-                    <DialogDescription>
-                        Are you sure you want to apply these changes?
-                    </DialogDescription>
+                    <DialogDescription>Are you sure you want to apply these changes?</DialogDescription>
                 </DialogHeader>
                 <DialogFooter>
                     <Button variant="secondary">Cancel</Button>
@@ -80,9 +76,7 @@ export const Destructive: Story = {
             <DialogContent>
                 <DialogHeader>
                     <DialogTitle>Delete project</DialogTitle>
-                    <DialogDescription>
-                        This action cannot be undone.
-                    </DialogDescription>
+                    <DialogDescription>This action cannot be undone.</DialogDescription>
                 </DialogHeader>
                 <DialogFooter>
                     <Button variant="secondary">Cancel</Button>

@@ -1,12 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
-import {
-    Pagination,
-    PaginationContent,
-    PaginationItem,
-    PaginationLink,
-} from './Pagination';
+import { Pagination, PaginationContent, PaginationItem, PaginationLink } from './Pagination';
 
 describe('Pagination', () => {
     it('renders navigation landmark with page links', () => {
@@ -25,9 +20,7 @@ describe('Pagination', () => {
             </Pagination>,
         );
 
-        expect(
-            screen.getByRole('navigation', { name: 'pagination' }),
-        ).toBeInTheDocument();
+        expect(screen.getByRole('navigation', { name: 'pagination' })).toBeInTheDocument();
         expect(screen.getByRole('link', { name: '1' })).toBeInTheDocument();
         expect(screen.getByRole('link', { name: '2' })).toBeInTheDocument();
     });

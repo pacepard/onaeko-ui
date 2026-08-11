@@ -12,6 +12,8 @@ export {
     LabelList,
     Layer,
     Legend,
+    /** Prefer `ChartLegend` at the package root to avoid clashing with UI names. */
+    Legend as ChartLegend,
     Line,
     LineChart,
     Pie,
@@ -33,6 +35,8 @@ export {
     ScatterChart,
     SunburstChart,
     Tooltip,
+    /** Prefer `ChartTooltip` at the package root (avoids clash with UI Tooltip). */
+    Tooltip as ChartTooltip,
     Treemap,
     XAxis,
     YAxis,
@@ -40,10 +44,4 @@ export {
     useChartWidth,
 } from './Chart';
 
-export type {
-    SankeyData,
-    SankeyLinkProps,
-    SankeyNodeProps,
-    SankeyProps,
-    SunburstData,
-} from './Chart';
+export type { SankeyData, SankeyLinkProps, SankeyNodeProps, SankeyProps, SunburstData } from './Chart';

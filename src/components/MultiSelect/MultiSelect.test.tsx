@@ -14,20 +14,12 @@ describe('MultiSelect', () => {
         const user = userEvent.setup();
         const onValueChange = vi.fn();
 
-        render(
-            <MultiSelect
-                options={options}
-                onValueChange={onValueChange}
-                placeholder="Pick items"
-            />,
-        );
+        render(<MultiSelect options={options} onValueChange={onValueChange} placeholder="Pick items" />);
 
         await user.click(screen.getByRole('button', { name: 'Pick items' }));
         await user.click(screen.getByText('One'));
 
         expect(onValueChange).toHaveBeenCalledWith(['one']);
-        expect(
-            screen.getByRole('button').textContent,
-        ).toContain('One');
+        expect(screen.getByRole('button').textContent).toContain('One');
     });
 });

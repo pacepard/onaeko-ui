@@ -7,19 +7,11 @@ describe('Calendar', () => {
     it('renders the calendar grid', () => {
         render(<Calendar mode="single" />);
         expect(screen.getByRole('grid')).toBeInTheDocument();
-        expect(
-            document.querySelector('[data-slot=calendar]'),
-        ).toBeInTheDocument();
+        expect(document.querySelector('[data-slot=calendar]')).toBeInTheDocument();
     });
 
     it('supports caption dropdown layout', () => {
-        render(
-            <Calendar
-                mode="single"
-                captionLayout="dropdown"
-                className="rounded-lg border"
-            />,
-        );
+        render(<Calendar mode="single" captionLayout="dropdown" className="rounded-lg border" />);
         expect(screen.getByRole('grid')).toBeInTheDocument();
     });
 });

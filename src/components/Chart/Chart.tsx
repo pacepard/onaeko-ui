@@ -53,10 +53,4 @@ export {
     useChartWidth,
 } from 'recharts';
 
-export type {
-    SankeyData,
-    SankeyLinkProps,
-    SankeyNodeProps,
-    SankeyProps,
-    SunburstData,
-} from 'recharts';
+export type { SankeyData, SankeyLinkProps, SankeyNodeProps, SankeyProps, SunburstData } from 'recharts';

@@ -11,8 +11,6 @@ describe('Sidebar', () => {
             </SidebarProvider>,
         );
 
-        expect(
-            screen.getByRole('button', { name: 'Toggle Sidebar' }),
-        ).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: 'Toggle Sidebar' })).toBeInTheDocument();
     });
 });

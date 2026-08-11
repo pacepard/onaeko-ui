@@ -5,13 +5,9 @@ import { Separator } from './Separator';
 
 describe('Separator', () => {
     it('renders separator element', () => {
-        const { container } = render(
-            <Separator decorative={false} orientation="horizontal" />,
-        );
+        const { container } = render(<Separator decorative={false} orientation="horizontal" />);
 
-        expect(
-            container.querySelector('[data-slot="separator"]'),
-        ).toBeInTheDocument();
+        expect(container.querySelector('[data-slot="separator"]')).toBeInTheDocument();
         expect(screen.getByRole('separator')).toBeInTheDocument();
     });
 });

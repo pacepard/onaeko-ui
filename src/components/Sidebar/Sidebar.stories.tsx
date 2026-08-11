@@ -78,9 +78,7 @@ function SidebarDemo({
                     <span className="text-sm font-medium">{title}</span>
                 </header>
                 <main className="p-6">
-                    <p className="text-muted-foreground text-sm">
-                        Main content area beside the sidebar.
-                    </p>
+                    <p className="text-muted-foreground text-sm">Main content area beside the sidebar.</p>
                 </main>
             </SidebarInset>
         </SidebarProvider>

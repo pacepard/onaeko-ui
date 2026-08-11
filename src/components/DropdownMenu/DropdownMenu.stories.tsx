@@ -42,9 +42,7 @@ export const Default: Story = {
                 </DropdownMenuItem>
                 <DropdownMenuItem>Settings</DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem variant="destructive">
-                    Sign out
-                </DropdownMenuItem>
+                <DropdownMenuItem variant="destructive">Sign out</DropdownMenuItem>
             </DropdownMenuContent>
         </DropdownMenu>
     ),
@@ -61,9 +59,7 @@ export const IconTrigger: Story = {
             <DropdownMenuContent>
                 <DropdownMenuItem>Edit</DropdownMenuItem>
                 <DropdownMenuItem>Duplicate</DropdownMenuItem>
-                <DropdownMenuItem variant="destructive">
-                    Delete
-                </DropdownMenuItem>
+                <DropdownMenuItem variant="destructive">Delete</DropdownMenuItem>
             </DropdownMenuContent>
         </DropdownMenu>
     ),
@@ -78,9 +74,7 @@ export const Destructive: Story = {
             <DropdownMenuContent>
                 <DropdownMenuItem>Transfer ownership</DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem variant="destructive">
-                    Delete account
-                </DropdownMenuItem>
+                <DropdownMenuItem variant="destructive">Delete account</DropdownMenuItem>
             </DropdownMenuContent>
         </DropdownMenu>
     ),
