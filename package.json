@@ -217,6 +217,10 @@
             "types": "./dist/sortable.d.ts",
             "import": "./dist/sortable.js"
         },
+        "./spacer": {
+            "types": "./dist/spacer.d.ts",
+            "import": "./dist/spacer.js"
+        },
         "./spinner": {
             "types": "./dist/spinner.d.ts",
             "import": "./dist/spinner.js"

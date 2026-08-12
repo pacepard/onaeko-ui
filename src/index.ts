@@ -331,6 +331,9 @@ export { Slider } from './components/Slider';
 export { Spinner } from './components/Spinner';
 export type { SpinnerProps } from './components/Spinner';
 
+export { Spacer } from './components/Spacer';
+export type { SpacerProps } from './components/Spacer';
+
 export { Stack, stackVariants } from './components/Stack';
 export type { StackProps } from './components/Stack';
 
