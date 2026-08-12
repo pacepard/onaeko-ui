@@ -1,5 +1,11 @@
 # @onaeko/ui
 
+## 0.3.0
+
+### Minor Changes
+
+- 31fb097: Add Spacer layout primitive for explicit height/width gaps.
+
 ## 0.2.0
 
 ### Minor Changes
