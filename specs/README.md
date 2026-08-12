@@ -30,4 +30,6 @@ specs/
 | [`feature/chart`](./feature/chart/PRODUCT.md) | Recharts re-exports and aliases |
 | [`feature/chart-catalog`](./feature/chart-catalog/PRODUCT.md) | Storybook Recharts catalog coverage |
 | [`feature/form`](./feature/form/PRODUCT.md) | react-hook-form Form primitives |
+| [`feature/input-blocks`](./feature/input-blocks/PRODUCT.md) | Tally/Notion-styled form input blocks |
 | [`feature/input-otp`](./feature/input-otp/PRODUCT.md) | Separate boxes + production OTP behaviors |
+| [`feature/spacer`](./feature/spacer/PRODUCT.md) | Empty height/width layout Spacer |
