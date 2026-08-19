@@ -6,37 +6,49 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-    /* Onaeko semantic tokens — teal/slate system */
-    --onaeko-background: oklch(0.995 0.002 200);
-    --onaeko-foreground: oklch(0.22 0.02 240);
-    --onaeko-card: oklch(1 0 0);
-    --onaeko-card-foreground: oklch(0.22 0.02 240);
-    --onaeko-popover: oklch(1 0 0);
-    --onaeko-popover-foreground: oklch(0.22 0.02 240);
-    --onaeko-primary: oklch(0.45 0.1 200);
-    --onaeko-primary-foreground: oklch(0.99 0.005 200);
-    --onaeko-secondary: oklch(0.95 0.01 220);
-    --onaeko-secondary-foreground: oklch(0.28 0.03 240);
-    --onaeko-muted: oklch(0.96 0.008 220);
-    --onaeko-muted-foreground: oklch(0.5 0.02 240);
-    --onaeko-accent: oklch(0.94 0.02 195);
-    --onaeko-accent-foreground: oklch(0.28 0.04 200);
-    --onaeko-destructive: oklch(0.55 0.2 25);
-    --onaeko-destructive-foreground: oklch(0.99 0.01 25);
-    --onaeko-success: oklch(0.55 0.12 165);
-    --onaeko-border: oklch(0.9 0.01 230);
-    --onaeko-input: oklch(0.9 0.01 230);
-    --onaeko-ring: oklch(0.55 0.08 200);
-    --onaeko-radius: 0.625rem;
+    /* Visual source: DESIGN.md (Notion analysis). Structural accent is Notion blue only. */
+    --onaeko-background: #f6f5f4;
+    --onaeko-foreground: rgb(0 0 0 / 0.95);
+    --onaeko-card: #ffffff;
+    --onaeko-card-foreground: rgb(0 0 0 / 0.95);
+    --onaeko-popover: #ffffff;
+    --onaeko-popover-foreground: rgb(0 0 0 / 0.95);
+    --onaeko-primary: #0075de;
+    --onaeko-primary-foreground: #ffffff;
+    --onaeko-primary-active: #005bab;
+    --onaeko-secondary: #ffffff;
+    --onaeko-secondary-foreground: #000000;
+    --onaeko-muted: #f6f5f4;
+    --onaeko-muted-foreground: #615d59;
+    --onaeko-placeholder: #a39e98;
+    --onaeko-accent: #f0efed;
+    --onaeko-accent-foreground: #31302e;
+    --onaeko-destructive: #dd5b00;
+    --onaeko-destructive-foreground: #ffffff;
+    --onaeko-success: #1aae39;
+    --onaeko-border: #e6e6e6;
+    --onaeko-input: #dddddd;
+    --onaeko-ring: #0075de;
+    --onaeko-radius: 0.75rem;
+    --onaeko-hero: #213183;
+    --onaeko-shadow-soft:
+        rgba(0, 0, 0, 0.01) 0 0.175px 1.041px, rgba(0, 0, 0, 0.02) 0 0.8px 2.925px,
+        rgba(0, 0, 0, 0.027) 0 2.025px 7.847px, rgba(0, 0, 0, 0.04) 0 4px 18px;
+    --onaeko-sticker-sky: #62aef0;
+    --onaeko-sticker-purple: #d6b6f6;
+    --onaeko-sticker-pink: #ff64c8;
+    --onaeko-sticker-orange: #dd5b00;
+    --onaeko-sticker-teal: #2a9d99;
+    --onaeko-sticker-green: #1aae39;
 
-    --onaeko-sidebar: oklch(0.985 0.005 220);
-    --onaeko-sidebar-foreground: oklch(0.22 0.02 240);
-    --onaeko-sidebar-primary: oklch(0.45 0.1 200);
-    --onaeko-sidebar-primary-foreground: oklch(0.99 0.005 200);
-    --onaeko-sidebar-accent: oklch(0.95 0.015 200);
-    --onaeko-sidebar-accent-foreground: oklch(0.28 0.04 200);
-    --onaeko-sidebar-border: oklch(0.9 0.01 230);
-    --onaeko-sidebar-ring: oklch(0.55 0.08 200);
+    --onaeko-sidebar: #ffffff;
+    --onaeko-sidebar-foreground: #31302e;
+    --onaeko-sidebar-primary: #0075de;
+    --onaeko-sidebar-primary-foreground: #ffffff;
+    --onaeko-sidebar-accent: #f6f5f4;
+    --onaeko-sidebar-accent-foreground: #000000;
+    --onaeko-sidebar-border: #e6e6e6;
+    --onaeko-sidebar-ring: #0075de;
 
     /* Short aliases for Tailwind theme mapping */
     --background: var(--onaeko-background);
@@ -47,6 +59,7 @@
     --popover-foreground: var(--onaeko-popover-foreground);
     --primary: var(--onaeko-primary);
     --primary-foreground: var(--onaeko-primary-foreground);
+    --primary-active: var(--onaeko-primary-active);
     --secondary: var(--onaeko-secondary);
     --secondary-foreground: var(--onaeko-secondary-foreground);
     --muted: var(--onaeko-muted);
@@ -71,43 +84,47 @@
 }
 
 .dark {
-    --onaeko-background: oklch(0.18 0.02 240);
-    --onaeko-foreground: oklch(0.96 0.01 220);
-    --onaeko-card: oklch(0.21 0.02 240);
-    --onaeko-card-foreground: oklch(0.96 0.01 220);
-    --onaeko-popover: oklch(0.21 0.02 240);
-    --onaeko-popover-foreground: oklch(0.96 0.01 220);
-    --onaeko-primary: oklch(0.72 0.09 195);
-    --onaeko-primary-foreground: oklch(0.18 0.03 220);
-    --onaeko-secondary: oklch(0.28 0.02 240);
-    --onaeko-secondary-foreground: oklch(0.96 0.01 220);
-    --onaeko-muted: oklch(0.28 0.02 240);
-    --onaeko-muted-foreground: oklch(0.7 0.02 220);
-    --onaeko-accent: oklch(0.3 0.03 200);
-    --onaeko-accent-foreground: oklch(0.96 0.01 200);
-    --onaeko-destructive: oklch(0.6 0.18 25);
-    --onaeko-destructive-foreground: oklch(0.98 0.01 25);
-    --onaeko-success: oklch(0.65 0.12 165);
-    --onaeko-border: oklch(0.32 0.02 240);
-    --onaeko-input: oklch(0.32 0.02 240);
-    --onaeko-ring: oklch(0.65 0.08 195);
+    --onaeko-background: #1a1918;
+    --onaeko-foreground: #f7f6f5;
+    --onaeko-card: #232220;
+    --onaeko-card-foreground: #f7f6f5;
+    --onaeko-popover: #232220;
+    --onaeko-popover-foreground: #f7f6f5;
+    --onaeko-primary: #3b8eef;
+    --onaeko-primary-foreground: #ffffff;
+    --onaeko-primary-active: #0075de;
+    --onaeko-secondary: #232220;
+    --onaeko-secondary-foreground: #f7f6f5;
+    --onaeko-muted: #2c2b29;
+    --onaeko-muted-foreground: #a39e98;
+    --onaeko-placeholder: #615d59;
+    --onaeko-accent: #2c2b29;
+    --onaeko-accent-foreground: #f7f6f5;
+    --onaeko-destructive: #dd5b00;
+    --onaeko-destructive-foreground: #ffffff;
+    --onaeko-success: #1aae39;
+    --onaeko-border: rgb(255 255 255 / 0.1);
+    --onaeko-input: rgb(255 255 255 / 0.14);
+    --onaeko-ring: #3b8eef;
+    --onaeko-hero: #213183;
+    --onaeko-shadow-soft:
+        rgba(0, 0, 0, 0.2) 0 0.175px 1.041px, rgba(0, 0, 0, 0.24) 0 0.8px 2.925px,
+        rgba(0, 0, 0, 0.28) 0 2.025px 7.847px, rgba(0, 0, 0, 0.32) 0 4px 18px;
 
-    --onaeko-sidebar: oklch(0.2 0.02 240);
-    --onaeko-sidebar-foreground: oklch(0.96 0.01 220);
-    --onaeko-sidebar-primary: oklch(0.72 0.09 195);
-    --onaeko-sidebar-primary-foreground: oklch(0.18 0.03 220);
-    --onaeko-sidebar-accent: oklch(0.28 0.03 200);
-    --onaeko-sidebar-accent-foreground: oklch(0.96 0.01 200);
-    --onaeko-sidebar-border: oklch(0.32 0.02 240);
-    --onaeko-sidebar-ring: oklch(0.65 0.08 195);
+    --onaeko-sidebar: #1a1918;
+    --onaeko-sidebar-foreground: #f7f6f5;
+    --onaeko-sidebar-primary: #3b8eef;
+    --onaeko-sidebar-primary-foreground: #ffffff;
+    --onaeko-sidebar-accent: #2c2b29;
+    --onaeko-sidebar-accent-foreground: #f7f6f5;
+    --onaeko-sidebar-border: rgb(255 255 255 / 0.1);
+    --onaeko-sidebar-ring: #3b8eef;
 }
 
 @theme inline {
     --color-background: var(--background);
     --color-foreground: var(--foreground);
-    --font-sans:
-        'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
-        Arial, sans-serif;
+    --font-sans: Inter, -apple-system, system-ui, 'Segoe UI', Helvetica, Arial, sans-serif;
     --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
     --color-sidebar-ring: var(--sidebar-ring);
     --color-sidebar-border: var(--sidebar-border);
@@ -135,10 +152,14 @@
     --color-card-foreground: var(--card-foreground);
     --color-card: var(--card);
     --color-success: var(--success);
-    --radius-sm: calc(var(--radius) - 4px);
-    --radius-md: calc(var(--radius) - 2px);
-    --radius-lg: var(--radius);
-    --radius-xl: calc(var(--radius) + 4px);
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --shadow-soft: var(--onaeko-shadow-soft);
+    --color-placeholder: var(--onaeko-placeholder);
+    --color-primary-active: var(--onaeko-primary-active);
+    --color-hero: var(--onaeko-hero);
     --animate-accordion-down: accordion-down 0.2s ease-out;
     --animate-accordion-up: accordion-up 0.2s ease-out;
     --animate-command-palette-in: command-palette-in 0.2s ease-out;
@@ -236,11 +257,14 @@
     body {
         @apply bg-background text-foreground antialiased;
         font-family: var(--font-sans);
+        font-size: 16px;
+        line-height: 1.5;
+        font-weight: 400;
     }
 
     input::placeholder,
     textarea::placeholder {
-        @apply text-muted-foreground;
+        color: var(--onaeko-placeholder);
     }
 
     button:not(:disabled),

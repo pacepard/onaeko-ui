@@ -2,7 +2,7 @@ export { cn } from './lib/cn';
 export { tokens } from './tokens';
 export type { OnaekoTokens } from './tokens';
 export { applyTheme, getStoredTheme, getSystemTheme, initTheme, resolveTheme, setTheme } from './theme';
-export type { Theme } from './theme';
+export type { Theme, ThemeStorageOptions } from './theme';
 
 export { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './components/Accordion';
 

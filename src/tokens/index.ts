@@ -8,6 +8,7 @@ export const colors = {
     foreground: 'var(--onaeko-foreground)',
     primary: 'var(--onaeko-primary)',
     primaryForeground: 'var(--onaeko-primary-foreground)',
+    primaryActive: 'var(--onaeko-primary-active)',
     secondary: 'var(--onaeko-secondary)',
     secondaryForeground: 'var(--onaeko-secondary-foreground)',
     muted: 'var(--onaeko-muted)',
@@ -36,18 +37,18 @@ export const spacing = {
 } as const;
 
 export const radii = {
-    sm: 'calc(var(--onaeko-radius) - 4px)',
-    md: 'calc(var(--onaeko-radius) - 2px)',
-    lg: 'var(--onaeko-radius)',
-    xl: 'calc(var(--onaeko-radius) + 4px)',
+    sm: '4px',
+    md: '8px',
+    lg: '12px',
+    xl: '16px',
     full: '9999px',
 } as const;
 
 export const shadows = {
     xs: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
-    sm: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
-    md: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
-    lg: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
+    sm: 'var(--onaeko-shadow-soft)',
+    md: 'var(--onaeko-shadow-soft)',
+    lg: 'rgba(0,0,0,0.05) 0 23px 52px',
 } as const;
 
 export const breakpoints = {
