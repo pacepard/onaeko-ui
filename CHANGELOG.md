@@ -1,5 +1,17 @@
 # @onaeko/ui
 
+## 1.0.0
+
+### Major Changes
+
+- 22a8a2d: First stable Onaeko-branded release. The package was renamed from `@onaeko/ui` to `@onaeko/ui`, so imports, installs, and CSS entrypoints change (`pnpm add @onaeko/ui`, `import '@onaeko/ui/styles.css'`). Component APIs are unchanged apart from the token/color rebrand.
+
+### Minor Changes
+
+- e4996c5: Restyle semantic tokens and core chrome (Button, Input, Textarea, Select, Card, Badge, Table) to follow DESIGN.md: warm paper canvas, Notion blue as the only structural accent, pill primary CTAs, and 4px form fields.
+- 22a8a2d: Recolor the design system to Onaeko from DESIGN.md: orange primary (#f36827), forest-green hero (#2e503f), Notion-style chrome unchanged. Expand typed tokens with palette, designColors, and semanticHex. Add dedicated `--onaeko-chart-*` series tokens and wire Chart stories to `chartColors` so series colors stay independent of CTA primary.
+- b1bc2c2: Share theme preference across subdomains via cookie (optional cookieDomain).
+
 ## 0.3.0
 
 ### Minor Changes
