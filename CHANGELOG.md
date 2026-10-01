@@ -4,7 +4,7 @@
 
 ### Major Changes
 
-- 22a8a2d: First stable Onaeko-branded release. The package was renamed from `@onaeko/ui` to `@onaeko/ui`, so imports, installs, and CSS entrypoints change (`pnpm add @onaeko/ui`, `import '@onaeko/ui/styles.css'`). Component APIs are unchanged apart from the token/color rebrand.
+- 22a8a2d: First stable Onaeko-branded release. Imports, installs, and CSS entrypoints use `pnpm add @onaeko/ui`, `import '@onaeko/ui/styles.css'`. Component APIs are unchanged apart from the token/color rebrand.
 
 ### Minor Changes
 

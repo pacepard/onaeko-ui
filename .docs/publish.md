@@ -28,7 +28,7 @@ Scope rules:
 
 - Every publish uses `"publishConfig": { "access": "public" }`, so both packages stay public scoped packages.
 - The scope owner is the npm account that holds the `@onaeko` org (`npm whoami` must be that account or a member with publish rights).
-- Published versions are immutable. Renaming `package.json` `"name"` later does not move existing versions: `@onaeko/ui@0.2.0` / `@onaeko/ui@0.3.0` remain on the registry forever under their old name.
+- Published versions are immutable. Renaming `package.json` `"name"` later does not move existing versions: already-published versions remain on the registry forever under their old name.
 
 ## Required Project Structure
 
@@ -577,7 +577,6 @@ Confirm you are logged in and the package exists:
 ```bash
 npm whoami
 npm view @onaeko/ui
-npm view @onaeko/ui version     # legacy name, still on the registry
 ```
 
 `@onaeko/ui` resolves only after its first successful publish. Before that, consumers install from GitHub (see step 10 above).
