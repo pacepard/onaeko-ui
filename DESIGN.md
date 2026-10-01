@@ -1,12 +1,12 @@
 ---
 version: alpha
-name: Notion Analysis
-description: An analysis of Notion's design language — a warm, paper-calm productivity system built on an off-white canvas, near-black Inter type, and a single confident blue, punctuated by a playful multi-color sticker palette that does all the personality work while the chrome stays quiet.
+name: Onaeko Analysis
+description: An analysis of Onaeko's design language — Notion's warm, paper-calm productivity system recolored from the Onaeko mark. Same off-white canvas, near-black Inter type, hairline chrome, and pill CTAs; the single structural accent and inverted hero band come from the logo's vibrant orange square and forest-green wordmark.
 
 colors:
-  primary: "#0075de"
-  primary-active: "#005bab"
-  secondary: "#213183"
+  primary: "#f36827"
+  primary-active: "#c44e1a"
+  secondary: "#2e503f"
   on-primary: "#ffffff"
   canvas: "#ffffff"
   canvas-soft: "#f6f5f4"
@@ -20,10 +20,10 @@ colors:
   accent-purple: "#d6b6f6"
   accent-purple-deep: "#391c57"
   accent-pink: "#ff64c8"
-  accent-orange: "#dd5b00"
+  accent-orange: "#f36827"
   accent-orange-deep: "#793400"
   accent-teal: "#2a9d99"
-  accent-green: "#1aae39"
+  accent-green: "#2e503f"
   accent-brown: "#523410"
 
 typography:
@@ -251,37 +251,40 @@ components:
 
 ## Overview
 
-Notion looks like a well-organized desk in good daylight. The dominant surface is not pure white but a warm, paper-soft off-white — `{colors.canvas-soft}` (#f6f5f4) — that takes the clinical edge off the screen and makes long pages feel like a document rather than an app. Type is set in `NotionInter` (a tuned Inter) in near-black `{colors.ink}` at large, tightly-tracked weights, so headlines read as confident statements with very little letter-spacing slack at display sizes (`{typography.display-1}` pulls −2.125px of tracking at 64px). The whole system whispers in greys and blacks, then says exactly one thing in colour: a single, dependable blue, `{colors.primary}` (#0075de), reserved almost entirely for the primary call-to-action and inline links.
+Onaeko keeps Notion's well-organized desk-in-daylight feel. The dominant surface is not pure white but a warm, paper-soft off-white — `{colors.canvas-soft}` (#f6f5f4) — that takes the clinical edge off the screen and makes long pages feel like a document rather than an app. Type is set in `NotionInter` (a tuned Inter) in near-black `{colors.ink}` at large, tightly-tracked weights, so headlines read as confident statements with very little letter-spacing slack at display sizes (`{typography.display-1}` pulls −2.125px of tracking at 64px). The chrome stays quiet in greys and blacks; the only colour change is the brand signal extracted from the Onaeko logo.
 
-Against that quiet chrome, Notion lets a **playful multi-colour sticker palette** carry all of the brand's personality — purple, pink, orange, teal, green and sky-blue appear as small illustrated blocks, app-icon stickers, and category dots scattered through the marketing pages. These colours never structure the layout or paint a CTA; they decorate. The discipline is deliberate: the interface stays monochrome-plus-blue so the content (and the cheerful illustrations) can breathe. The one exception to the bright daylight is the homepage hero, which inverts into a deep indigo "night" band (`{colors.secondary}`) with white type and glowing sticker constellations — a single dark island in an otherwise light document.
+Against that quiet chrome, Onaeko says exactly one thing in colour for structure: a single, energetic orange from the logo square, `{colors.primary}` (#f36827), reserved almost entirely for the primary call-to-action and inline links. The wordmark's forest green, `{colors.secondary}` (#2e503f), replaces Notion's indigo as the inverted hero "night" band — dark fill, white type, still a single dark island in an otherwise light document.
 
-Surfaces are defined by hairlines and the faintest layered shadows rather than heavy elevation. Cards round at a friendly 12px (`{rounded.lg}`), the marketing CTAs are fully-pill-shaped (`{rounded.full}`), and utility buttons round at a tighter 8px (`{rounded.md}`). Nothing is loud; the brand's character comes from restraint plus one well-placed splash of joy.
+The playful multi-colour sticker palette still carries decorative personality — sky, purple, pink, teal, and brown remain illustration-only — while sticker orange and sticker green alias the logo colours so brand marks and category dots stay on-palette. These colours never structure the layout or paint a CTA; they decorate. The discipline is deliberate: the interface stays monochrome-plus-orange so the content (and the cheerful illustrations) can breathe.
+
+Surfaces are defined by hairlines and the faintest layered shadows rather than heavy elevation. Cards round at a friendly 12px (`{rounded.lg}`), the marketing CTAs are fully-pill-shaped (`{rounded.full}`), and utility buttons round at a tighter 8px (`{rounded.md}`). Nothing is loud; the brand's character comes from Notion's restraint plus Onaeko's orange-and-green mark.
 
 **Key Characteristics:**
-- Warm paper-soft canvas `{colors.canvas-soft}` over pure white, never clinical
+- Warm paper-soft canvas `{colors.canvas-soft}` over pure white, never clinical (Notion chrome, unchanged)
 - Near-black `{colors.ink}` `NotionInter` type with tight negative tracking at display sizes (`{typography.display-1}`)
-- Exactly one structural accent — Notion blue `{colors.primary}` — reserved for CTAs and links
+- Exactly one structural accent — Onaeko Orange `{colors.primary}` (#f36827), from the logo square — reserved for CTAs and links
+- Forest green `{colors.secondary}` (#2e503f), from the wordmark, for the single inverted hero band
 - A decorative-only multi-colour sticker palette (`{colors.accent-purple}`, `{colors.accent-pink}`, `{colors.accent-orange}`, `{colors.accent-teal}`, `{colors.accent-green}`, `{colors.accent-sky}`) that adds personality without ever painting structure
 - Pill-shaped marketing CTAs (`{rounded.full}`) contrasted with 8px utility buttons (`{rounded.md}`)
 - Elevation by hairline + barely-there layered shadow, not heavy drop-shadows
-- A single dark indigo hero "night" band (`{colors.secondary}`) inverting the otherwise daylight page rhythm
+- A single dark forest-green hero band (`{colors.secondary}`) inverting the otherwise daylight page rhythm
 
 ## Colors
 
-> Source pages analysed: the Notion home page plus Pricing, Enterprise, Product (AI), Product (Agents), and Startups. Every secondary page resolved to the same core palette — Notion runs one tightly-scoped system across the marketing site.
+> Source: Onaeko logo assets (`onaeko.png`, `onaeko-icon.png`, wordmark SVG). UI chrome, type, radius, spacing, and component shapes follow the Notion analysis; only the structural brand colours are replaced from the mark.
 
 ### Brand & Accent
-- **Notion Blue** (`{colors.primary}` — #0075de): the single structural accent. Primary CTA fill ("Get Notion free"), inline link colour, active-tab and focus signal. This is the only colour that ever paints an action.
-- **Pressed Blue** (`{colors.primary-active}` — #005bab): the darker press state of the primary CTA.
-- **Deep Indigo** (`{colors.secondary}` — #213183): the dark hero "night" band background and its sticker-constellation field; a deep brand-blue used for full-bleed inverted sections.
+- **Onaeko Orange** (`{colors.primary}` — #f36827): sampled from the logo icon square (RGB 243, 104, 39). The single structural accent. Primary CTA fill, inline link colour, active-tab and focus signal. This is the only colour that ever paints an action.
+- **Pressed Orange** (`{colors.primary-active}` — #c44e1a): the darker press state of the primary CTA.
+- **Forest Green** (`{colors.secondary}` — #2e503f): sampled from the wordmark (RGB 46, 80, 63). The dark hero band background; used for full-bleed inverted sections in place of Notion's indigo.
 
-The remaining colours form Notion's **decorative sticker palette** — they appear only as illustrated blocks, app stickers and category dots, never as CTAs or structural fills:
+The remaining colours form the **decorative sticker palette** — they appear only as illustrated blocks, app stickers and category dots, never as CTAs or structural fills:
 - **Sticker Sky** (`{colors.accent-sky}` — #62aef0)
 - **Sticker Purple** (`{colors.accent-purple}` — #d6b6f6) / **Deep Purple** (`{colors.accent-purple-deep}` — #391c57)
 - **Sticker Pink** (`{colors.accent-pink}` — #ff64c8)
-- **Sticker Orange** (`{colors.accent-orange}` — #dd5b00) / **Deep Orange** (`{colors.accent-orange-deep}` — #793400)
+- **Sticker Orange** (`{colors.accent-orange}` — #f36827) / **Deep Orange** (`{colors.accent-orange-deep}` — #793400) — sticker orange matches the logo primary
 - **Sticker Teal** (`{colors.accent-teal}` — #2a9d99)
-- **Sticker Green** (`{colors.accent-green}` — #1aae39)
+- **Sticker Green** (`{colors.accent-green}` — #2e503f) — sticker green matches the wordmark
 - **Sticker Brown** (`{colors.accent-brown}` — #523410)
 
 ### Surface
@@ -290,13 +293,13 @@ The remaining colours form Notion's **decorative sticker palette** — they appe
 - **Hairline** (`{colors.hairline}` — #e6e6e6): 1px card borders and dividers, a black-at-10%-on-white blend kept solid for token reuse.
 
 ### Text
-- **Ink** (`{colors.ink}` — #000000): primary headings and body text (rendered at ~95% alpha for a soft true-black).
+- **Ink** (`{colors.ink}` — #000000): primary headings and body text (rendered at ~95% alpha for a soft true-black). Matches the logo mark's black bars.
 - **Warm Charcoal** (`{colors.ink-secondary}` — #31302e): secondary body copy and footer text.
 - **Stone** (`{colors.ink-muted}` — #615d59): supporting / muted copy.
 - **Ash** (`{colors.ink-faint}` — #a39e98): captions, metadata, placeholder text.
 
 ### Semantic
-Notion's marketing surfaces do not expose a dedicated error/success palette in the system chrome — status is carried by the sticker palette (e.g. `{colors.accent-green}` for affirmative ticks) rather than a separate semantic ramp.
+Marketing surfaces do not expose a dedicated error/success palette in the system chrome — status is carried by the sticker palette (e.g. `{colors.accent-green}` for affirmative ticks, `{colors.accent-orange}` for attention) rather than a separate semantic ramp.
 
 ## Typography
 
@@ -307,9 +310,9 @@ The entire system is set in **`NotionInter`** — Notion's tuned cut of Inter �
 
 | Token | Size | Weight | Line Height | Letter Spacing | Use |
 |---|---|---|---|---|---|
-| `{typography.display-1}` | 64px | 700 | 1.0 | −2.125px | Hero headline ("Meet the night shift") |
+| `{typography.display-1}` | 64px | 700 | 1.0 | −2.125px | Hero headline |
 | `{typography.display-2}` | 54px | 700 | 1.04 | −1.875px | Large section headlines |
-| `{typography.heading-1}` | 40px | 700 | 1.1 | −1px | Section headlines ("Plans and features") |
+| `{typography.heading-1}` | 40px | 700 | 1.1 | −1px | Section headlines |
 | `{typography.heading-2}` | 26px | 700 | 1.23 | −0.625px | Sub-section headings |
 | `{typography.heading-3}` | 22px | 700 | 1.27 | −0.25px | Card titles |
 | `{typography.title}` | 20px | 600 | 1.4 | −0.125px | Feature titles, callouts |
@@ -320,7 +323,7 @@ The entire system is set in **`NotionInter`** — Notion's tuned cut of Inter �
 | `{typography.eyebrow}` | 12px | 600 | 1.33 | +0.125px | Pill badges, small labels |
 
 ### Principles
-Notion's type voice is **tight, heavy, and quiet-confident**. Headlines lean on weight 700 and aggressive negative tracking (more negative the larger the size) so display copy feels set, not stretched. Body copy stays at a comfortable 1.5 line-height for document readability. The contrast between a heavy 700 headline and a calm 400 body is the primary expressive lever — there is no decorative typography, only a clear hierarchy.
+Onaeko's type voice is **tight, heavy, and quiet-confident** — identical to Notion. Headlines lean on weight 700 and aggressive negative tracking (more negative the larger the size) so display copy feels set, not stretched. Body copy stays at a comfortable 1.5 line-height for document readability. The contrast between a heavy 700 headline and a calm 400 body is the primary expressive lever — there is no decorative typography, only a clear hierarchy.
 
 ### Note on Font Substitutes
 `NotionInter` is a proprietary tuning of the open-source **Inter** family — substitute Inter directly. To approximate Notion's display tightness, apply the negative letter-spacing values in the table above explicitly (Inter at default tracking will read looser than `NotionInter`).
@@ -365,10 +368,10 @@ Product screenshots and illustration tiles sit inside rounded `{rounded.lg}` fra
 | 1 — Soft | Layered micro-shadow: `rgba(0,0,0,0.01) 0 0.175px 1.041px`, `0.02 0 0.8px 2.925px`, `0.027 0 2.025px 7.847px`, `0.04 0 4px 18px` | Raised feature cards, floating buttons |
 | 2 — Elevated | Deeper 5-stop stack ending in `rgba(0,0,0,0.05) 0 23px 52px` | Modals, popovers, the elevated white pill on the dark hero |
 
-Notion's elevation philosophy is **barely-there**: shadows are built from many near-transparent layers so surfaces feel gently lifted off the paper rather than dramatically dropped. Most cards rely on a hairline alone.
+Elevation philosophy is **barely-there**: shadows are built from many near-transparent layers so surfaces feel gently lifted off the paper rather than dramatically dropped. Most cards rely on a hairline alone.
 
 ### Decorative Depth
-The brand's real depth cue is **illustration**, not shadow. The dark indigo hero (`{colors.secondary}`) uses glowing sticker stickers and a starfield to create a sense of a lit night scene, and feature sections layer small colourful app-icon stickers over plain surfaces to add playful dimensionality. Colour-blocked illustration tiles (purple, pink, orange, teal headers on otherwise-white cards) provide visual rhythm.
+The brand's real depth cue is **illustration**, not shadow. The forest-green hero (`{colors.secondary}`) uses glowing stickers and a light field to create a lit night scene, and feature sections layer small colourful app-icon stickers over plain surfaces to add playful dimensionality. Colour-blocked illustration tiles (orange, green, purple, pink, teal headers on otherwise-white cards) provide visual rhythm; orange and green tiles should prefer the logo colours.
 
 ## Shapes
 
@@ -393,18 +396,18 @@ Product screenshots are framed in rounded `{rounded.lg}` / `{rounded.xl}` wells,
 ### Navigation
 
 **`nav-bar`** — Top navigation
-- White surface `{colors.canvas}`, `{colors.ink}` link text at `{typography.body-sm}`, padding `{spacing.md}`. Sits as a slim sticky bar; left wordmark, centre product/solutions menu links, right "Log in" text link plus a `button-utility` "Get Notion free" CTA. Condenses to a hamburger below the tablet breakpoint.
+- White surface `{colors.canvas}`, `{colors.ink}` link text at `{typography.body-sm}`, padding `{spacing.md}`. Sits as a slim sticky bar; left Onaeko wordmark, centre product/solutions menu links, right "Log in" text link plus a `button-utility` primary CTA. Condenses to a hamburger below the tablet breakpoint.
 
 ### Buttons
 
-**`button-primary`** — Primary CTA ("Get Notion free")
-- Background `{colors.primary}`, text `{colors.on-primary}`, type `{typography.button}`, fully pill-shaped `{rounded.full}`. The single blue action on any page.
+**`button-primary`** — Primary CTA
+- Background `{colors.primary}`, text `{colors.on-primary}`, type `{typography.button}`, fully pill-shaped `{rounded.full}`. The single orange action on any page.
 - Pressed state lives in `button-primary-pressed` (background `{colors.primary-active}`); marketing buttons also apply a brief `scale(0.9)` press transform.
 
 **`button-primary-pressed`**
 - Background `{colors.primary-active}`, text `{colors.on-primary}` — the depressed state of the primary CTA.
 
-**`button-secondary`** — Secondary CTA ("Request a demo")
+**`button-secondary`** — Secondary CTA
 - White surface `{colors.surface}`, text `{colors.ink}`, type `{typography.button}`, pill `{rounded.full}`, carried by the soft Level-1 shadow. Pairs beside `button-primary` in the hero.
 
 **`button-utility`** — Nav / plan-select button
@@ -434,11 +437,11 @@ Product screenshots are framed in rounded `{rounded.lg}` / `{rounded.xl}` wells,
 
 ### Signature Components
 
-**`hero-band`** — Dark "night" hero
-- Full-bleed deep indigo `{colors.secondary}` band carrying `{typography.display-1}` white headline, sticker-constellation field, and a `button-primary` + `button-secondary` CTA pair. The single inverted dark island in an otherwise daylight page.
+**`hero-band`** — Dark forest-green hero
+- Full-bleed forest green `{colors.secondary}` band carrying `{typography.display-1}` white headline, sticker field, and a `button-primary` + `button-secondary` CTA pair. The single inverted dark island in an otherwise daylight page.
 
 **`badge-pill`** — Eyebrow / category pill
-- White surface `{colors.surface}`, `{colors.primary}` text, `{typography.eyebrow}` (12px / 600), fully pill `{rounded.full}`, padding `4px 8px`. Small labels such as the pricing "Essential for staying organized" eyebrow and category tags.
+- White surface `{colors.surface}`, `{colors.primary}` text, `{typography.eyebrow}` (12px / 600), fully pill `{rounded.full}`, padding `4px 8px`. Small labels and category tags.
 
 **`footer`** — Site footer
 - Warm `{colors.canvas-soft}` band, `{colors.ink-secondary}` link text at `{typography.caption}`, padding `{spacing.xxl}`. Multi-column link directory closing every page.
@@ -487,12 +490,13 @@ Product screenshots are framed in rounded `{rounded.lg}` / `{rounded.xl}` wells,
 - Set headlines in heavy `{typography.display-1}`/`{typography.heading-1}` with their negative tracking applied explicitly.
 - Use pill `{rounded.full}` for marketing CTAs and tighter `{rounded.md}` for nav/utility buttons — the contrast is intentional.
 - Define surfaces with `{colors.hairline}` and the barely-there Level-1 shadow rather than heavy drop-shadows.
-- Reserve the deep indigo `{colors.secondary}` "night" treatment for a single hero moment, not repeated bands.
+- Reserve the forest green `{colors.secondary}` hero treatment for a single hero moment, not repeated bands.
 
 ### Don't
-- Don't paint a CTA or structural fill in any sticker-palette colour — those are decoration only.
-- Don't introduce a second structural accent alongside `{colors.primary}`.
+- Don't paint a CTA or structural fill in any sticker-palette colour — those are decoration only. Orange is structural only when used as `{colors.primary}`.
+- Don't introduce a second structural accent alongside `{colors.primary}` (do not use forest green as a CTA fill).
 - Don't put pill `{rounded.full}` radii on form fields — inputs stay tight at `{rounded.xs}` (4px).
-- Don't drop heavy shadows; Notion's elevation is many near-transparent layers, never a hard cast.
+- Don't drop heavy shadows; elevation is many near-transparent layers, never a hard cast.
 - Don't set body copy in a heavy weight — keep 400 for readability and let weight 700 belong to headlines.
-- Don't place type on pure clinical white for full pages; the warm `{colors.canvas-soft}` is core to the brand calm.
+- Don't place type on pure clinical white for full pages; the warm `{colors.canvas-soft}` is core to the document calm.
+- Don't replace Notion type, radius, spacing, or component shapes — only the colour tokens change.

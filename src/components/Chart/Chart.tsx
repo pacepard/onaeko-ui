@@ -8,6 +8,7 @@
  *
  * This module re-exports Recharts chart roots and common series/helpers.
  * It intentionally does not wrap charts in shadcn ChartContainer/ChartConfig.
+ * Series colors: use `chartColors` / `--onaeko-chart-*` — not `--primary` alone.
  */
 export {
     // Chart roots (from recharts package exports)

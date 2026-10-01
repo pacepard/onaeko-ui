@@ -44,4 +44,7 @@ export {
     useChartWidth,
 } from './Chart';
 
+export { chartColors, chartSeries } from './chartColors';
+export type { ChartColorToken } from './chartColors';
+
 export type { SankeyData, SankeyLinkProps, SankeyNodeProps, SankeyProps, SunburstData } from './Chart';

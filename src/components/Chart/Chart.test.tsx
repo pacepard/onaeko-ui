@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
 import { CartesianGrid, Line, LineChart, XAxis, YAxis } from './Chart';
+import { chartColors } from './chartColors';
 
 describe('Chart (Recharts)', () => {
     it('renders a LineChart from recharts', () => {
@@ -12,10 +13,10 @@ describe('Chart (Recharts)', () => {
 
         const { container } = render(
             <LineChart width={320} height={200} data={data}>
-                <CartesianGrid strokeDasharray="3 3" />
+                <CartesianGrid strokeDasharray="3 3" stroke={chartColors.grid} />
                 <XAxis dataKey="name" />
                 <YAxis />
-                <Line type="monotone" dataKey="uv" stroke="#8884d8" isAnimationActive={false} />
+                <Line type="monotone" dataKey="uv" stroke={chartColors[1]} isAnimationActive={false} />
             </LineChart>,
         );
 

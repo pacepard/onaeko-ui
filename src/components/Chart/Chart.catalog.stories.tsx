@@ -35,6 +35,8 @@ import {
     ZAxis,
 } from './Chart';
 
+import { chartColors } from './chartColors';
+
 const pageData = [
     { name: 'Page A', uv: 4000, pv: 2400, amt: 2400 },
     { name: 'Page B', uv: 3000, pv: 1398, amt: 2210 },
@@ -78,8 +80,8 @@ export const BiaxialLineChart: Story = {
             <YAxis yAxisId="right" orientation="right" width="auto" />
             <Tooltip />
             <Legend />
-            <Line yAxisId="left" type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
-            <Line yAxisId="right" type="monotone" dataKey="uv" stroke="#82ca9d" />
+            <Line yAxisId="left" type="monotone" dataKey="pv" stroke={chartColors[1]} activeDot={{ r: 8 }} />
+            <Line yAxisId="right" type="monotone" dataKey="uv" stroke={chartColors[2]} />
         </LineChart>
     ),
 };
@@ -100,8 +102,8 @@ export const VerticalLineChart: Story = {
             <YAxis dataKey="name" type="category" width="auto" />
             <Tooltip />
             <Legend />
-            <Line dataKey="pv" stroke="#8884d8" />
-            <Line dataKey="uv" stroke="#82ca9d" />
+            <Line dataKey="pv" stroke={chartColors[1]} />
+            <Line dataKey="uv" stroke={chartColors[2]} />
         </LineChart>
     ),
 };
@@ -132,14 +134,14 @@ export const LineChartConnectNulls: Story = {
                     <XAxis dataKey="name" />
                     <YAxis width="auto" />
                     <Tooltip />
-                    <Line type="monotone" dataKey="uv" stroke="#8884d8" />
+                    <Line type="monotone" dataKey="uv" stroke={chartColors[1]} />
                 </LineChart>
                 <LineChart style={frame} responsive data={data} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="name" />
                     <YAxis width="auto" />
                     <Tooltip />
-                    <Line connectNulls type="monotone" dataKey="uv" stroke="#8884d8" />
+                    <Line connectNulls type="monotone" dataKey="uv" stroke={chartColors[1]} />
                 </LineChart>
             </div>
         );
@@ -156,7 +158,7 @@ export const TinyAreaChart: Story = {
             data={pageData}
             margin={{ top: 5, right: 0, left: 0, bottom: 5 }}
         >
-            <Area type="monotone" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
+            <Area type="monotone" dataKey="uv" stroke={chartColors[1]} fill={chartColors[1]} />
         </AreaChart>
     ),
 };
@@ -186,9 +188,9 @@ export const PercentAreaChart: Story = {
                 <XAxis dataKey="month" />
                 <YAxis width="auto" tickFormatter={(v) => `${(Number(v) * 100).toFixed(0)}%`} />
                 <Tooltip />
-                <Area type="monotone" dataKey="a" stackId="1" stroke="#8884d8" fill="#8884d8" />
-                <Area type="monotone" dataKey="b" stackId="1" stroke="#82ca9d" fill="#82ca9d" />
-                <Area type="monotone" dataKey="c" stackId="1" stroke="#ffc658" fill="#ffc658" />
+                <Area type="monotone" dataKey="a" stackId="1" stroke={chartColors[1]} fill={chartColors[1]} />
+                <Area type="monotone" dataKey="b" stackId="1" stroke={chartColors[2]} fill={chartColors[2]} />
+                <Area type="monotone" dataKey="c" stackId="1" stroke={chartColors[4]} fill={chartColors[4]} />
             </AreaChart>
         );
     },
@@ -213,7 +215,7 @@ export const AreaChartConnectNulls: Story = {
                 <XAxis dataKey="name" />
                 <YAxis width="auto" />
                 <Tooltip />
-                <Area connectNulls type="monotone" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
+                <Area connectNulls type="monotone" dataKey="uv" stroke={chartColors[1]} fill={chartColors[1]} />
             </AreaChart>
         );
     },
@@ -228,7 +230,7 @@ export const TinyBarChart: Story = {
             responsive
             data={pageData}
         >
-            <Bar dataKey="uv" fill="#8884d8" />
+            <Bar dataKey="uv" fill={chartColors[1]} />
         </BarChart>
     ),
 };
@@ -243,9 +245,9 @@ export const MixBarChart: Story = {
             <YAxis width="auto" />
             <Tooltip />
             <Legend />
-            <Bar dataKey="pv" stackId="a" fill="#8884d8" />
-            <Bar dataKey="amt" stackId="a" fill="#82ca9d" />
-            <Bar dataKey="uv" fill="#ffc658" />
+            <Bar dataKey="pv" stackId="a" fill={chartColors[1]} />
+            <Bar dataKey="amt" stackId="a" fill={chartColors[2]} />
+            <Bar dataKey="uv" fill={chartColors[4]} />
         </BarChart>
     ),
 };
@@ -270,9 +272,9 @@ export const PositiveAndNegativeBarChart: Story = {
                 <YAxis width="auto" />
                 <Tooltip />
                 <Legend />
-                <ReferenceLine y={0} stroke="#000" />
-                <Bar dataKey="pv" fill="#8884d8" />
-                <Bar dataKey="uv" fill="#82ca9d" />
+                <ReferenceLine y={0} stroke="currentColor" />
+                <Bar dataKey="pv" fill={chartColors[1]} />
+                <Bar dataKey="uv" fill={chartColors[2]} />
             </BarChart>
         );
     },
@@ -292,13 +294,13 @@ export const SameDataComposedChart: Story = {
         ];
         return (
             <ComposedChart style={chartFrame} responsive data={data} margin={{ top: 20, right: 0, bottom: 0, left: 0 }}>
-                <CartesianGrid stroke="#f5f5f5" />
+                <CartesianGrid stroke={chartColors.grid} />
                 <XAxis dataKey="name" scale="band" />
                 <YAxis width="auto" />
                 <Tooltip />
                 <Legend />
-                <Bar dataKey="uv" barSize={20} fill="#413ea0" />
-                <Line type="monotone" dataKey="uv" stroke="#ff7300" />
+                <Bar dataKey="uv" barSize={20} fill={chartColors[3]} />
+                <Line type="monotone" dataKey="uv" stroke={chartColors[4]} />
             </ComposedChart>
         );
     },
@@ -324,14 +326,14 @@ export const VerticalComposedChart: Story = {
                 data={data}
                 margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
             >
-                <CartesianGrid stroke="#f5f5f5" />
+                <CartesianGrid stroke={chartColors.grid} />
                 <XAxis type="number" />
                 <YAxis dataKey="name" type="category" scale="band" width="auto" />
                 <Tooltip />
                 <Legend />
-                <Area dataKey="amt" fill="#8884d8" stroke="#8884d8" />
-                <Bar dataKey="pv" barSize={20} fill="#413ea0" />
-                <Line dataKey="uv" stroke="#ff7300" />
+                <Area dataKey="amt" fill={chartColors[1]} stroke={chartColors[1]} />
+                <Bar dataKey="pv" barSize={20} fill={chartColors[3]} />
+                <Line dataKey="uv" stroke={chartColors[4]} />
             </ComposedChart>
         );
     },
@@ -365,8 +367,8 @@ export const ThreeDimScatterChart: Story = {
                 <ZAxis type="number" dataKey="z" range={[60, 400]} name="score" unit="km" />
                 <Tooltip cursor={{ strokeDasharray: '3 3' }} />
                 <Legend />
-                <Scatter name="A school" data={data01} fill="#8884d8" shape="star" />
-                <Scatter name="B school" data={data02} fill="#82ca9d" shape="triangle" />
+                <Scatter name="A school" data={data01} fill={chartColors[1]} shape="star" />
+                <Scatter name="B school" data={data02} fill={chartColors[2]} shape="triangle" />
             </ScatterChart>
         );
     },
@@ -394,8 +396,8 @@ export const SpecifiedDomainRadarChart: Story = {
                 <PolarGrid />
                 <PolarAngleAxis dataKey="subject" />
                 <PolarRadiusAxis angle={30} domain={[0, 150]} />
-                <Radar name="Mike" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
-                <Radar name="Lily" dataKey="B" stroke="#82ca9d" fill="#82ca9d" fillOpacity={0.6} />
+                <Radar name="Mike" dataKey="A" stroke={chartColors[1]} fill={chartColors[1]} fillOpacity={0.6} />
+                <Radar name="Lily" dataKey="B" stroke={chartColors[2]} fill={chartColors[2]} fillOpacity={0.6} />
                 <Legend />
             </RadarChart>
         );
@@ -420,8 +422,8 @@ export const LegendEffectOpacity: Story = {
                     onMouseEnter={(payload) => setHoveringDataKey(String(payload.dataKey))}
                     onMouseLeave={() => setHoveringDataKey(undefined)}
                 />
-                <Line type="monotone" dataKey="pv" strokeOpacity={pvOpacity} stroke="#8884d8" />
-                <Line type="monotone" dataKey="uv" strokeOpacity={uvOpacity} stroke="#82ca9d" />
+                <Line type="monotone" dataKey="pv" strokeOpacity={pvOpacity} stroke={chartColors[1]} />
+                <Line type="monotone" dataKey="uv" strokeOpacity={uvOpacity} stroke={chartColors[2]} />
             </LineChart>
         );
     },
@@ -437,9 +439,9 @@ export const AreaResponsiveContainer: Story = {
                 <YAxis width="auto" />
                 <CartesianGrid strokeDasharray="3 3" />
                 <Tooltip />
-                <ReferenceLine x="Page C" stroke="green" label="Min PAGE" />
-                <ReferenceLine y={4000} label="Max" stroke="red" strokeDasharray="3 3" />
-                <Area type="monotone" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
+                <ReferenceLine x="Page C" stroke={chartColors[2]} label="Min PAGE" />
+                <ReferenceLine y={4000} label="Max" stroke={chartColors[4]} strokeDasharray="3 3" />
+                <Area type="monotone" dataKey="uv" stroke={chartColors[1]} fill={chartColors[1]} />
             </AreaChart>
         </ResponsiveContainer>
     ),

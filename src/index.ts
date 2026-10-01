@@ -1,5 +1,5 @@
 export { cn } from './lib/cn';
-export { tokens } from './tokens';
+export { tokens, designColors, palette, semanticHex, chartColorsHex, chartSeriesHex } from './tokens';
 export type { OnaekoTokens } from './tokens';
 export { applyTheme, getStoredTheme, getSystemTheme, initTheme, resolveTheme, setTheme } from './theme';
 export type { Theme, ThemeStorageOptions } from './theme';
@@ -94,8 +94,17 @@ export {
     YAxis,
     ZAxis,
     useChartWidth,
+    chartColors,
+    chartSeries,
 } from './components/Chart';
-export type { SankeyData, SankeyLinkProps, SankeyNodeProps, SankeyProps, SunburstData } from './components/Chart';
+export type {
+    ChartColorToken,
+    SankeyData,
+    SankeyLinkProps,
+    SankeyNodeProps,
+    SankeyProps,
+    SunburstData,
+} from './components/Chart';
 
 export {
     Command,

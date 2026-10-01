@@ -49,6 +49,8 @@ import {
     type SunburstData,
 } from './Chart';
 
+import { chartColors } from './chartColors';
+
 const pageData = [
     { name: 'Page A', uv: 4000, pv: 2400, amt: 2400 },
     { name: 'Page B', uv: 3000, pv: 1398, amt: 2210 },
@@ -91,8 +93,8 @@ export const SimpleLineChart: Story = {
             <YAxis width="auto" />
             <Tooltip />
             <Legend />
-            <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
-            <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+            <Line type="monotone" dataKey="pv" stroke={chartColors[1]} activeDot={{ r: 8 }} />
+            <Line type="monotone" dataKey="uv" stroke={chartColors[2]} />
         </LineChart>
     ),
 };
@@ -107,8 +109,8 @@ export const DashedLineChart: Story = {
             <YAxis width="auto" />
             <Tooltip />
             <Legend />
-            <Line type="monotone" dataKey="pv" stroke="#8884d8" strokeDasharray="5 5" />
-            <Line type="monotone" dataKey="uv" stroke="#82ca9d" strokeDasharray="3 4 5 2" />
+            <Line type="monotone" dataKey="pv" stroke={chartColors[1]} strokeDasharray="5 5" />
+            <Line type="monotone" dataKey="uv" stroke={chartColors[2]} strokeDasharray="3 4 5 2" />
         </LineChart>
     ),
 };
@@ -122,7 +124,7 @@ export const SimpleAreaChart: Story = {
             <XAxis dataKey="name" niceTicks="snap125" />
             <YAxis width="auto" niceTicks="snap125" />
             <Tooltip />
-            <Area type="monotone" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
+            <Area type="monotone" dataKey="uv" stroke={chartColors[1]} fill={chartColors[1]} />
         </AreaChart>
     ),
 };
@@ -136,9 +138,9 @@ export const StackedAreaChart: Story = {
             <XAxis dataKey="name" niceTicks="snap125" />
             <YAxis width="auto" niceTicks="snap125" />
             <Tooltip />
-            <Area type="monotone" dataKey="uv" stackId="1" stroke="#8884d8" fill="#8884d8" />
-            <Area type="monotone" dataKey="pv" stackId="1" stroke="#82ca9d" fill="#82ca9d" />
-            <Area type="monotone" dataKey="amt" stackId="1" stroke="#ffc658" fill="#ffc658" />
+            <Area type="monotone" dataKey="uv" stackId="1" stroke={chartColors[1]} fill={chartColors[1]} />
+            <Area type="monotone" dataKey="pv" stackId="1" stroke={chartColors[2]} fill={chartColors[2]} />
+            <Area type="monotone" dataKey="amt" stackId="1" stroke={chartColors[4]} fill={chartColors[4]} />
         </AreaChart>
     ),
 };
@@ -153,8 +155,18 @@ export const SimpleBarChart: Story = {
             <YAxis width="auto" />
             <Tooltip />
             <Legend />
-            <Bar dataKey="pv" fill="#8884d8" activeBar={{ fill: 'pink', stroke: 'blue' }} radius={[10, 10, 0, 0]} />
-            <Bar dataKey="uv" fill="#82ca9d" activeBar={{ fill: 'gold', stroke: 'purple' }} radius={[10, 10, 0, 0]} />
+            <Bar
+                dataKey="pv"
+                fill={chartColors[1]}
+                activeBar={{ fill: chartColors[4], stroke: chartColors[1] }}
+                radius={[10, 10, 0, 0]}
+            />
+            <Bar
+                dataKey="uv"
+                fill={chartColors[2]}
+                activeBar={{ fill: chartColors[3], stroke: chartColors[5] }}
+                radius={[10, 10, 0, 0]}
+            />
         </BarChart>
     ),
 };
@@ -169,8 +181,8 @@ export const StackedBarChart: Story = {
             <YAxis width="auto" niceTicks="snap125" />
             <Tooltip />
             <Legend />
-            <Bar dataKey="pv" stackId="a" fill="#8884d8" background />
-            <Bar dataKey="uv" stackId="a" fill="#82ca9d" background />
+            <Bar dataKey="pv" stackId="a" fill={chartColors[1]} background />
+            <Bar dataKey="uv" stackId="a" fill={chartColors[2]} background />
         </BarChart>
     ),
 };
@@ -189,15 +201,15 @@ export const LineBarAreaComposedChart: Story = {
         ];
         return (
             <ComposedChart style={chartFrame} responsive data={data} margin={{ top: 20, right: 0, bottom: 0, left: 0 }}>
-                <CartesianGrid stroke="#f5f5f5" />
+                <CartesianGrid stroke={chartColors.grid} />
                 <XAxis dataKey="name" scale="band" />
                 <YAxis width="auto" niceTicks="snap125" />
                 <Tooltip />
                 <Legend />
-                <Area type="monotone" dataKey="amt" fill="#8884d8" stroke="#8884d8" />
-                <Bar dataKey="pv" barSize={20} fill="#413ea0" />
-                <Line type="monotone" dataKey="uv" stroke="#ff7300" />
-                <Scatter dataKey="cnt" fill="red" />
+                <Area type="monotone" dataKey="amt" fill={chartColors[1]} stroke={chartColors[1]} />
+                <Bar dataKey="pv" barSize={20} fill={chartColors[3]} />
+                <Line type="monotone" dataKey="uv" stroke={chartColors[4]} />
+                <Scatter dataKey="cnt" fill={chartColors[4]} />
             </ComposedChart>
         );
     },
@@ -236,7 +248,7 @@ export const TwoLevelPieChart: Story = {
                 }}
                 responsive
             >
-                <Pie data={data01} dataKey="value" cx="50%" cy="50%" outerRadius="50%" fill="#8884d8" />
+                <Pie data={data01} dataKey="value" cx="50%" cy="50%" outerRadius="50%" fill={chartColors[1]} />
                 <Pie
                     data={data02}
                     dataKey="value"
@@ -244,7 +256,7 @@ export const TwoLevelPieChart: Story = {
                     cy="50%"
                     innerRadius="60%"
                     outerRadius="80%"
-                    fill="#82ca9d"
+                    fill={chartColors[2]}
                     label
                 />
                 <Tooltip />
@@ -258,10 +270,10 @@ export const PieChartWithPaddingAngle: Story = {
     name: 'Pie Chart with padding angle',
     render: () => {
         const data = [
-            { name: 'Group A', value: 400, fill: '#0088FE' },
-            { name: 'Group B', value: 300, fill: '#00C49F' },
-            { name: 'Group C', value: 300, fill: '#FFBB28' },
-            { name: 'Group D', value: 200, fill: '#FF8042' },
+            { name: 'Group A', value: 400, fill: chartColors[1] },
+            { name: 'Group B', value: 300, fill: chartColors[2] },
+            { name: 'Group C', value: 300, fill: chartColors[4] },
+            { name: 'Group D', value: 200, fill: chartColors[4] },
         ];
         return (
             <PieChart
@@ -278,7 +290,7 @@ export const PieChartWithPaddingAngle: Story = {
                     innerRadius="80%"
                     outerRadius="100%"
                     cornerRadius="50%"
-                    fill="#8884d8"
+                    fill={chartColors[1]}
                     paddingAngle={5}
                     dataKey="value"
                 />
@@ -317,7 +329,7 @@ export const StraightAnglePieChart: Story = {
                     cx="50%"
                     cy="100%"
                     outerRadius="120%"
-                    fill="#8884d8"
+                    fill={chartColors[1]}
                     label
                 />
             </PieChart>
@@ -353,7 +365,7 @@ export const SimpleRadarChart: Story = {
                 <PolarGrid />
                 <PolarAngleAxis dataKey="subject" />
                 <PolarRadiusAxis />
-                <Radar name="Mike" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+                <Radar name="Mike" dataKey="A" stroke={chartColors[1]} fill={chartColors[1]} fillOpacity={0.6} />
             </RadarChart>
         );
     },
@@ -364,13 +376,13 @@ export const SimpleRadialBarChart: Story = {
     name: 'Simple Radial Bar Chart',
     render: () => {
         const data = [
-            { name: '18-24', uv: 31.47, pv: 2400, fill: '#8884d8' },
-            { name: '25-29', uv: 26.69, pv: 4567, fill: '#83a6ed' },
-            { name: '30-34', uv: 15.69, pv: 1398, fill: '#8dd1e1' },
-            { name: '35-39', uv: 8.22, pv: 9800, fill: '#82ca9d' },
-            { name: '40-49', uv: 8.63, pv: 3908, fill: '#a4de6c' },
-            { name: '50+', uv: 2.63, pv: 4800, fill: '#d0ed57' },
-            { name: 'unknown', uv: 6.67, pv: 4800, fill: '#ffc658' },
+            { name: '18-24', uv: 31.47, pv: 2400, fill: chartColors[1] },
+            { name: '25-29', uv: 26.69, pv: 4567, fill: chartColors[1] },
+            { name: '30-34', uv: 15.69, pv: 1398, fill: chartColors[2] },
+            { name: '35-39', uv: 8.22, pv: 9800, fill: chartColors[2] },
+            { name: '40-49', uv: 8.63, pv: 3908, fill: chartColors[2] },
+            { name: '50+', uv: 2.63, pv: 4800, fill: chartColors[5] },
+            { name: 'unknown', uv: 6.67, pv: 4800, fill: chartColors[4] },
         ];
         const style = {
             top: '50%',
@@ -427,8 +439,8 @@ export const SimpleScatterChart: Story = {
                 <ZAxis dataKey="z" type="number" range={[64, 144]} name="score" unit="km" />
                 <Tooltip cursor={{ strokeDasharray: '3 3' }} />
                 <Legend />
-                <Scatter name="A school" data={data01} fill="#8884d8" />
-                <Scatter name="B school" data={data02} fill="#82ca9d" />
+                <Scatter name="A school" data={data01} fill={chartColors[1]} />
+                <Scatter name="B school" data={data02} fill={chartColors[2]} />
             </ScatterChart>
         );
     },
@@ -489,8 +501,8 @@ export const SimpleTreemap: Story = {
                 data={data}
                 dataKey="size"
                 aspectRatio={4 / 3}
-                stroke="#fff"
-                fill="#8884d8"
+                stroke="#ffffff"
+                fill={chartColors[1]}
             />
         );
     },
@@ -506,7 +518,7 @@ export const SunburstChartExample: Story = {
             children: [
                 {
                     name: 'Child1',
-                    fill: '#264653',
+                    fill: chartColors[3],
                     value: 30,
                     children: [
                         { name: 'third child', value: 10 },
@@ -528,7 +540,7 @@ export const SunburstChartExample: Story = {
                 },
                 {
                     name: 'Child2',
-                    fill: '#2a9d8f',
+                    fill: chartColors[2],
                     value: 20,
                     children: [
                         { name: 'another child', value: 10 },
@@ -543,17 +555,17 @@ export const SunburstChartExample: Story = {
                         },
                     ],
                 },
-                { name: 'Child3', fill: '#e9c46a', value: 20 },
+                { name: 'Child3', fill: chartColors[4], value: 20 },
                 {
                     name: 'Child4',
-                    fill: '#F4A261',
+                    fill: chartColors[4],
                     value: 10,
                     children: [
                         { name: 'child4 child', value: 5 },
                         { name: 'child4 child', value: 5 },
                     ],
                 },
-                { name: 'Child5', fill: '#e76f51', value: 20 },
+                { name: 'Child5', fill: chartColors[4], value: 20 },
             ],
         };
         return (
@@ -571,17 +583,17 @@ export const FunnelChartExample: Story = {
     name: 'Funnel Chart',
     render: () => {
         const data = [
-            { value: 100, name: 'Impression', fill: '#8884d8' },
-            { value: 80, name: 'Click', fill: '#83a6ed' },
-            { value: 50, name: 'Visit', fill: '#8dd1e1' },
-            { value: 40, name: 'Consult', fill: '#82ca9d' },
-            { value: 26, name: 'Order', fill: '#a4de6c' },
+            { value: 100, name: 'Impression', fill: chartColors[1] },
+            { value: 80, name: 'Click', fill: chartColors[1] },
+            { value: 50, name: 'Visit', fill: chartColors[2] },
+            { value: 40, name: 'Consult', fill: chartColors[2] },
+            { value: 26, name: 'Order', fill: chartColors[2] },
         ];
         return (
             <FunnelChart style={chartFrame} responsive margin={{ right: 30 }}>
                 <Tooltip />
                 <Funnel dataKey="value" data={data}>
-                    <LabelList position="right" fill="#000" stroke="none" dataKey="name" />
+                    <LabelList position="right" fill="currentColor" stroke="none" dataKey="name" />
                 </Funnel>
             </FunnelChart>
         );
@@ -616,13 +628,13 @@ export const SankeyChartExample: Story = {
             const isOut = x + width + 6 > containerWidth;
             return (
                 <Layer key={`CustomNode${index}`}>
-                    <Rectangle x={x} y={y} width={width} height={height} fill="#5192ca" fillOpacity="1" />
+                    <Rectangle x={x} y={y} width={width} height={height} fill={chartColors[1]} fillOpacity="1" />
                     <text
                         textAnchor={isOut ? 'end' : 'start'}
                         x={isOut ? x - 6 : x + width + 6}
                         y={y + height / 2}
                         fontSize="14"
-                        stroke="#333"
+                        stroke="currentColor"
                     >
                         {payload.name}
                     </text>
@@ -631,7 +643,7 @@ export const SankeyChartExample: Story = {
                         x={isOut ? x - 6 : x + width + 6}
                         y={y + height / 2 + 13}
                         fontSize="12"
-                        stroke="#333"
+                        stroke="currentColor"
                         strokeOpacity="0.5"
                     >
                         {`${payload.value}k`}
@@ -647,7 +659,7 @@ export const SankeyChartExample: Story = {
                     node={MyCustomSankeyNode}
                     nodePadding={50}
                     margin={{ bottom: 30 }}
-                    link={{ stroke: '#77c878' }}
+                    link={{ stroke: chartColors[2] }}
                 >
                     <Tooltip />
                 </Sankey>
