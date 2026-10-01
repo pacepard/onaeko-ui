@@ -2,6 +2,12 @@
 
 Onaeko design system and React UI component library. Framework-agnostic presentation components for Next.js, Vite, and other React applications.
 
+## Description
+
+`@onaeko/ui` is the shared design system for Onaeko products — the presentation layer Accounts, Academy, Pathfinder, Workspace, and marketing use so every surface stays visually consistent.
+
+It ships tokens, theme helpers, and accessible components (buttons, forms, dialogs, and more) driven by [`DESIGN.md`](./DESIGN.md): Notion-style warm paper canvas, Inter type, pill CTAs, and Onaeko orange primary (`#f36827`) with forest-green hero (`#2e503f`). Import components plus `@onaeko/ui/styles.css`; keep auth, API clients, and business logic out of this package.
+
 ## Installation
 
 ```bash
@@ -35,11 +41,11 @@ Semantic CSS variables power light and dark themes. Initialize theme on the clie
 ```tsx
 import { initTheme, setTheme } from '@onaeko/ui';
 
-initTheme('system');
+initTheme('system', { cookieDomain: '.onaeko.com' });
 setTheme('dark');
 ```
 
-Themes: `light`, `dark`, `system`. Components use tokens such as `--onaeko-primary` and short aliases like `--primary`.
+Themes: `light`, `dark`, `system`. Tokens follow [`DESIGN.md`](./DESIGN.md): orange primary `#f36827`, paper canvas `#f6f5f4`, forest-green hero `#2e503f`, Inter, pill marketing CTAs (`rounded-full`). Use `Button` variants `primary` (Onaeko orange) and `secondary` (white chrome). Prefixed vars are `--onaeko-*` with short aliases like `--primary`.
 
 ## Development
 
@@ -64,8 +70,9 @@ Includes the accessibility addon. Violations are treated as errors (`a11y.test: 
 
 - **Storybook** — interactive components, props, a11y
 - **Mintlify** — conceptual docs under `docs/` (installation, theming, tokens)
+- **DESIGN.md** — brand source of truth (Onaeko); archived Notion analysis in `notion/DESIGN.md`
 
-Mintlify content is intended for `docs.onaeko.com` and does not duplicate every Storybook example.
+Mintlify content is intended for product docs and does not duplicate every Storybook example.
 
 ```bash
 # Preview Mintlify docs locally (requires Mintlify CLI)
@@ -94,7 +101,7 @@ pnpm changeset
 | --- | --- |
 | `@onaeko/ui` | Components, utilities, theme helpers |
 | `@onaeko/ui/styles.css` | Design tokens and component styles |
-| `@onaeko/ui/tokens` | Typed token references |
+| `@onaeko/ui/tokens` | Typed token references (`designColors`, `palette`, …) |
 | `@onaeko/ui/theme` | Theme helpers (`initTheme`, `setTheme`) |
 | `@onaeko/ui/<name>` | Per-component ESM entry (kebab-case), e.g. `@onaeko/ui/button` |
 

@@ -11,9 +11,12 @@ See [`PRODUCT.md`](./PRODUCT.md).
 | Concern | Path |
 | ------- | ---- |
 | Re-exports | [`src/components/Chart/Chart.tsx`](../../../src/components/Chart/Chart.tsx) |
+| Series colors | [`src/components/Chart/chartColors.ts`](../../../src/components/Chart/chartColors.ts) — CSS vars; hex in `src/tokens` |
 | Stories (core) | [`src/components/Chart/Chart.stories.tsx`](../../../src/components/Chart/Chart.stories.tsx) |
 | Tests | [`src/components/Chart/Chart.test.tsx`](../../../src/components/Chart/Chart.test.tsx) |
-| Package aliases | [`src/index.ts`](../../../src/index.ts) — `ChartTooltip`, `ChartLegend` |
+| Package aliases | [`src/index.ts`](../../../src/index.ts) — `ChartTooltip`, `ChartLegend`, `chartColors` |
+
+Series must use `--onaeko-chart-*` / `chartColors`, not `--primary` alone, so CTA rebrands do not collapse multi-series palettes.
 
 ---
 

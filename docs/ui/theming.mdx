@@ -5,24 +5,25 @@ description: Light, dark, and system themes via CSS variables.
 
 # Theming
 
-Onaeko UI uses semantic CSS variables. Toggle themes by applying the `dark` class on `document.documentElement`.
+`@onaeko/ui` uses semantic CSS variables. Toggle themes by applying the `dark` class on `document.documentElement`.
 
-Visual tokens follow [`DESIGN.md`](../../DESIGN.md): warm paper canvas (`#f6f5f4`), near-black ink, and a single structural accent (Notion blue `#0075de`). Sticker palette colors are decorative only.
+Visual tokens follow [`DESIGN.md`](../../DESIGN.md): warm paper canvas (`#f6f5f4`), near-black ink, and a single structural accent (Onaeko orange `#f36827`). Forest green `#2e503f` is the hero band only. Sticker palette colors are decorative only.
 
 ```tsx
 import { initTheme, setTheme } from '@onaeko/ui';
 
-initTheme('system');
+initTheme('system', { cookieDomain: '.onaeko.com' });
 setTheme('dark');
 ```
 
 Supported values: `light`, `dark`, `system`.
 
-| Token                       | Light     | Role                                                  |
-| --------------------------- | --------- | ----------------------------------------------------- |
+| Token                     | Light     | Role                                                  |
+| ------------------------- | --------- | ----------------------------------------------------- |
 | `--onaeko-background`     | `#f6f5f4` | Page canvas                                           |
 | `--onaeko-card`           | `#ffffff` | Cards, fields, nav                                    |
-| `--onaeko-primary`        | `#0075de` | CTAs, links, focus                                    |
-| `--onaeko-primary-active` | `#005bab` | Pressed primary                                       |
+| `--onaeko-primary`        | `#f36827` | CTAs, links, focus                                    |
+| `--onaeko-primary-active` | `#c44e1a` | Pressed primary                                       |
+| `--onaeko-hero`           | `#2e503f` | Inverted hero / marketing band                        |
 | `--onaeko-border`         | `#e6e6e6` | Hairlines                                             |
 | `--onaeko-radius`         | `12px`    | Cards (`rounded-lg`); fields use `4px` (`rounded-sm`) |

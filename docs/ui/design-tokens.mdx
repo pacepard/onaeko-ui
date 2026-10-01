@@ -5,7 +5,7 @@ description: Semantic tokens for color, space, radius, motion, and more.
 
 # Design Tokens
 
-Tokens are defined as CSS variables in `@onaeko/ui/styles.css` and mirrored in `src/tokens` for documentation.
+Tokens are defined as CSS variables in `@onaeko/ui/styles.css` and mirrored in `src/tokens` for documentation. Brand hex values live in `designColors` / `palette` (from [`DESIGN.md`](../../DESIGN.md)).
 
 Examples:
 
@@ -14,6 +14,8 @@ Examples:
 --onaeko-foreground
 --onaeko-primary
 --onaeko-primary-foreground
+--onaeko-primary-active
+--onaeko-hero
 --onaeko-secondary
 --onaeko-muted
 --onaeko-destructive
@@ -22,4 +24,24 @@ Examples:
 --onaeko-ring
 ```
 
-Prefer semantic tokens over hard-coded colors in product code.
+```tsx
+import { designColors, tokens } from '@onaeko/ui/tokens';
+
+designColors.primary; // '#f36827'
+tokens.colors.hero; // 'var(--onaeko-hero)'
+```
+
+Prefer semantic tokens over hard-coded colors in product code. Use `--onaeko-primary` for CTAs; use `--onaeko-hero` (forest green) only for inverted marketing bands — never as a CTA fill.
+
+### Chart series
+
+Charts use a dedicated ramp (`--onaeko-chart-1` … `--onaeko-chart-5`), not `--primary` alone:
+
+```tsx
+import { chartColors, chartSeries } from '@onaeko/ui';
+
+<Line stroke={chartColors[1]} />
+<Line stroke={chartColors[2]} />
+```
+
+Also use `stroke={chartColors.grid}` on `CartesianGrid` when you want theme-aware grid lines.

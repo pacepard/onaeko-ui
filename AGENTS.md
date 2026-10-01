@@ -1,10 +1,10 @@
-# AGENTS.md — @onaeko/ui
+# AGENTS.md — @onaeko/ui (Onaeko design system)
 
 Guidance for coding agents working in this repository.
 
 ## Mission
 
-Ship a framework-agnostic React design system (`@onaeko/ui`). Prefer small, reviewable changes. Do not invent APIs that are not backed by this repo or cited upstream docs (Radix, Recharts, input-otp, shadcn patterns already mirrored here).
+Ship a framework-agnostic React design system for Onaeko (`@onaeko/ui`). Brand truth is [`DESIGN.md`](./DESIGN.md) (orange primary `#f36827`, forest-green hero `#2e503f`, Notion-style chrome). Prefer small, reviewable changes. Do not invent APIs that are not backed by this repo or cited upstream docs (Radix, Recharts, input-otp, shadcn patterns already mirrored here).
 
 ## Hard constraints
 
