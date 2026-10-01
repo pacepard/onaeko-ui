@@ -9,8 +9,8 @@
     },
     "dependencies": {
         "@hookform/resolvers": "^5.7.1",
-        "@onaeko/icons": "npm:@onaeko/icons@^0.2.0",
-        "@onaeko/ui": "npm:@onaeko/ui@^0.2.0",
+        "@onaeko/icons": "workspace:*",
+        "@onaeko/ui": "workspace:*",
         "react": "^19.1.1",
         "react-dom": "^19.1.1",
         "react-hook-form": "^7.85.0",
